@@ -1,0 +1,75 @@
+.film-list {
+  padding-bottom: 40px;
+}
+.film-list__title {
+  margin-bottom: 30px;
+}
+.film-list__card-block {
+  position: relative;
+  height: 300px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 1s;
+  overflow-y: hidden;
+}
+.film-list__card-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 1s;
+}
+.film-list__card-block:hover {
+  transform: translateY(-4px);
+  transition: 1s;
+}
+.film-list__card-block:hover .film-list__card-info {
+  display: flex;
+  transition: 1s;
+  bottom: 0;
+}
+.film-list__card-info {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  position: absolute;
+  border-radius: 15px;
+  bottom: -100%;
+  background: rgba(54, 53, 62, 0.5019607843);
+}
+.film-list__card-icons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  position: absolute;
+  top: 30px;
+  right: 15px;
+}
+.film-list__card-icon {
+  font-size: 24px;
+  position: relative;
+}
+.film-list__card-icon:hover .film-list__card-move {
+  display: flex;
+}
+.film-list__card-move {
+  display: none;
+  position: absolute;
+  padding: 3px 0;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  background: #100e19;
+  top: -25px;
+  right: 0;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.swiper {
+  padding: 40px 40px;
+}
+
+/*# sourceMappingURL=film-list.css.map */

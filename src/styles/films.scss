@@ -1,0 +1,54 @@
+.films {
+  padding: 60px 0 90px;
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  &__card {
+    width: calc(16.66666% - 25px);
+  }
+  &__sort {
+    margin-top: 30px;
+  }
+  &__filter {
+    padding: 20px;
+    background: #1f1b2e;
+    border-radius: 8px;
+    margin: 30px 0;
+    &-sort {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    &-box {
+      background: #312b45 !important;
+      color: white!important;
+      border: none !important;
+      border-radius: 6px !important;
+    }
+    &-item {
+      background: #1f1b2e !important;
+      color: white;
+      &:hover{
+        background: #ea0057 !important;
+      }
+    }
+  }
+  &__skeleton {
+    width: calc(16.66666% - 25px);
+  }
+  &__select{
+    color: black;
+    padding: 12px 20px;
+
+    & > option{
+      color: black;
+    }
+  }
+}
+
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+  padding: 0 !important;
+}

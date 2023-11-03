@@ -1,0 +1,51 @@
+.film {
+  padding: 60px 0;
+  text-align: center;
+  &__row {
+    display: flex;
+    column-gap: 40px;
+  }
+  &__right {
+    width: 60%;
+    border-radius: 10px;
+    height: 400px;
+    background: #36353e;
+    box-shadow: 0px 0px 9px 8px rgba(234, 0, 87, 0.2);
+  }
+  &__info {
+    width: 40%;
+    &-title {
+      text-align: center;
+      font-size: 40px;
+    }
+    &-date {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 10px;
+      margin: 15px 0;
+    }
+    &-up {
+      display: flex;
+      column-gap: 20px;
+      justify-content: center;
+    }
+    &-rate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+      p {
+        width: 40px;
+        height: 40px;
+        background: #36353e;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+}

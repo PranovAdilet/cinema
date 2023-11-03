@@ -1,0 +1,48 @@
+.admin {
+  display: flex;
+  &__aside {
+    width: 20%;
+    height: 100vh;
+    background: #36353e;
+    padding: 40px 20px;
+    &-list {
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    &-item {
+      padding: 8px 10px;
+      background: #ea0057;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+  &__info {
+    width: 80%;
+    padding: 40px 100px;
+  }
+  &__table {
+    margin-top: 40px;
+    width: 100%;
+    border: 2px solid #ea0057;
+    border-radius: 8px;
+    border-collapse: collapse;
+    &-title {
+      border: 2px solid #ea0057;
+      border-radius: 8px;
+      height: 40px;
+    }
+    &-info {
+      border: 2px solid #ea0057;
+      border-radius: 8px;
+      text-align: center;
+      height: 40px;
+    }
+    &-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

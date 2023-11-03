@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+body {
+  background: #100e19;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+@import "header";
+@import "slider";
+@import "film-list";
+@import "films";
+@import "film";
+@import "login";
+@import "admin";
+@import "footer";

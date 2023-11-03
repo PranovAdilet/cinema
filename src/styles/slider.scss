@@ -1,0 +1,33 @@
+.slider {
+  padding: 30px 30px;
+  position: relative;
+  &__block {
+    width: 100%;
+    border-radius: 30px;
+    &-img {
+      width: 100%;
+      height: 500px;
+      border-radius: 30px;
+      object-fit: cover;
+    }
+  }
+
+}
+
+
+
+.slider .swiper-button-prev:after {
+  color: #a5a1b2;
+}
+
+.slider .swiper-button-prev:hover::after {
+  color: #ffffff;
+}
+
+.slider .swiper-button-next:after {
+  color: #a5a1b2;
+}
+
+.slider .swiper-button-next:hover::after {
+  color: #ffffff;
+}
