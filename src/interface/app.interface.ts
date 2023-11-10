@@ -18,6 +18,7 @@ export interface IFilter{
     search:string
     status:string | null,
     sort: string
+    rating: string
 }
 
 export interface ILoginField{

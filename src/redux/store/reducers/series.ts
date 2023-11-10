@@ -11,6 +11,7 @@ interface SeriesAsync {
         year: string
         search:string
         sort: string
+        rating: string
     }
     status: "loading"| "error" | "done" | "empty" | null,
     error: null | string
@@ -23,7 +24,8 @@ const initialState: SeriesAsync = {
         genre : '',
         year: '',
         search: '',
-        sort: 'viewCount'
+        sort: 'viewCount',
+        rating: ""
     },
     status: 'empty',
     error: null

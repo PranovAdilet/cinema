@@ -10,6 +10,8 @@ interface CinemaAsync {
         year: string,
         search: string
         sort: string
+        rating: string
+        state: boolean
     },
     status: "loading"| "error" | "done" | "empty" | null,
     error: null | string
@@ -22,7 +24,9 @@ const initialState: CinemaAsync = {
         genre : '',
         year: '',
         search: '',
-        sort: 'viewCount'
+        sort: '',
+        rating: "",
+        state: true
     },
     status: 'empty',
     error: ''
@@ -32,7 +36,7 @@ export const getCinema = createAsyncThunk(
     'cinema/getCinema',
     async (filter: IFilter) => {
         try {
-            const res = await axios(`/films?${filter.genre !== '' ? `genre=${filter.genre}&` : ''}${filter.year !== '' ? `year=${filter.year}&` : ''}${filter.search !== '' ? `title_like=${filter.search}&` : ''}${filter.sort ? `_sort=${filter.sort}&_order=desc&` : ""} `)
+            const res = await axios(`/films?${filter.genre !== '' ? `genre=${filter.genre}&` : ''}${filter.year !== '' ? `year=${filter.year}&` : ''}${filter.search !== '' ? `title_like=${filter.search}&` : ''}${filter.sort !== "" ? `_sort=${filter.sort}&_order=desc&` : ""}${filter.rating !== "" ? `rating_gte=${filter.rating}` : ""} `)
             if (res.statusText !== 'OK') {
                 throw new Error('Server error !')
             }
@@ -66,7 +70,19 @@ const cinemaSlice = createSlice({
         },
         sortFilms: (state, action) =>  {
             state.filter.sort = action.payload
+        },
+        sortRating: (state, action) => {
+            state.filter.rating = action.payload
+        },
+        clearFilters: (state, action) => {
+            state.filter.genre = ""
+            state.filter.year = ""
+            state.filter.sort = ""
+            state.filter.rating = ""
+            state.filter.state = false
         }
+
+
     },
     extraReducers : (builder) => {
         builder
@@ -89,5 +105,5 @@ const cinemaSlice = createSlice({
     }
 })
 
-export const {changeGenre, changeYear, changeSearch, sortFilms} = cinemaSlice.actions
+export const {changeGenre, changeYear, changeSearch, sortFilms, sortRating, clearFilters} = cinemaSlice.actions
 export default cinemaSlice.reducer

@@ -67,7 +67,7 @@ const Series = () => {
                         <SeriesYear/>
                     </div>
                 </div>
-                <div className="films__row">
+                <div className={status === 'loading' ? "" : "films__row"}>
                     {
                         status === 'loading' ?
                             <SkeletonCard cards={12}/>

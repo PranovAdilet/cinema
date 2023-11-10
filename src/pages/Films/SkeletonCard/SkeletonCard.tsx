@@ -9,7 +9,7 @@ const SkeletonCard = ({cards}: { cards: number}) => {
         </div>
     ));
 
-    return <div>{skeletonCards}</div>;
+    return <div className="films__skeleton-box">{skeletonCards}</div>;
 }
 
 export default SkeletonCard;

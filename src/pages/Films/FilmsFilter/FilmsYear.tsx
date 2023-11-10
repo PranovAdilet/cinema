@@ -8,17 +8,21 @@ import Select from '@mui/material/Select';
 import {changeYear} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
 
-const FilmsYear = () => {
+interface props{
+    year: string
+    setYear: (value: string) => void
+}
+
+const FilmsYear = ({year, setYear}: props) => {
     const dispatch = useAppDispatch()
 
-    const [year, setYear] = useState('');
 
     useEffect(() => {
         dispatch(changeYear(year))
     },[year]);
 
     return (
-        <Box className="films__filter-box" sx={{ minWidth: 120 }}>
+        <Box className="films__filter-box" sx={{ minWidth: 200 }}>
             <FormControl fullWidth>
                 <InputLabel style={{color: 'white'}} id="demo-simple-select-label">Год</InputLabel>
                 <Select style={{color: 'white'}}

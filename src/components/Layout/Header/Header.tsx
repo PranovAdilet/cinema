@@ -27,7 +27,7 @@ const Header = () => {
         }
 
     }
-    console.log(user)
+
 
     return (
         <header className="header">

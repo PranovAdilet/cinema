@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -7,11 +7,17 @@ import Select, {SelectChangeEvent} from '@mui/material/Select';
 import {changeGenre} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
 
-const FilmsSort = () => {
+interface props{
+    genreState: string
+    setGenreState: (value: string) => void
+}
+
+
+const GenreSort = ({genreState, setGenreState} : props) => {
 
     const dispatch = useAppDispatch();
 
-    const [genreState, setGenreState] = useState('')
+
     useEffect(() => {
         dispatch(changeGenre(genreState))
     }, [genreState])
@@ -41,4 +47,4 @@ const FilmsSort = () => {
     );
 };
 
-export default FilmsSort;
+export default GenreSort;
