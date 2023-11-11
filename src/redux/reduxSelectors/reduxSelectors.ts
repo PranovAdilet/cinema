@@ -5,3 +5,5 @@ export const selectSeries =(state : RootReducer) => state.series
 export const selectUser =(state : RootReducer) => state.user
 export const selectFilm =(state : RootReducer) => state.oneFilm
 export const selectOneSeries =(state : RootReducer) => state.oneSeries
+export const selectCartoons =(state : RootReducer) => state.cartoons
+export const selectOneCartoon =(state : RootReducer) => state.oneCartoon

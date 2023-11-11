@@ -4,6 +4,8 @@ import oneFilm from "../store/reducers/oneFilm"
 import series from "../store/reducers/series"
 import user from "../store/reducers/user"
 import oneSeries from "../store/reducers/oneSeries"
+import cartoons from "./reducers/cartoons";
+import oneCartoon from "./reducers/oneCartoon";
 
 
 const rootReducer = combineReducers({
@@ -11,7 +13,9 @@ const rootReducer = combineReducers({
     oneFilm: oneFilm,
     series: series,
     user: user,
-    oneSeries: oneSeries
+    oneSeries: oneSeries,
+    cartoons: cartoons,
+    oneCartoon: oneCartoon
 })
 
 const store = configureStore({

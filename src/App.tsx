@@ -1,10 +1,12 @@
 import {Routes, Route} from 'react-router-dom'
 import './styles/App.scss'
 import Home from "./pages/Home/Home";
-import Layout from "./Layout/Layout"
+import Layout from "./components/Layout/Layout"
 import Films from "./pages/Films/Films"
 import Film from "./pages/Film/Film"
-import OneSeries from "./pages/Series/OneSeries/OneSeries"
+import Cartoons from "./pages/Cartoons/Cartoons"
+import OneSeries from "./pages/OneSeries/OneSeries"
+import Cartoon from "./pages/Cartoon/Cartoon"
 import Series from "./pages/Series/Series"
 import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
@@ -21,8 +23,10 @@ function App() {
             <Route path={''} element={<Home/>}/>
             <Route path={'films'} element={<Films/>}/>
             <Route path={'series'} element={<Series/>}/>
+            <Route path={'cartoons'} element={<Cartoons/>}/>
             <Route path={'film/:id'} element={<Film/>}/>
             <Route path={'series/:id'} element={<OneSeries/>}/>
+            <Route path={'cartoons/:id'} element={<Cartoon/>}/>
           </Route>
           <Route path={'/login'} element={<Login/>}/>
           <Route path={'/registration'} element={<Register/>}/>

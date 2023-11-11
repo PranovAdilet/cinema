@@ -11,6 +11,7 @@ export interface IFilm{
     "countRate": number,
     "status": string,
     "viewCount": number
+    country: string
 }
 export interface IFilter{
     genre: string
@@ -19,6 +20,7 @@ export interface IFilter{
     status:string | null,
     sort: string
     rating: string
+    country: string
 }
 
 export interface ILoginField{
@@ -37,4 +39,11 @@ export interface IShippingFields{
 
 export interface IUser extends IShippingFields{
     id: number
+}
+export interface IFilterState {
+    cartoonState: string,
+    year: string,
+    genreState: string,
+    country: string,
+    rating: string
 }

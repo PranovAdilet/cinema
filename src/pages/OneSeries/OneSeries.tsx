@@ -14,6 +14,7 @@ const OneSeries = () => {
 
     const dispatch = useAppDispatch()
     const params = useParams();
+
     const {product} = useSelector(selectOneSeries);
 
     useEffect(() => {

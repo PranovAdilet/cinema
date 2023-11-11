@@ -1,5 +1,5 @@
 import ReactPlayer from 'react-player';
-import {IFilm} from "../../../../interface/app.interface";
+import {IFilm} from "../../../interface/app.interface";
 
 const FilmsRight = ({product} : {product: IFilm}) => {
 

@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import {BsBookmark} from "react-icons/bs";
 import {ImMagicWand} from "react-icons/im";
 import {AiOutlineDisconnect, AiOutlineStar} from "react-icons/ai";
-import {IFilm} from "../../../../interface/app.interface"
+import {IFilm} from "../../../interface/app.interface"
 
 const OneSeriesCard = ({item}: {item: IFilm}) => {
 

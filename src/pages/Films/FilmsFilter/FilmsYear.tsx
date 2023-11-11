@@ -35,6 +35,7 @@ const FilmsYear = ({year, setYear}: props) => {
                     <MenuItem className="films__filter-item"  value="">По умолчанию</MenuItem>
                     <MenuItem className="films__filter-item"  value={2022}>2022</MenuItem>
                     <MenuItem className="films__filter-item"  value={2021}>2021</MenuItem>
+                    <MenuItem className="films__filter-item"  value={2020}>2020</MenuItem>
                     <MenuItem className="films__filter-item"  value={2019}>2019</MenuItem>
                     <MenuItem className="films__filter-item"  value={2018}>2018</MenuItem>
                     <MenuItem className="films__filter-item"  value={2017}>2017</MenuItem>

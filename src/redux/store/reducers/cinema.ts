@@ -12,6 +12,7 @@ interface CinemaAsync {
         sort: string
         rating: string
         state: boolean
+        country: string
     },
     status: "loading"| "error" | "done" | "empty" | null,
     error: null | string
@@ -26,7 +27,8 @@ const initialState: CinemaAsync = {
         search: '',
         sort: '',
         rating: "",
-        state: true
+        state: true,
+        country: ""
     },
     status: 'empty',
     error: ''
@@ -36,7 +38,12 @@ export const getCinema = createAsyncThunk(
     'cinema/getCinema',
     async (filter: IFilter) => {
         try {
-            const res = await axios(`/films?${filter.genre !== '' ? `genre=${filter.genre}&` : ''}${filter.year !== '' ? `year=${filter.year}&` : ''}${filter.search !== '' ? `title_like=${filter.search}&` : ''}${filter.sort !== "" ? `_sort=${filter.sort}&_order=desc&` : ""}${filter.rating !== "" ? `rating_gte=${filter.rating}` : ""} `)
+            const res = await axios(`/films?${filter.genre !== '' ? `genre=${filter.genre}&` : ''
+            }${filter.year !== '' ? `year=${filter.year}&` : ''
+            }${filter.search !== '' ? `title_like=${filter.search
+            }&` : ''}${filter.sort !== "" ? `_sort=${filter.sort
+            }&_order=desc&` : ""}${filter.rating !== "" ? `rating_gte=${filter.rating}&` : ""
+            }${filter.country !== "" ? `country=${filter.country}` : "" } `)
             if (res.statusText !== 'OK') {
                 throw new Error('Server error !')
             }
@@ -59,6 +66,9 @@ const cinemaSlice = createSlice({
         //     state.data = action.payload
         //     state.dataLength = action.payload.length
         // }
+        sortCountries : (state, action) => {
+            state.filter.country = action.payload
+        },
         changeGenre: (state,action) => {
             state.filter.genre = action.payload
         },
@@ -80,6 +90,7 @@ const cinemaSlice = createSlice({
             state.filter.sort = ""
             state.filter.rating = ""
             state.filter.state = false
+            state.filter.country = ""
         }
 
 
@@ -105,5 +116,5 @@ const cinemaSlice = createSlice({
     }
 })
 
-export const {changeGenre, changeYear, changeSearch, sortFilms, sortRating, clearFilters} = cinemaSlice.actions
+export const {changeGenre, changeYear, changeSearch, sortFilms, sortRating, clearFilters, sortCountries} = cinemaSlice.actions
 export default cinemaSlice.reducer

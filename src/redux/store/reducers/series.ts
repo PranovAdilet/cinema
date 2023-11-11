@@ -5,13 +5,13 @@ import {IFilm, IFilter} from '../../../interface/app.interface'
 
 interface SeriesAsync {
     data : IFilm[] | []
-    dataLength: number
     filter: {
         genre: string
         year: string
         search:string
         sort: string
         rating: string
+        country: string
     }
     status: "loading"| "error" | "done" | "empty" | null,
     error: null | string
@@ -19,13 +19,13 @@ interface SeriesAsync {
 
 const initialState: SeriesAsync = {
     data: [],
-    dataLength: 0,
     filter: {
         genre : '',
         year: '',
         search: '',
         sort: 'viewCount',
-        rating: ""
+        rating: "",
+        country: ""
     },
     status: 'empty',
     error: null
@@ -87,7 +87,6 @@ const seriesSlice = createSlice({
                 state.status = 'done'
                 state.error = ''
                 state.data = action.payload
-                state.dataLength = action.payload.length
             })
     }
 })

@@ -42,9 +42,16 @@
     min-width: 100px;
     border-radius: 20px !important;
     cursor: pointer;
-    &:active{
-      background: #252035;
-      color: #676471;
+
+    &_active{
+      border: none !important;
+      padding: 12px 25px;
+      min-width: 100px;
+      border-radius: 20px !important;
+      cursor: pointer;
+      background: #252035 !important;
+      color: #676471 !important;
+
     }
     &:hover{
       transition: .3s;

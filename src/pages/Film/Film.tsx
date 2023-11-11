@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import {useSelector} from "react-redux";
 import {getOneFilm} from "../../redux/store/reducers/oneFilm";
 import FilmsInfo from "./FilmInfo/FilmInfo";
-import FilmsRight from "./FilmRight/FilmRight";
+import FilmsRight from "./FilmVideo/FilmVideo";
 import { selectFilm} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 

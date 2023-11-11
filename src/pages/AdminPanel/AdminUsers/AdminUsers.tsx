@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useAppDispatch} from "../../../redux/hooks/reduxHooks";
 
 const AdminUsers = () => {
+    const dispatch = useAppDispatch()
+
+
+
     return (
         <div className="admin__info">
             <h2 className="admin__info-title">

@@ -1,11 +1,14 @@
 import {Link, NavLink, useNavigate, useLocation} from "react-router-dom";
 import {BsFillCameraReelsFill} from 'react-icons/bs'
 import {useDispatch, useSelector} from "react-redux";
-import {changeSearch} from '../../redux/store/reducers/cinema'
-import {changeSeriesSearch} from '../../redux/store/reducers/series'
-import {selectUser} from '../../redux/reduxSelectors/reduxSelectors'
+import {changeSearch} from '../../../redux/store/reducers/cinema'
+import {changeSeriesSearch} from '../../../redux/store/reducers/series'
+import {selectUser} from '../../../redux/reduxSelectors/reduxSelectors'
 import {ChangeEvent} from "react";
-import {logOutAccount} from "../../redux/store/reducers/user";
+import {logOutAccount} from "../../../redux/store/reducers/user";
+import {changeCartoonsSearch} from "../../../redux/store/reducers/cartoons";
+import { DebouncedFunc } from 'lodash';
+import _ from 'lodash';
 
 const Header = () => {
 
@@ -22,11 +25,12 @@ const Header = () => {
         if (location.pathname === "/series"){
             dispatch(changeSeriesSearch(e.target.value))
         }
-        if (location.pathname !== "/series"){
-            navigate("/films")
-        }
 
+        if (location.pathname === "/cartoons"){
+            dispatch(changeCartoonsSearch(e.target.value))
+        }
     }
+    const debounceSearch: DebouncedFunc<typeof handleChange> = _.debounce(handleChange, 500)
 
 
     return (
@@ -51,14 +55,14 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li className="header__item">
-                            <NavLink className="header__link" to={''}>
+                            <NavLink className="header__link" to={'/cartoons'}>
                                 Мультфильмы
                             </NavLink>
                         </li>
                     </ul>
 
                     <div className="header__right">
-                        <input className="header__search" type="search" placeholder='Поиск' onChange={handleChange}/>
+                        <input className="header__search" type="search" placeholder='Поиск' onChange={debounceSearch}/>
 
                         {
                             localStorage.getItem("user") ?

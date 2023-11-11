@@ -6,15 +6,14 @@ import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
 import {sortFilms} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
-import {useSelector} from "react-redux";
-import {selectFilms} from "../../../redux/reduxSelectors/reduxSelectors";
+
 
 interface props{
     filmsState: string
     setFilmsState: (value: string) => void
 }
 
-const GenreSort = ({filmsState, setFilmsState}: props) => {
+const FilmsSort = ({filmsState, setFilmsState}: props) => {
 
     const dispatch = useAppDispatch();
 
@@ -43,4 +42,4 @@ const GenreSort = ({filmsState, setFilmsState}: props) => {
     );
 };
 
-export default GenreSort;
+export default FilmsSort;

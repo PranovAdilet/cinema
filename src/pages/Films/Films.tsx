@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {getCinema, clearFilters} from "../../redux/store/reducers/cinema";
+import {getCinema, clearFilters, changeYear, sortRating, sortFilms} from "../../redux/store/reducers/cinema";
 import {useSelector} from "react-redux";
 import FilmsCard from "./FilmsCard/FilmsCard";
 import SkeletonCard from "./SkeletonCard/SkeletonCard";
@@ -10,18 +10,25 @@ import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 import RatingSort from "./FilmsFilter/RatingSort";
 import FilmsSort from "./FilmsFilter/FilmsSort";
 import {TfiClose} from "react-icons/tfi"
+import ActiveItem from "../../components/ActiveItem";
+import SortCartoons from "../../components/SortCartoons";
 
 const Films = () => {
     const [filmsState, setFilmsState ] = useState('')
     const [year, setYear] = useState('');
     const [genreState, setGenreState] = useState('')
     const [rating, setRating] = useState('')
+    const [active, setActive] = useState('')
 
     const dispatch = useAppDispatch()
-    const {status, error, data, filter} = useSelector(selectFilms)
-    const userValue = localStorage.getItem('user');
 
+    const {status, error, data, filter} = useSelector(selectFilms)
+
+    const userValue = localStorage.getItem('user');
     const newStatus = userValue !== null ? 'gold' : 'free';
+
+    const values = ["2023", "2022", "2021", "Новые", "Япония", "Россия"]
+
 
     useEffect(() => {
         dispatch(getCinema({
@@ -37,8 +44,8 @@ const Films = () => {
         setYear("")
         setRating("")
         setGenreState("")
+        setActive("")
     }
-
 
     return (
         <section className="films">
@@ -55,10 +62,11 @@ const Films = () => {
                         <FilmsSort filmsState={filmsState} setFilmsState={setFilmsState}/>
                     </div>
                     <div className="films__filter2">
-                        <p className="films__item">Новые</p>
-                        <p className="films__item">2023 год</p>
-                        <p className="films__item">2022 год</p>
-                        <p className="films__item">2021 год</p>
+                        {
+                            values.map((item) => (
+                                <ActiveItem  active={active} setActive={setActive} value={item}/>
+                            ))
+                        }
                     </div>
 
 

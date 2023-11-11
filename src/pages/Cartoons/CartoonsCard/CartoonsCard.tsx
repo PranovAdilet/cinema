@@ -9,7 +9,7 @@ const CartoonsCard = ({item}: {item: IFilm}) => {
 
     return (
         <div key={item.id} className="film-list__card films__card">
-            <Link to={`/film/${item.id}`}>
+            <Link to={`/cartoons/${item.id}`}>
                 <div className="film-list__card-block">
                     <img src={item.poster} alt=""/>
                     <div className="film-list__card-info">
@@ -17,10 +17,15 @@ const CartoonsCard = ({item}: {item: IFilm}) => {
                             {item.rating}
                         </h3>
                         <p className="film-list__card-desc">
-                            {item.year} {item.genre}
+                            {item.year} {item.country} {item.genre}
                         </p>
                         <p className="film-list__card-time">
-                            {Math.floor(item.time / 60)} ч {item.time % 60} мин
+                            {!isNaN(item.time) ? (
+                                <span>{Math.floor(item.time / 60)} ч {item.time % 60} мин</span>
+                            ) : (
+                                <p className="film-list__card-time">{item.time}</p>
+                            )}
+
                         </p>
                         <div className="film-list__card-icons">
                                         <span className="film-list__card-icon">

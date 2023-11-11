@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import {Navigation} from "swiper";
+import {Navigation, Autoplay} from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation"
@@ -16,10 +16,14 @@ const Slider = () => {
                 spaceBetween={30}
                 navigation={true}
                 autoplay={{
-                    delay: 500
+                    delay: 4000,
+                    disableOnInteraction: false,
+                    stopOnLastSlide: false,
+                    pauseOnMouseEnter: true
                 }}
+                effect="slide"
                 speed={2000}
-                modules={[Navigation]}
+                modules={[Navigation, Autoplay]}
                 className="sliderSwiper"
             >
                 <SwiperSlide>
