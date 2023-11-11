@@ -16,7 +16,7 @@ const OneSeriesCard = ({item}: {item: IFilm}) => {
                             {item.rating}
                         </h3>
                         <p className="film-list__card-desc">
-                            {item.year} {item.genre}
+                            {item.year} {item.country} {item.genre}
                         </p>
                         <p className="film-list__card-time">
                             {Math.floor(item.time / 60)} ч {item.time % 60} мин

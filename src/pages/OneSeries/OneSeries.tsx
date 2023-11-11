@@ -1,11 +1,11 @@
 import {useEffect} from 'react';
 import {useParams} from 'react-router-dom'
 import {useSelector} from "react-redux";
-import {getOneSeries} from "../../../redux/store/reducers/oneSeries";
+import {getOneSeries} from "../../redux/store/reducers/oneSeries";
 import OneSeriesInfo from "./OneSeriesInfo/OneSeriesInfo";
 import OneSeriesVideo from "./OneSeriesVideo/OneSeriesVideo";
-import {selectOneSeries} from "../../../redux/reduxSelectors/reduxSelectors"
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
+import {selectOneSeries} from "../../redux/reduxSelectors/reduxSelectors"
+import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 
 
 const OneSeries = () => {

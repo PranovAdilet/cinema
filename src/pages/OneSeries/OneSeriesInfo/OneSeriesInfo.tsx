@@ -1,5 +1,5 @@
 import {AiOutlineStar} from 'react-icons/ai'
-import {IFilm} from '../../../../interface/app.interface'
+import {IFilm} from '../../../interface/app.interface'
 
 
 
