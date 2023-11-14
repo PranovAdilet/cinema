@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import {ILoginField} from "../../../interface/app.interface"
+import {ILoginField, IShippingFields} from "../../../interface/app.interface"
 import axios from "../../../utils/axios";
 
 interface IUser{
@@ -10,7 +10,8 @@ interface IUser{
 interface UserSlice {
     user: IUser,
     status: "loading" | "empty" | "done" | "error"
-    error:string
+    error:string,
+    users: [] | IShippingFields[]
 }
 
 const initialState: UserSlice = {
@@ -19,8 +20,32 @@ const initialState: UserSlice = {
         login: ''
     },
     status: "empty",
-    error:""
+    error:"",
+    users: []
 }
+export const getAllUsers = createAsyncThunk(
+    "user/getAllUsers",
+    async (_, {rejectWithValue}) => {
+        try {
+            const res = await axios("/users")
+            if(res.status !== 200 ){
+                throw new Error('Ошибка при входе')
+            }
+            return res.data
+        }
+        catch (err){
+            if (err instanceof Error){
+                console.log(err.message)
+                return rejectWithValue(err.message)
+            }else {
+                console.log('Unexpected error', err)
+                return rejectWithValue("Unexpected error")
+            }
+        }
+    }
+)
+
+
 export const loginUser = createAsyncThunk(
     "user/loginUser",
     async (data:ILoginField,{rejectWithValue} ) => {
@@ -74,6 +99,18 @@ const userSlice = createSlice({
             })
             .addCase(loginUser.fulfilled,(state, action) => {
                 state.user = action.payload
+                state.status = "done"
+            })
+            .addCase(getAllUsers.pending, (state) => {
+                state.status = "loading"
+                state.error = ""
+            })
+            .addCase(getAllUsers.rejected,(state, action) => {
+                state.status = "error"
+                state.error = action.payload as string
+            })
+            .addCase(getAllUsers.fulfilled,(state, action) => {
+                state.users = action.payload
                 state.status = "done"
             })
 
