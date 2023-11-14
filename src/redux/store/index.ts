@@ -2,7 +2,7 @@ import {configureStore, combineReducers} from "@reduxjs/toolkit";
 import cinemaSlice from "../store/reducers/cinema"
 import oneFilm from "../store/reducers/oneFilm"
 import series from "../store/reducers/series"
-import user from "../store/reducers/user"
+import users from "./reducers/users"
 import oneSeries from "../store/reducers/oneSeries"
 import cartoons from "./reducers/cartoons";
 import oneCartoon from "./reducers/oneCartoon";
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
     cinema: cinemaSlice,
     oneFilm: oneFilm,
     series: series,
-    user: user,
+    users: users,
     oneSeries: oneSeries,
     cartoons: cartoons,
     oneCartoon: oneCartoon

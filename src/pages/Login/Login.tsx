@@ -1,7 +1,7 @@
 import {Link, useNavigate} from "react-router-dom";
 import {BiHomeSmile} from "react-icons/bi"
 import {useForm, SubmitHandler} from "react-hook-form";
-import {loginUser, loginAccount} from "../../redux/store/reducers/user";
+import {loginUser, loginAccount} from "../../redux/store/reducers/users";
 import {ILoginField} from "../../interface/app.interface"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 

@@ -1,18 +1,11 @@
 {
   "users": [
     {
-      "email": "Pranov@mail.ru",
-      "password": "$2a$10$BFwtQsv1IWrolBe6iYqoj.SOf765RUeG67nHgRQURQNwbuI9LJgxW",
+      "email": "Pranov@mail.r",
+      "password": "$2a$10$g4QmbVlNptDe.mP1rd7vN.1B37b8BtLdpF8Vkhh/M9PU6bFjouNaC",
       "login": "PranovAdilet",
-      "phone": "+996(444)44-44-44",
+      "phone": "+996(444)44-23-22",
       "id": 1
-    },
-    {
-      "email": "Nurs@mail.ru",
-      "password": "$2a$10$zcMc7Koi/fHCUlYthe7A7.E4RJAmGnHc1Y.943bHxJCY2JPUfLtny",
-      "login": "adilet",
-      "phone": "+996(222)22-22-22",
-      "id": 2
     },
     {
       "email": "Nurs2@mail.ru",
@@ -23,52 +16,10 @@
     },
     {
       "email": "Kanat@mail.ru",
-      "password": "$2a$10$sJND9NtPjpYt50pAjbZi5Oo82moSYYu7bqSuSSUwYxXUZjO8XQlz.",
-      "login": "Kanat",
+      "password": "$2a$10$I93b.sJo95/vz3x5druMNOVPaz1FjqJKJpaMeAlcwXZBFK4046C8S",
+      "login": "Kana",
       "phone": "+996(555)55-55-55",
       "id": 4
-    },
-    {
-      "email": "admin@mail.ru",
-      "password": "$2a$10$N7NebqupAqjTYc9otpEYTu3QXE7S0gxfIZnN6.KVccofmaV3SSjY2",
-      "login": "admin",
-      "phone": "+996(333)33-33-33",
-      "id": 5
-    },
-    {
-      "email": "Bas@mail.ru",
-      "password": "$2a$10$TbcSJjouuszIp5YePG0Y5uBnufaYOmsYXbZ7Fia6szXnkYVbtGEPS",
-      "login": "Bes",
-      "phone": "+996(333)33-33-33",
-      "id": 6
-    },
-    {
-      "email": "GGbe@mail.ru",
-      "password": "$2a$10$7VuUJj4hsNDSfRQMDeQHk.cnVULjfFi7IofXtdhxMTM/gu2gknudm",
-      "login": "PranovAdilet",
-      "phone": "+996(222)22-22-22",
-      "id": 7
-    },
-    {
-      "email": "kkke@mail.ru",
-      "password": "$2a$10$mkRR7T2jAT5jU3A5D4UtSeVff1oIbsjgWWWStMAfEQMBHz2/PUvhu",
-      "login": "PranovAdilet",
-      "phone": "+996(322)22-22-22",
-      "id": 8
-    },
-    {
-      "email": "nnncx@mail.ru",
-      "password": "$2a$10$yR1SIo8PHBpoChLtkBskAuhkjcs0LHRgcxjchODBx2gdItISAFr0m",
-      "login": "PranovAdilet",
-      "phone": "+996(666)66-66-66",
-      "id": 9
-    },
-    {
-      "email": "Balbaeasv@mail.ru",
-      "password": "$2a$10$DPCbomFhEdcjwl4wGihvZO0fTCctGrsqVNihNIJCMEVb/8G5fYwYy",
-      "login": "asdas",
-      "phone": "+996(333)33-33-33",
-      "id": 10
     }
   ],
   "films": [
@@ -263,7 +214,7 @@
       "genre": "Ужасы",
       "trailer": "https://www.youtube.com/watch?v=DTkkYFKqV6o",
       "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/d56e4949-29f6-47d2-87a8-2659f57e1175/600x900",
-      "rating": 0,
+      "rating": 8,
       "countRate": 0,
       "status": "free",
       "viewCount": 0,
@@ -278,7 +229,7 @@
       "genre": "Фантастика",
       "trailer": "кольцо власти трейлер",
       "poster": "https://www.film.ru/sites/default/files/styles/thumb_260x400/public/movies/posters/34553674-2296524.jpg",
-      "rating": 0,
+      "rating": 8,
       "countRate": 0,
       "status": "gold",
       "viewCount": 0,
@@ -293,7 +244,7 @@
       "genre": "Драма",
       "trailer": "https://www.youtube.com/watch?v=AaIrw54oonU",
       "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/c5539203-bd0a-4d93-920a-11be2fbbd778/600x900",
-      "rating": 0,
+      "rating": 9,
       "countRate": 0,
       "status": "gold",
       "viewCount": 0,
@@ -308,7 +259,7 @@
       "genre": "Боевик",
       "trailer": "https://www.youtube.com/watch?v=L5l3vv9n7EU",
       "poster": "https://thumbs.dfs.ivi.ru/storage6/contents/f/1/2dfa8e334b1bb5129694b27ad6ebf7.jpg",
-      "rating": 0,
+      "rating": 9,
       "countRate": 0,
       "status": "free",
       "viewCount": 0,
@@ -323,7 +274,7 @@
       "genre": "Комедия",
       "trailer": "https://www.youtube.com/watch?v=NPFilbpd_Qs",
       "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/83329555-5830-42ca-b250-e983073ad226/600x900",
-      "rating": 0,
+      "rating": 5,
       "countRate": 0,
       "status": "free",
       "viewCount": 0,
@@ -338,7 +289,7 @@
       "genre": "Фантастика",
       "trailer": "https://www.youtube.com/watch?v=esAsOLKlU-Q",
       "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/34eca9f3-a72a-4bd9-8ec1-efced3056446/600x900",
-      "rating": 0,
+      "rating": 5,
       "countRate": 0,
       "status": "free",
       "viewCount": 0,
@@ -480,6 +431,21 @@
       "status": "free",
       "viewCount": 2000,
       "country": "США"
+    },
+    {
+      "id": 10,
+      "title": "Код Гиас",
+      "description": "Альтернативная реальность: Британская империя захватила треть мира, обрушивая на непокорных мощь своей военной машины.\n\nВ Японии, захваченной и переименованной в Зону 11, вместе с младшей сестрой живёт старшеклассник Лелуш – изгнанный сын Императора, потерявший мать и право на престол. Юноша отличается от сверстников не только происхождением – он весьма одарённая личность, только где применить эти способности?",
+      "year": 2022,
+      "time": "2 сезона ",
+      "genre": "Комедия",
+      "trailer": "https://www.youtube.com/embed/c4kYpCRQVRc?si=1JwDoiplW1JJmGe2",
+      "poster": "https://static.hdrezka.ac/i/2022/7/19/ke9bd779097f3ze64t50y.jpg",
+      "rating": 9,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 2000,
+      "country": "Япония"
     },
     {
       "id": 11,
@@ -1223,21 +1189,6 @@
       "year": 2023,
       "time": 148,
       "genre": "Боевик",
-      "trailer": "https://www.youtube.com/embed/9Fc2mX3eJ0E?si=YxBp6ckwV9Kvoz8Q",
-      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKI-qdIYWtD5tDB0TBv42VOToE9JoLxfPU9wZ1QcphE1F8pkkWCePAL1ze_2QHW8YJZ8E&usqp=CAU",
-      "rating": 9,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 2000,
-      "country": "Корея"
-    },
-    {
-      "id": 71,
-      "title": "Маша и Медведь: Анимашки (Мультфильм 2022)",
-      "description": "Непоседливая девочка Маша и её друг Медведь участвуют в увлекательных приключениях. Короткие истории про любимых героев для самых маленьких. Маша, Медведь и их друзья открывают мир. Им предстоит побывать в музее, ресторане, аэропорту, магазине игрушек и других интересных местах. Чтобы узнать, что ждёт весёлых персонажей, смотри онлайн на Иви «Маша и Медведь: Анимашки».",
-      "year": 2022,
-      "time": 148,
-      "genre": "Комедия",
       "trailer": "https://www.youtube.com/embed/9Fc2mX3eJ0E?si=YxBp6ckwV9Kvoz8Q",
       "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKI-qdIYWtD5tDB0TBv42VOToE9JoLxfPU9wZ1QcphE1F8pkkWCePAL1ze_2QHW8YJZ8E&usqp=CAU",
       "rating": 9,

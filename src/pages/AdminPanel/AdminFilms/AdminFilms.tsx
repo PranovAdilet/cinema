@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useSelector} from "react-redux";
+import {selectFilms} from "../../../redux/reduxSelectors/reduxSelectors";
+import {getCinema} from "../../../redux/store/reducers/cinema";
+import {useAppDispatch} from "../../../redux/hooks/reduxHooks";
+import {newStatus} from "../../../App";
+import {deleteUser} from "../../../redux/store/reducers/users";
 
 
 const AdminFilms = () => {
 
-    // const dispatch = useDispatch()
-    //
-    // const {data} = useSelector( s => s.cinema)
-    //
-    // useEffect(() => {
-    //     dispatch(getCinema())
-    // })
+    const dispatch = useAppDispatch()
+
+    const {data, filter} = useSelector( selectFilms)
+
+    useEffect(() => {
+        dispatch(getCinema({...filter, status: newStatus}))
+    }, [])
 
     return (
         <div className="admin__info">
@@ -17,6 +23,7 @@ const AdminFilms = () => {
                 Все фильмы
             </h2>
             <table className="admin__table" >
+                <tbody>
                 <tr className="admin__table-block">
                     <th className="admin__table-title">
                         ID
@@ -40,6 +47,38 @@ const AdminFilms = () => {
                         Удалить
                     </th>
                 </tr>
+                {
+                    data.map((item) => (
+                        <tr key={item.id} className="admin__table-block">
+                            <td className="admin__table-info">
+                                {item.id}
+                            </td>
+                            <td className="admin__table-info">
+                                {item.title}
+                            </td>
+                            <td className="admin__table-info">
+                                {item.year}
+                            </td>
+                            <td className="admin__table-info">
+                                {item.genre}
+                            </td>
+                            <td className="admin__table-info">
+                                {item.status}
+                            </td>
+                            <td className="admin__table-info">
+                                <button className="admin__table-btn">
+                                    Изменить
+                                </button>
+                            </td>
+                            <td className="admin__table-info">
+                                <button className="admin__table-btn">
+                                    X
+                                </button>
+                            </td>
+                        </tr>
+                    ))
+                }
+                </tbody>
 
             </table >
         </div>

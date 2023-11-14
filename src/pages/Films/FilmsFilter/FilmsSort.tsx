@@ -6,20 +6,21 @@ import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
 import {sortFilms} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
+import {IFilterState} from "../../../interface/app.interface";
 
 
 interface props{
-    filmsState: string
-    setFilmsState: (value: string) => void
+    setFilter: (obj: IFilterState) => void
+    filter: IFilterState
 }
 
-const FilmsSort = ({filmsState, setFilmsState}: props) => {
+const FilmsSort = ({filter, setFilter}: props) => {
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(sortFilms(filmsState))
-    }, [filmsState])
+        dispatch(sortFilms(filter.state))
+    }, [filter.state])
 
 
     return (
@@ -29,9 +30,12 @@ const FilmsSort = ({filmsState, setFilmsState}: props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={filmsState}
+                        value={filter.state}
                         label="fasf"
-                        onChange={(e:SelectChangeEvent<string> ) => setFilmsState(e.target.value)}
+                        onChange={(e:SelectChangeEvent<string> ) => setFilter({
+                            ...filter,
+                            state: e.target.value
+                        })}
                 >
                     <MenuItem className="films__filter-item" value="viewCount">По популярности</MenuItem>
                     <MenuItem className="films__filter-item" value="year">Дате</MenuItem>

@@ -35,7 +35,12 @@ export const getSeries = createAsyncThunk(
     'series/getSeries',
     async (filter: IFilter) => {
         try {
-            const res = await axios(`/series?${filter.genre !== '' ? `genre=${filter.genre}&` : ''}${filter.year !== '' ? `year=${filter.year}&` : ''}${filter.search !== '' ? `title_like=${filter.search}&` : ''}${filter.sort ? `_sort=${filter.sort}&_order=desc&` : ""}`)
+            const res = await axios(`/series?${filter.genre !== '' ? `genre=${filter.genre}&` : ''
+            }${filter.year !== '' ? `year=${filter.year}&` : ''
+            }${filter.search !== '' ? `title_like=${filter.search
+            }&` : ''}${filter.sort !== "" ? `_sort=${filter.sort
+            }&_order=desc&` : ""}${filter.rating !== "" ? `rating_gte=${filter.rating}&` : ""
+            }${filter.country !== "" ? `country=${filter.country}` : "" } `)
             if (res.statusText !== 'OK') {
                 throw new Error('Server error !')
             }
@@ -67,8 +72,21 @@ const seriesSlice = createSlice({
         changeSeriesYear: (state, action) => {
             state.filter.year = action.payload
         },
-        sortSeriesFilms: (state, action) =>  {
+        sortSeries: (state, action) =>  {
             state.filter.sort = action.payload
+        },
+        sortSeriesRating: (state, action) => {
+            state.filter.rating = action.payload
+        },
+        clearSeriesFilters: (state, action) => {
+            state.filter.genre = ""
+            state.filter.year = ""
+            state.filter.sort = ""
+            state.filter.rating = ""
+            state.filter.country = ""
+        },
+        sortSeriesCountries : (state, action) => {
+            state.filter.country = action.payload
         }
     },
     extraReducers : (builder) => {
@@ -91,5 +109,5 @@ const seriesSlice = createSlice({
     }
 })
 
-export const {changeSeriesSearch, changeSeriesGenre, changeSeriesYear, sortSeriesFilms} = seriesSlice.actions
+export const {changeSeriesSearch, changeSeriesGenre, changeSeriesYear, clearSeriesFilters, sortSeriesRating, sortSeriesCountries, sortSeries} = seriesSlice.actions
 export default seriesSlice.reducer

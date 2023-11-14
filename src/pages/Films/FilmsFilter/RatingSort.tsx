@@ -6,20 +6,21 @@ import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
 import { sortRating} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
+import {IFilterState} from "../../../interface/app.interface";
 
 interface props{
-    rating: string
-    setRating: (value: string) => void
+    setFilter: (obj: IFilterState) => void
+    filter: IFilterState
 }
 
 
-const FilmsSort = ({rating, setRating} : props) => {
+const FilmsSort = ({filter, setFilter} : props) => {
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(sortRating(rating))
-    }, [rating])
+        dispatch(sortRating(filter.rating))
+    }, [filter.rating])
 
 
     return (
@@ -29,9 +30,13 @@ const FilmsSort = ({rating, setRating} : props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={rating}
+                        value={filter.rating}
                         label="fasf"
-                        onChange={(e:SelectChangeEvent<string> ) => setRating(e.target.value)}
+                        onChange={(e:SelectChangeEvent<string> ) => setFilter({
+                            ...filter,
+                            rating: e.target.value
+
+                        })}
                 >
                     <MenuItem className="films__filter-item" value="">Любой рейтинг</MenuItem>
                     <MenuItem className="films__filter-item" value="9">Больше 9</MenuItem>

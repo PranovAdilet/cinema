@@ -5,7 +5,7 @@ import {changeSearch} from '../../../redux/store/reducers/cinema'
 import {changeSeriesSearch} from '../../../redux/store/reducers/series'
 import {selectUser} from '../../../redux/reduxSelectors/reduxSelectors'
 import {ChangeEvent} from "react";
-import {logOutAccount} from "../../../redux/store/reducers/user";
+import {logOutAccount} from "../../../redux/store/reducers/users";
 import {changeCartoonsSearch} from "../../../redux/store/reducers/cartoons";
 import { DebouncedFunc } from 'lodash';
 import _ from 'lodash';

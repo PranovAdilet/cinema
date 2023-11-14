@@ -9,18 +9,17 @@ import {changeCartoonsYear} from "../../../redux/store/reducers/cartoons";
 import {IFilterState} from "../../../interface/app.interface";
 
 interface props{
-    year: string
     setFilter: (obj: IFilterState) => void
     filter: IFilterState
 }
 
-const CartoonsYearSort = ({year, setFilter, filter}: props) => {
+const CartoonsYearSort = ({ setFilter, filter}: props) => {
     const dispatch = useAppDispatch()
 
 
     useEffect(() => {
-        dispatch(changeCartoonsYear(year))
-    },[year]);
+        dispatch(changeCartoonsYear(filter.year))
+    },[filter.year]);
 
     return (
         <Box className="films__filter-box" sx={{ minWidth: 200 }}>
@@ -29,7 +28,7 @@ const CartoonsYearSort = ({year, setFilter, filter}: props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={year}
+                        value={filter.year}
                         label="fasf"
                         onChange={(e) => setFilter({
                             ...filter,

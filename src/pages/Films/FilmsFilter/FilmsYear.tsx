@@ -7,19 +7,20 @@ import Select from '@mui/material/Select';
 
 import {changeYear} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
+import {IFilterState} from "../../../interface/app.interface";
 
 interface props{
-    year: string
-    setYear: (value: string) => void
+    setFilter: (obj: IFilterState) => void
+    filter: IFilterState
 }
 
-const FilmsYear = ({year, setYear}: props) => {
+const FilmsYear = ({filter, setFilter}: props) => {
     const dispatch = useAppDispatch()
 
 
     useEffect(() => {
-        dispatch(changeYear(year))
-    },[year]);
+        dispatch(changeYear(filter.year))
+    },[filter.year]);
 
     return (
         <Box className="films__filter-box" sx={{ minWidth: 200 }}>
@@ -28,9 +29,12 @@ const FilmsYear = ({year, setYear}: props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={year}
+                        value={filter.year}
                         label="fasf"
-                        onChange={(e) => setYear(e.target.value)}
+                        onChange={(e) => setFilter({
+                            ...filter,
+                            year:e.target.value
+                        })}
                 >
                     <MenuItem className="films__filter-item"  value="">По умолчанию</MenuItem>
                     <MenuItem className="films__filter-item"  value={2022}>2022</MenuItem>

@@ -6,21 +6,22 @@ import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
 import {changeGenre} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
+import {IFilterState} from "../../../interface/app.interface";
 
 interface props{
-    genreState: string
-    setGenreState: (value: string) => void
+    setFilter: (obj: IFilterState) => void
+    filter: IFilterState
 }
 
 
-const GenreSort = ({genreState, setGenreState} : props) => {
+const GenreSort = ({filter, setFilter} : props) => {
 
     const dispatch = useAppDispatch();
 
 
     useEffect(() => {
-        dispatch(changeGenre(genreState))
-    }, [genreState])
+        dispatch(changeGenre(filter.genreState))
+    }, [filter.genreState])
 
 
     return (
@@ -30,9 +31,12 @@ const GenreSort = ({genreState, setGenreState} : props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={genreState}
+                        value={filter.genreState}
                         label="fasf"
-                        onChange={(e:SelectChangeEvent<string> ) => setGenreState(e.target.value)}
+                        onChange={(e:SelectChangeEvent<string> ) => setFilter({
+                            ...filter,
+                            genreState: e.target.value
+                        })}
                 >
                     <MenuItem className="films__filter-item" value="">По умолчанию</MenuItem>
                     <MenuItem className="films__filter-item" value="Приключения">Приключения</MenuItem>

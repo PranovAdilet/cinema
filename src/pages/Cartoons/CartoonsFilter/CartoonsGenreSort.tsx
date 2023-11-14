@@ -9,20 +9,19 @@ import {changeCartoonsGenre} from "../../../redux/store/reducers/cartoons";
 import {IFilterState} from "../../../interface/app.interface";
 
 interface props{
-    genreState: string
     setFilter: (obj: IFilterState) => void
     filter: IFilterState
 }
 
 
-const CartoonsGenreSort = ({genreState, setFilter, filter} : props) => {
+const CartoonsGenreSort = ({ setFilter, filter} : props) => {
 
     const dispatch = useAppDispatch();
 
 
     useEffect(() => {
-        dispatch(changeCartoonsGenre(genreState))
-    }, [genreState])
+        dispatch(changeCartoonsGenre(filter.genreState))
+    }, [filter.genreState])
 
 
     return (
@@ -32,7 +31,7 @@ const CartoonsGenreSort = ({genreState, setFilter, filter} : props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={genreState}
+                        value={filter.genreState}
                         label="fasf"
                         onChange={(e:SelectChangeEvent<string> ) => setFilter({
                             ...filter,

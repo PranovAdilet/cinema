@@ -1,28 +1,26 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
-import { sortRating} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
 import {sortCartoonsRating} from "../../../redux/store/reducers/cartoons";
 import {IFilterState} from "../../../interface/app.interface";
 
 interface props{
-    rating: string
     setFilter: (obj: IFilterState) => void
     filter: IFilterState
 }
 
 
-const CartoonsRatingSort = ({rating, setFilter, filter} : props) => {
+const CartoonsRatingSort = ({ setFilter, filter} : props) => {
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(sortCartoonsRating(rating))
-    }, [rating])
+        dispatch(sortCartoonsRating(filter.rating))
+    }, [filter.rating])
 
 
     return (
@@ -32,7 +30,7 @@ const CartoonsRatingSort = ({rating, setFilter, filter} : props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={rating}
+                        value={filter.rating}
                         label="fasf"
                         onChange={(e:SelectChangeEvent<string> ) => setFilter({
                             ...filter,

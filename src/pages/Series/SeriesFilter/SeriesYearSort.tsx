@@ -5,32 +5,42 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-import {changeSeriesYear} from "../../../redux/store/reducers/series";
+import {changeYear} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
+import {IFilterState} from "../../../interface/app.interface";
+import {changeSeriesYear} from "../../../redux/store/reducers/series";
 
-const FilmsYear = () => {
+interface props{
+    setFilter: (obj: IFilterState) => void
+    filter: IFilterState
+}
+
+const SeriesYearSort = ({filter, setFilter}: props) => {
     const dispatch = useAppDispatch()
 
-    const [year, setYear] = useState<string>("");
 
     useEffect(() => {
-        dispatch(changeSeriesYear(year))
-    },[year]);
+        dispatch(changeSeriesYear(filter.year))
+    },[filter.year]);
 
     return (
-        <Box className="films__filter-box" sx={{ minWidth: 120 }}>
+        <Box className="films__filter-box" sx={{ minWidth: 200 }}>
             <FormControl fullWidth>
                 <InputLabel style={{color: 'white'}} id="demo-simple-select-label">Год</InputLabel>
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={year}
+                        value={filter.year}
                         label="fasf"
-                        onChange={(e) => setYear(e.target.value)}
+                        onChange={(e) => setFilter({
+                            ...filter,
+                            year:e.target.value
+                        })}
                 >
                     <MenuItem className="films__filter-item"  value="">По умолчанию</MenuItem>
                     <MenuItem className="films__filter-item"  value={2022}>2022</MenuItem>
                     <MenuItem className="films__filter-item"  value={2021}>2021</MenuItem>
+                    <MenuItem className="films__filter-item"  value={2020}>2020</MenuItem>
                     <MenuItem className="films__filter-item"  value={2019}>2019</MenuItem>
                     <MenuItem className="films__filter-item"  value={2018}>2018</MenuItem>
                     <MenuItem className="films__filter-item"  value={2017}>2017</MenuItem>
@@ -43,4 +53,4 @@ const FilmsYear = () => {
     );
 };
 
-export default FilmsYear;
+export default SeriesYearSort;

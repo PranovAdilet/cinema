@@ -10,18 +10,17 @@ import {IFilterState} from "../../../interface/app.interface";
 
 
 interface props{
-    filmsState: string
     setFilter: (obj: IFilterState) => void
     filter: IFilterState
 }
 
-const CartoonsSort = ({filmsState, setFilter, filter}: props) => {
+const CartoonsSort = ({ setFilter, filter}: props) => {
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(sortCartoons(filmsState))
-    }, [filmsState])
+        dispatch(sortCartoons(filter.state))
+    }, [filter.state])
 
 
     return (
@@ -31,11 +30,11 @@ const CartoonsSort = ({filmsState, setFilter, filter}: props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={filmsState}
+                        value={filter.state}
                         label="fasf"
                         onChange={(e:SelectChangeEvent<string> ) => setFilter({
                             ...filter,
-                            cartoonState: e.target.value
+                            state: e.target.value
                         })}
                 >
                     <MenuItem className="films__filter-item" value="viewCount">По популярности</MenuItem>

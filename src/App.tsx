@@ -12,6 +12,8 @@ import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
 import AdminPanel from "./pages/AdminPanel/AdminPanel"
 
+const userValue = localStorage.getItem('user');
+export const newStatus = userValue !== null ? 'gold' : 'free'
 
 
 function App() {

@@ -40,9 +40,9 @@ export const getCinema = createAsyncThunk(
         try {
             const res = await axios(`/films?${filter.genre !== '' ? `genre=${filter.genre}&` : ''
             }${filter.year !== '' ? `year=${filter.year}&` : ''
-            }${filter.search !== '' ? `title_like=${filter.search
-            }&` : ''}${filter.sort !== "" ? `_sort=${filter.sort
-            }&_order=desc&` : ""}${filter.rating !== "" ? `rating_gte=${filter.rating}&` : ""
+            }${filter.search !== '' ? `title_like=${filter.search}&` : ''
+            }${filter.sort !== "" ? `_sort=${filter.sort}&_order=desc&` : ""
+            }${filter.rating !== "" ? `rating_gte=${filter.rating}&` : ""
             }${filter.country !== "" ? `country=${filter.country}` : "" } `)
             if (res.statusText !== 'OK') {
                 throw new Error('Server error !')

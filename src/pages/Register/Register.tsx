@@ -5,10 +5,10 @@ import {useForm, SubmitHandler} from "react-hook-form";
 import InputMask from 'react-input-mask'
 import axios from "../../utils/axios";
 import {IShippingFields} from "../../interface/app.interface"
-import {loginAccount} from "../../redux/store/reducers/user"
+import {loginAccount} from "../../redux/store/reducers/users"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks";
 
-const Registe = () => {
+const Register = () => {
     const [show, setShow] = useState(false);
 
     const dispatch = useAppDispatch()
@@ -24,7 +24,6 @@ const Registe = () => {
 
         axios.post('/register', data)
             .then((response) => {
-                console.log(data)
                 localStorage.setItem('user', JSON.stringify(response.data));
                 dispatch(loginAccount({...data}))
                 navigate('/');
@@ -130,5 +129,5 @@ const Registe = () => {
     );
 };
 
-export default Registe;
+export default Register;
 

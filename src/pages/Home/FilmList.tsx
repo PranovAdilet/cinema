@@ -4,22 +4,24 @@ import {AiOutlineStar,AiOutlineDisconnect} from 'react-icons/ai'
 import {BsBookmark} from 'react-icons/bs'
 import {ImMagicWand} from 'react-icons/im'
 import "swiper/css";
+import {Link} from "react-router-dom"
 import {useEffect} from "react";
 import {useAppDispatch} from "../../redux/hooks/reduxHooks";
 import {getCinema} from "../../redux/store/reducers/cinema";
 import {useSelector} from "react-redux";
-import {selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
+import {selectCartoons, selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
+import {getCartoons} from "../../redux/store/reducers/cartoons";
 
 const FilmList = () => {
     const dispatch = useAppDispatch()
-    const {filter, data} = useSelector(selectFilms)
+    const {filter, data} = useSelector(selectCartoons)
 
 
     const userValue = localStorage.getItem('user');
     const newStatus = userValue !== null ? 'gold' : 'free';
 
     useEffect(() => {
-        dispatch(getCinema({
+        dispatch(getCartoons({
             ...filter,
             status:newStatus
         }))
@@ -32,13 +34,15 @@ const FilmList = () => {
                     Рекомендуем посмотреть
                 </h2>
                 <Swiper
-                    slidesPerView={7}
+                    slidesPerView={6}
+                    slidesPerGroup={2}
                     loop={true}
                     spaceBetween={30}
                     modules={[Navigation, Autoplay]}
                     speed={2000}
                     autoplay={{
-                        delay: 0.1,
+
+                        delay: 2000,
                         disableOnInteraction: false,
                         stopOnLastSlide: false,
                         pauseOnMouseEnter: true
@@ -48,8 +52,8 @@ const FilmList = () => {
                 >
                     {
                         data.map(item => (
-                            <SwiperSlide>
-
+                            <SwiperSlide key={item.id}>
+                                <Link  to={`/cartoons/${item.id}`}>
                                 <div className="film-list__card">
                                     <div className="film-list__card-block">
                                         <img src={item.poster} alt=""/>
@@ -96,6 +100,7 @@ const FilmList = () => {
                                         {item.title}
                                     </h3>
                                 </div>
+                            </Link>
                             </SwiperSlide>
                         ))
                     }

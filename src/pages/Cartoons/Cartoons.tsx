@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {clearCartoonsFilters, getCartoons} from "../../redux/store/reducers/cartoons";
 import {useSelector} from "react-redux";
-import SkeletonCard from "../Films/SkeletonCard/SkeletonCard";
+import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
 import {selectCartoons} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 import {TfiClose} from "react-icons/tfi"
@@ -16,7 +16,7 @@ import {IFilterState} from "../../interface/app.interface";
 
 const Cartoons = () => {
     const [filterState, setFilterState] = useState<IFilterState>({
-        cartoonState: "",
+        state: "",
         year: "",
         genreState: "",
         country: "",
@@ -40,11 +40,10 @@ const Cartoons = () => {
         }))
     }, [filter])
 
-
     const clearFilter = () => {
         dispatch(clearCartoonsFilters(filter))
         setFilterState({
-            cartoonState: "",
+            state: "",
             year: "",
             genreState: "",
             country: "",
@@ -62,16 +61,16 @@ const Cartoons = () => {
 
                 <div className="films__filter">
                     <div className="films__filter-sort">
-                        <CartoonsGenreSort filter={filterState} genreState={filterState.genreState} setFilter={setFilterState}/>
-                        <CartoonsYearSort  filter={filterState} year={filterState.year} setFilter={setFilterState}/>
-                        <CartoonsRatingSort filter={filterState} rating={filterState.rating} setFilter={setFilterState}/>
-                        <CartoonsSort filter={filterState} filmsState={filterState.cartoonState} setFilter={setFilterState}/>
-                        <CartoonsCountrySort filter={filterState} country={filterState.country} setFilter={setFilterState}/>
+                        <CartoonsGenreSort  filter={filterState}  setFilter={setFilterState}/>
+                        <CartoonsYearSort  filter={filterState}  setFilter={setFilterState}/>
+                        <CartoonsRatingSort filter={filterState}  setFilter={setFilterState}/>
+                        <CartoonsSort filter={filterState}  setFilter={setFilterState}/>
+                        <CartoonsCountrySort filter={filterState}  setFilter={setFilterState}/>
                     </div>
                     <div className="films__filter2">
                         {
-                            values.map((item, index) => (
-                                <SortCartoons key={index} active={active} setActive={setActive} value={item}/>
+                            values.map((item) => (
+                                <SortCartoons filter={{...filter, status: newStatus}} key={item} active={active} setActive={setActive} value={item}/>
                             ))
                         }
                     </div>

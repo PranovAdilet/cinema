@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import {useSelector} from "react-redux";
 import {getOneFilm} from "../../redux/store/reducers/oneFilm";
 import FilmsInfo from "./FilmInfo/FilmInfo";
-import FilmsRight from "./FilmVideo/FilmVideo";
+import FilmVideo from "./FilmVideo/FilmVideo";
 import { selectFilm} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 
@@ -26,7 +26,7 @@ const Film = () => {
                 <div className="film__row">
                     {
                         product !== null && <>
-                            <FilmsRight product={product}/>
+                            <FilmVideo trailer={product.trailer}/>
                             <FilmsInfo product={product}/>
                         </>
                     }

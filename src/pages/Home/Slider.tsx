@@ -3,10 +3,31 @@ import {Navigation, Autoplay} from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation"
+import {useAppDispatch} from "../../redux/hooks/reduxHooks";
+import {useSelector} from "react-redux";
+import {selectFilms, selectSeries} from "../../redux/reduxSelectors/reduxSelectors";
+import {useEffect} from "react";
+import {getCinema} from "../../redux/store/reducers/cinema";
+import {getSeries} from "../../redux/store/reducers/series";
 
 
 
 const Slider = () => {
+
+    const dispatch = useAppDispatch()
+    const {filter, data} = useSelector(selectSeries)
+
+
+    const userValue = localStorage.getItem('user');
+    const newStatus = userValue !== null ? 'gold' : 'free';
+
+    useEffect(() => {
+        dispatch(getSeries({
+            ...filter,
+            status:newStatus
+        }))
+    }, [filter])
+
     return (
         <section className="slider">
 
@@ -21,7 +42,6 @@ const Slider = () => {
                     stopOnLastSlide: false,
                     pauseOnMouseEnter: true
                 }}
-                effect="slide"
                 speed={2000}
                 modules={[Navigation, Autoplay]}
                 className="sliderSwiper"

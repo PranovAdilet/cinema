@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {getCinema, clearFilters, changeYear, sortRating, sortFilms} from "../../redux/store/reducers/cinema";
 import {useSelector} from "react-redux";
 import FilmsCard from "./FilmsCard/FilmsCard";
-import SkeletonCard from "./SkeletonCard/SkeletonCard";
+import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
 import GenreSort from "./FilmsFilter/GenreSort";
 import FilmsYear from "./FilmsFilter/FilmsYear";
 import { selectFilms} from "../../redux/reduxSelectors/reduxSelectors"
@@ -12,20 +12,27 @@ import FilmsSort from "./FilmsFilter/FilmsSort";
 import {TfiClose} from "react-icons/tfi"
 import ActiveItem from "../../components/ActiveItem";
 import SortCartoons from "../../components/SortCartoons";
+import {newStatus} from "../../App";
+import filmsCountrySort from "./FilmsFilter/FilmsCountrySort";
+import {IFilterState} from "../../interface/app.interface";
+import FilmsCountrySort from "./FilmsFilter/FilmsCountrySort";
+
 
 const Films = () => {
-    const [filmsState, setFilmsState ] = useState('')
-    const [year, setYear] = useState('');
-    const [genreState, setGenreState] = useState('')
-    const [rating, setRating] = useState('')
+    const [filterState, setFilterState] = useState<IFilterState>({
+        state: "",
+        year: "",
+        genreState: "",
+        country: "",
+        rating: ""
+    })
     const [active, setActive] = useState('')
 
     const dispatch = useAppDispatch()
 
     const {status, error, data, filter} = useSelector(selectFilms)
 
-    const userValue = localStorage.getItem('user');
-    const newStatus = userValue !== null ? 'gold' : 'free';
+
 
     const values = ["2023", "2022", "2021", "Новые", "Япония", "Россия"]
 
@@ -40,10 +47,13 @@ const Films = () => {
 
     const clearFilter = () => {
         dispatch(clearFilters(filter))
-        setFilmsState("")
-        setYear("")
-        setRating("")
-        setGenreState("")
+        setFilterState({
+            state: "",
+            year: "",
+            genreState: "",
+            country: "",
+            rating: ""
+        })
         setActive("")
     }
 
@@ -56,15 +66,16 @@ const Films = () => {
 
                 <div className="films__filter">
                     <div className="films__filter-sort">
-                        <GenreSort genreState={genreState} setGenreState={setGenreState}/>
-                        <FilmsYear year={year} setYear={setYear}/>
-                        <RatingSort rating={rating} setRating={setRating}/>
-                        <FilmsSort filmsState={filmsState} setFilmsState={setFilmsState}/>
+                        <GenreSort setFilter={setFilterState} filter={filterState}/>
+                        <FilmsYear filter={filterState} setFilter={setFilterState}/>
+                        <RatingSort filter={filterState}  setFilter={setFilterState}/>
+                        <FilmsSort filter={filterState}  setFilter={setFilterState}/>
+                        <FilmsCountrySort filter={filterState}  setFilter={setFilterState}/>
                     </div>
                     <div className="films__filter2">
                         {
-                            values.map((item) => (
-                                <ActiveItem  active={active} setActive={setActive} value={item}/>
+                            values.map((item, index) => (
+                                <ActiveItem key={index}  active={active} setActive={setActive} value={item}/>
                             ))
                         }
                     </div>

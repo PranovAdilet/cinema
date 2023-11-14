@@ -3,18 +3,19 @@ import {useAppDispatch} from "../redux/hooks/reduxHooks";
 import {changeCartoonsYear, sortCountriesCartoons} from "../redux/store/reducers/cartoons";
 import {useSelector} from "react-redux";
 import {selectFilms} from "../redux/reduxSelectors/reduxSelectors";
+import {IFilter} from "../interface/app.interface";
 
 interface props {
     active: string
     setActive: (value: string) => void
     value: string
+    filter: IFilter
 }
 
 
 
-const SortCartoons = ({setActive, active, value}: props) => {
+const SortCartoons = ({setActive, active, value, filter}: props) => {
 
-    const {filter} = useSelector(selectFilms)
 
     const dispatch = useAppDispatch()
 

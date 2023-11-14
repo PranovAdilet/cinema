@@ -41,9 +41,15 @@ export interface IUser extends IShippingFields{
     id: number
 }
 export interface IFilterState {
-    cartoonState: string,
+    state: string,
     year: string,
     genreState: string,
     country: string,
     rating: string
+}
+
+export interface IEditUser{
+    email: string
+    login: string
+    phone: string
 }

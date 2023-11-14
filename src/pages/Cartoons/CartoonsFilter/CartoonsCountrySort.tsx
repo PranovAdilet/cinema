@@ -9,18 +9,17 @@ import {sortCountriesCartoons} from "../../../redux/store/reducers/cartoons";
 import {IFilterState} from "../../../interface/app.interface";
 
 interface props{
-    country: string
     setFilter: (obj: IFilterState) => void
     filter: IFilterState}
 
 
-const CartoonsRatingSort = ({country, setFilter, filter} : props) => {
+const CartoonsRatingSort = ({setFilter, filter} : props) => {
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(sortCountriesCartoons(country))
-    }, [country])
+        dispatch(sortCountriesCartoons(filter.country))
+    }, [filter.country])
 
 
     return (
@@ -30,7 +29,7 @@ const CartoonsRatingSort = ({country, setFilter, filter} : props) => {
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={country}
+                        value={filter.country}
                         label="fasf"
                         onChange={(e:SelectChangeEvent<string> ) => setFilter({
                             ...filter,

@@ -29,15 +29,24 @@
     border-radius: 8px;
     border-collapse: collapse;
     &-title {
+      min-width: 80px;
       border: 2px solid #ea0057;
       border-radius: 8px;
       height: 40px;
     }
     &-info {
+
       border: 2px solid #ea0057;
       border-radius: 8px;
       text-align: center;
       height: 40px;
+    }
+    &-input{
+
+      text-align: center;
+      color: black;
+      border-radius: 8px;
+      padding: 5px 7px;
     }
     &-btn {
       background: transparent;
