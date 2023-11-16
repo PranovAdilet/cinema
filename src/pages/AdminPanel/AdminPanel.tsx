@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import {Link} from "react-router-dom";
-import AdminFilms from "./AdminFilms/AdminFilms";
-import AdminUsers from "./AdminUsers/AdminUsers";
+import AdminFilms from "../../components/AdminFilms/AdminFilms";
+import AdminUsers from "../../components/AdminUsers/AdminUsers";
 
 
 const AdminPanel = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import {changeYear, sortCountries} from "../redux/store/reducers/cinema";
-import {useAppDispatch} from "../redux/hooks/reduxHooks";
+import {changeYear, sortCountries} from "../../redux/store/reducers/cinema";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks";
 
 interface props {
     active: string
@@ -10,7 +10,7 @@ interface props {
 
 
 
-const ActiveItem = ({setActive, active, value}: props) => {
+const FilmsActiveItem = ({setActive, active, value}: props) => {
 
     const handleClick = () => {
         if (!isNaN(+value)) {
@@ -31,4 +31,4 @@ const ActiveItem = ({setActive, active, value}: props) => {
     );
 };
 
-export default ActiveItem;
+export default FilmsActiveItem;

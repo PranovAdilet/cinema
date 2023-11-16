@@ -1,10 +1,10 @@
 import React, { useEffect, useState} from 'react';
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks";
 import {useSelector} from "react-redux";
-import {selectUser} from "../../../redux/reduxSelectors/reduxSelectors";
-import {getAllUsers, deleteUser} from "../../../redux/store/reducers/users";
-import {IShippingFields} from "../../../interface/app.interface";
-import EditUser from "../../../components/EditUser";
+import {selectUser} from "../../redux/reduxSelectors/reduxSelectors";
+import {getAllUsers, deleteUser} from "../../redux/store/reducers/users";
+import {IShippingFields} from "../../interface/app.interface";
+import EditUser from "../EditUser";
 
 const AdminUsers = () => {
     const [changeInput, setChangeInput] = useState<IShippingFields | null>(null)

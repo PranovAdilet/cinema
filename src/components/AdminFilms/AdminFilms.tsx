@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {useSelector} from "react-redux";
-import {selectFilms} from "../../../redux/reduxSelectors/reduxSelectors";
-import {getCinema} from "../../../redux/store/reducers/cinema";
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks";
-import {newStatus} from "../../../App";
-import {deleteUser} from "../../../redux/store/reducers/users";
+import {selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
+import {getCinema} from "../../redux/store/reducers/cinema";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks";
+import {newStatus} from "../../App";
+import {deleteUser} from "../../redux/store/reducers/users";
 
 
 const AdminFilms = () => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import {useAppDispatch} from "../redux/hooks/reduxHooks";
-import {changeCartoonsYear, sortCountriesCartoons} from "../redux/store/reducers/cartoons";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks";
+import {changeCartoonsYear, sortCountriesCartoons} from "../../redux/store/reducers/cartoons";
 import {useSelector} from "react-redux";
-import {selectFilms} from "../redux/reduxSelectors/reduxSelectors";
-import {IFilter} from "../interface/app.interface";
+import {selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
+import {IFilter} from "../../interface/app.interface";
 
 interface props {
     active: string

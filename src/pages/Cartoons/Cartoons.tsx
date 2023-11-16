@@ -5,13 +5,13 @@ import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
 import {selectCartoons} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 import {TfiClose} from "react-icons/tfi"
-import CartoonsCard from "./CartoonsCard/CartoonsCard";
-import CartoonsGenreSort from "./CartoonsFilter/CartoonsGenreSort";
-import CartoonsYearSort from "./CartoonsFilter/CartoonsYearSort";
-import CartoonsRatingSort from "./CartoonsFilter/CartoonsRatingSort";
-import CartoonsSort from "./CartoonsFilter/CartoonsSort";
-import SortCartoons from "../../components/SortCartoons";
-import CartoonsCountrySort from "./CartoonsFilter/CartoonsCountrySort";
+import CartoonsCard from "../../components/Cartoons/CartoonsCard/CartoonsCard";
+import CartoonsGenreSort from "../../components/Cartoons/CartoonsFilter/CartoonsGenreSort";
+import CartoonsYearSort from "../../components/Cartoons/CartoonsFilter/CartoonsYearSort";
+import CartoonsRatingSort from "../../components/Cartoons/CartoonsFilter/CartoonsRatingSort";
+import CartoonsSort from "../../components/Cartoons/CartoonsFilter/CartoonsSort";
+import SortCartoons from "../../components/Cartoons/SortCartoons";
+import CartoonsCountrySort from "../../components/Cartoons/CartoonsFilter/CartoonsCountrySort";
 import {IFilterState} from "../../interface/app.interface";
 
 const Cartoons = () => {
@@ -64,8 +64,8 @@ const Cartoons = () => {
                         <CartoonsGenreSort  filter={filterState}  setFilter={setFilterState}/>
                         <CartoonsYearSort  filter={filterState}  setFilter={setFilterState}/>
                         <CartoonsRatingSort filter={filterState}  setFilter={setFilterState}/>
-                        <CartoonsSort filter={filterState}  setFilter={setFilterState}/>
                         <CartoonsCountrySort filter={filterState}  setFilter={setFilterState}/>
+                        <CartoonsSort filter={filterState}  setFilter={setFilterState}/>
                     </div>
                     <div className="films__filter2">
                         {
