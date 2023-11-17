@@ -1,11 +1,9 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
-import {changeYear} from "../../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
 import {IFilterState} from "../../../interface/app.interface";
 import {changeSeriesYear} from "../../../redux/store/reducers/series";

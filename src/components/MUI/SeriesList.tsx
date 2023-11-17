@@ -57,7 +57,7 @@ const SeriesList = () => {
                     {
                         data.map(item => (
                             <SwiperSlide key={item.id}>
-                                <Link  to={`/films/${item.id}`}>
+                                <Link  to={`/series/${item.id}`}>
                                     <div className="film-list__card">
                                         <div className="film-list__card-block">
                                             <img src={item.poster} alt=""/>

@@ -99,7 +99,7 @@ const Register = () => {
                     <label className="register__form-label register__form-label_checkbox">
                         <input
                             checked={show}
-                            onChange={() => setShow(!show)}
+                            onChange={() => setShow((prevState) => !prevState)}
                             className="register__form-input register__form-input_checkbox"
                             type="checkbox"
                         />

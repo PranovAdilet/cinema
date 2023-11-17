@@ -1,22 +1,27 @@
 import {Link, NavLink, useNavigate, useLocation} from "react-router-dom";
 import {BsFillCameraReelsFill} from 'react-icons/bs'
-import {useDispatch, useSelector} from "react-redux";
+import { useSelector} from "react-redux";
 import {changeSearch} from '../../../redux/store/reducers/cinema'
 import {changeSeriesSearch} from '../../../redux/store/reducers/series'
 import {selectUser} from '../../../redux/reduxSelectors/reduxSelectors'
-import {ChangeEvent} from "react";
-import {logOutAccount} from "../../../redux/store/reducers/users";
+import {ChangeEvent, useEffect} from "react";
+import {getAllUsers, logOutAccount} from "../../../redux/store/reducers/users";
 import {changeCartoonsSearch} from "../../../redux/store/reducers/cartoons";
 import { DebouncedFunc } from 'lodash';
 import _ from 'lodash';
+import {useAppDispatch} from "../../../redux/hooks/reduxHooks";
 
 const Header = () => {
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const location = useLocation()
 
-    const {user} = useSelector(selectUser)
+    const {user, users} = useSelector(selectUser)
+
+    useEffect(() => {
+       dispatch(getAllUsers())
+    }, [])
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (location.pathname === "/films"){
@@ -33,6 +38,7 @@ const Header = () => {
     const debounceSearch: DebouncedFunc<typeof handleChange> = _.debounce(handleChange, 500)
 
 
+
     return (
         <header className="header">
             <div className="container">
@@ -44,6 +50,7 @@ const Header = () => {
                         </h1>
                     </Link>
                     <ul className="header__menu ">
+
                         <li className="header__item header__item_films">
                             <NavLink className="header__link " to={'/films'}>
                                 Фильмы
@@ -65,7 +72,7 @@ const Header = () => {
                         <input className="header__search" type="search" placeholder='Поиск' onChange={debounceSearch}/>
 
                         {
-                            localStorage.getItem("user") ?
+                            user.email ?
                                 <div className="header__auth">
                                     <p onClick={() => {
                                         dispatch(logOutAccount())

@@ -1,8 +1,8 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import {ILoginField, IShippingFields} from "../../../interface/app.interface"
+import { IShippingFields} from "../../../interface/app.interface"
 import axios from "../../../utils/axios";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
+
+
 
 interface IUser{
     email: string
@@ -14,7 +14,7 @@ interface UserSlice {
     user: IUser,
     status: "loading" | "empty" | "done" | "error"
     error:string,
-    users: [] | IShippingFields[]
+    users: IShippingFields[]
 }
 
 const initialState: UserSlice = {
@@ -50,28 +50,6 @@ export const getAllUsers = createAsyncThunk(
 )
 
 
-export const loginUser = createAsyncThunk(
-    "user/loginUser",
-    async (data:ILoginField,{rejectWithValue} ) => {
-        try {
-            const res = await axios.post("/login",data)
-
-            if(res.status !== 200 ){
-                throw new Error('Ошибка при входе')
-            }
-            return res.data.user
-        }
-        catch (err) {
-            if (err instanceof Error){
-                console.log(err.message)
-                return rejectWithValue(err.message)
-            }else {
-                console.log('Unexpected error', err)
-                return rejectWithValue("Unexpected error")
-            }
-        }
-    }
-)
 
 export const deleteUser = createAsyncThunk(
     "user/deleteUser",
@@ -121,11 +99,7 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         loginAccount : (state,action) => {
-             state.user = {
-                email: action.payload.email,
-                login: action.payload.login,
-                 phone: action.payload.phone
-            }
+             state.user = action.payload
         },
         logOutAccount : (state) => {
             state.user = {
@@ -137,19 +111,6 @@ const userSlice = createSlice({
     },
     extraReducers:(builder) => {
         builder
-            .addCase(loginUser.pending, (state) => {
-                state.status = "loading"
-                state.error = ""
-            })
-            .addCase(loginUser.rejected,(state, action) => {
-                state.status = "error"
-                state.error = action.payload as string
-            })
-            .addCase(loginUser.fulfilled,(state, action) => {
-                state.user = action.payload
-                state.status = "done"
-            })
-
 
             .addCase(getAllUsers.pending, (state) => {
                 state.status = "loading"

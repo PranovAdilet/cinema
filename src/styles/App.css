@@ -228,6 +228,7 @@ body {
   position: absolute;
   top: 30px;
   right: 15px;
+  z-index: 100;
 }
 .film-list__card-icon {
   font-size: 24px;
@@ -617,6 +618,67 @@ body {
 
 .white {
   color: white;
+}
+
+.favorites {
+  padding: 30px 0 40px;
+}
+.favorites__top {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin-bottom: 17px;
+}
+.favorites__text {
+  color: #939297;
+}
+.favorites__title {
+  font-size: 43px;
+  font-weight: 800;
+  margin-bottom: 45px;
+}
+.favorites__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.favorites__card {
+  display: flex;
+  column-gap: 15px;
+  width: 260px;
+  cursor: pointer;
+}
+.favorites__card:hover > img {
+  transition: 0.3s;
+  transform: scale(1.04);
+  cursor: pointer;
+}
+.favorites__card:hover > .favorites__card-info > .favorites__card-info-top > h4 {
+  transition: 0.3s;
+  color: white;
+}
+.favorites__card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.favorites__card-img {
+  width: 70px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.favorites__card-descr {
+  font-size: 15px;
+  color: #939297;
+}
+.favorites__card-descr-title {
+  font-size: 18px;
+  color: #d9d7e0;
+}
+.favorites__card-subscr {
+  font-size: 14px;
+  color: red;
 }
 
 /*# sourceMappingURL=App.css.map */

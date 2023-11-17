@@ -7,3 +7,5 @@ export const selectFilm =(state : RootReducer) => state.oneFilm
 export const selectOneSeries =(state : RootReducer) => state.oneSeries
 export const selectCartoons =(state : RootReducer) => state.cartoons
 export const selectOneCartoon =(state : RootReducer) => state.oneCartoon
+
+export const selectFavorites =(state : RootReducer) => state.favorites

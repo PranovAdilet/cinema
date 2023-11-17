@@ -1,9 +1,10 @@
 import {Link, useNavigate} from "react-router-dom";
 import {BiHomeSmile} from "react-icons/bi"
 import {useForm, SubmitHandler} from "react-hook-form";
-import {loginUser, loginAccount} from "../../redux/store/reducers/users";
+import {loginAccount} from "../../redux/store/reducers/users";
 import {ILoginField} from "../../interface/app.interface"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
+import axios from "../../utils/axios";
 
 const Login = () => {
 
@@ -19,13 +20,11 @@ const Login = () => {
     } = useForm<ILoginField>()
 
 
-    const onSubmit:SubmitHandler<ILoginField> = (data) => {
-        console.log(data)
-        dispatch(loginUser(data)).then((response) => {
-            localStorage.setItem('user', JSON.stringify(response))
-            dispatch(loginAccount(data))
+    const onSubmit:SubmitHandler<ILoginField> = async (data) => {
+        axios.post('/login', data).then((res) => {
+            dispatch(loginAccount(res.data.user))
             navigate("/")
-        })
+        }).catch(e => alert(e))
     }
 
     return (

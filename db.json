@@ -1,25 +1,25 @@
 {
   "users": [
     {
-      "email": "Pranov@mail.ru",
-      "password": "$2a$10$3isuTyAK43nAmZFFw3q6G.Q2dYR9QeMIdm4iQZXLMz6/jemAG1Eke",
-      "login": "PranovAdilet",
-      "phone": "+996(444)44-23-22",
+      "email": "Nurs22@mail.ru",
+      "password": "$2a$10$CwYcJR99oWTSXgm5byraZOE.Q3XWqbv8T40yvDJ9P8NA6DbKaVvXG",
+      "login": "NURs",
+      "phone": "+996(666)66-66-66",
       "id": 1
     },
     {
-      "email": "Nurs2@mail.ru",
-      "password": "$2a$10$wltvmBqSkRfYnJeEmSVT6e3MfL.6oVhgAjxyTr7v2Y1kW0cERvJWa",
-      "login": "PranovAdilet",
-      "phone": "+996(222)22-22-22",
-      "id": 3
+      "email": "Nurs@mail.ru",
+      "password": "$2a$10$CwYcJR99oWTSXgm5byraZOE.Q3XWqbv8T40yvDJ9P8NA6DbKaVvXG",
+      "login": "NURs",
+      "phone": "+996(666)66-66-66",
+      "id": 2
     },
     {
-      "email": "Kanat@mail.ru",
-      "password": "$2a$10$I93b.sJo95/vz3x5druMNOVPaz1FjqJKJpaMeAlcwXZBFK4046C8S",
-      "login": "Kana",
-      "phone": "+996(555)55-55-55",
-      "id": 4
+      "email": "Pranov@mail.ru",
+      "password": "$2a$10$/0kmPJESot.onqkgOxmRTuqan1aCKm9Vh9wiv1qJcIC3g8nrKDG5G",
+      "login": "PranovAdilet",
+      "phone": "+996(333)33-33-33",
+      "id": 3
     }
   ],
   "films": [

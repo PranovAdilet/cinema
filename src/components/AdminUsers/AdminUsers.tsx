@@ -49,7 +49,7 @@ const AdminUsers = () => {
                    </th>
                </tr>
                {
-                    users.map((item) => (
+                    users.length && users.map((item) => (
                         changeInput !== null && item.id === changeInput.id ?
                             <EditUser changeInput={changeInput} item={item} setChangeInput={setChangeInput} key={item.id}/>
                             : <tr key={item.id} className="admin__table-block">

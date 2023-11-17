@@ -54,6 +54,7 @@ const FilmList = () => {
                     slidesPerView={6.8}
                     loop={true}
                     spaceBetween={30}
+
                     modules={[Navigation]}
                     navigation={true}
                     className="filmList"
@@ -61,7 +62,7 @@ const FilmList = () => {
                     {
                         data.map(item => (
                             <SwiperSlide key={item.id}>
-                                <Link  to={`/films/${item.id}`}>
+                                <Link to={`/film/${item.id}`}>
                                     <div className="film-list__card">
                                         <div className="film-list__card-block">
                                             <img src={item.poster} alt=""/>
