@@ -5,21 +5,24 @@
       "password": "$2a$10$CwYcJR99oWTSXgm5byraZOE.Q3XWqbv8T40yvDJ9P8NA6DbKaVvXG",
       "login": "NURs",
       "phone": "+996(666)66-66-66",
-      "id": 1
+      "id": 1,
+      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
     },
     {
       "email": "Nurs@mail.ru",
       "password": "$2a$10$CwYcJR99oWTSXgm5byraZOE.Q3XWqbv8T40yvDJ9P8NA6DbKaVvXG",
       "login": "NURs",
       "phone": "+996(666)66-66-66",
-      "id": 2
+      "id": 2,
+      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
     },
     {
       "email": "Pranov@mail.ru",
       "password": "$2a$10$/0kmPJESot.onqkgOxmRTuqan1aCKm9Vh9wiv1qJcIC3g8nrKDG5G",
       "login": "PranovAdilet",
       "phone": "+996(333)33-33-33",
-      "id": 3
+      "id": 3,
+      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
     }
   ],
   "films": [

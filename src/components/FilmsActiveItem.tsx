@@ -1,6 +1,6 @@
 import React from 'react';
-import {changeYear, sortCountries} from "../../redux/store/reducers/cinema";
-import {useAppDispatch} from "../../redux/hooks/reduxHooks";
+import {changeYear, sortCountries} from "../redux/store/reducers/cinema";
+import {useAppDispatch} from "../redux/hooks/reduxHooks";
 
 interface props {
     active: string

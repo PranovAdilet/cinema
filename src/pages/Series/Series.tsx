@@ -7,7 +7,7 @@ import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 import OneSeriesCard from "../../components/Series/OneSeriesCard/OneSeriesCard";
 import {IFilterState} from "../../interface/app.interface";
 import {clearFilters} from "../../redux/store/reducers/cinema";
-import FilmsActiveItem from "../../components/Films/FilmsActiveItem";
+import FilmsActiveItem from "../../components/FilmsActiveItem";
 import {TfiClose} from "react-icons/tfi";
 import SeriesGenreSort from "../../components/Series/SeriesFilter/SeriesGenreSort";
 import SeriesYearSort from "../../components/Series/SeriesFilter/SeriesYearSort";

@@ -16,13 +16,15 @@ const favoritesSlice = createSlice({
     initialState,
     reducers: {
         addFavorite : (state, action: PayloadAction<IFilm>) => {
-            state.favoritesData = [...state.favoritesData, action.payload]
-            console.log("ok")
+                state.favoritesData = [...state.favoritesData, action.payload]
+        },
+        removeFavorite: (state, action) => {
+            state.favoritesData = state.favoritesData.filter(item => item.id !== action.payload)
         }
     }
 })
 
-export const {addFavorite} = favoritesSlice.actions
+export const {addFavorite, removeFavorite} = favoritesSlice.actions
 
 export default favoritesSlice.reducer
 

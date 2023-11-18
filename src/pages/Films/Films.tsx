@@ -1,21 +1,21 @@
 import {useEffect, useState} from 'react';
 import {getCinema, clearFilters, changeYear, sortRating, sortFilms} from "../../redux/store/reducers/cinema";
 import {useSelector} from "react-redux";
-import FilmsCard from "../../components/Films/FilmsCard/FilmsCard";
+import FilmsCard from "../../components/FilmsCard/FilmsCard";
 import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
-import GenreSort from "../../components/Films/FilmsFilter/GenreSort";
-import FilmsYear from "../../components/Films/FilmsFilter/FilmsYear";
+import GenreSort from "../../components/FilmsFilter/GenreSort";
+import FilmsYear from "../../components/FilmsFilter/FilmsYear";
 import { selectFilms} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
-import RatingSort from "../../components/Films/FilmsFilter/RatingSort";
-import FilmsSort from "../../components/Films/FilmsFilter/FilmsSort";
+import RatingSort from "../../components/FilmsFilter/RatingSort";
+import FilmsSort from "../../components/FilmsFilter/FilmsSort";
 import {TfiClose} from "react-icons/tfi"
-import FilmsActiveItem from "../../components/Films/FilmsActiveItem";
+import FilmsActiveItem from "../../components/FilmsActiveItem";
 import SortCartoons from "../../components/Cartoons/SortCartoons";
 import {newStatus} from "../../App";
-import filmsCountrySort from "../../components/Films/FilmsFilter/FilmsCountrySort";
+import filmsCountrySort from "../../components/FilmsFilter/FilmsCountrySort";
 import {IFilterState} from "../../interface/app.interface";
-import FilmsCountrySort from "../../components/Films/FilmsFilter/FilmsCountrySort";
+import FilmsCountrySort from "../../components/FilmsFilter/FilmsCountrySort";
 
 
 const Films = () => {

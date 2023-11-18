@@ -1,12 +1,11 @@
 import React from 'react';
-import img from "../../gotem.jpg"
 import {useSelector} from "react-redux";
 import {selectFavorites} from "../../redux/reduxSelectors/reduxSelectors";
+import FavoriteCard from "../../components/FavoriteCard";
 
 const FavoritesPage = () => {
 
     const {favoritesData} = useSelector(selectFavorites)
-    console.log(favoritesData)
 
     return (
         <div className="favorites">
@@ -19,19 +18,8 @@ const FavoritesPage = () => {
                 <h2 className="favorites__title">Смотреть позже</h2>
                 <div className="favorites__cards">
                     {
-                        favoritesData.length && favoritesData.map((item) => (
-                            <div className="favorites__card">
-                                <img className="favorites__card-img" src={item.poster} alt=""/>
-                                <div className="favorites__card-info">
-                                    <div className="favorites__card-info-top">
-                                        <h4 className="favorites__card-descr-title">{item.title.length > 14 ? item.title.slice(0,14) +"..." : item.title}</h4>
-                                        <p className="favorites__card-descr">{item.year}, {item.country}</p>
-                                        <p className="favorites__card-descr">{item.time}</p>
-                                    </div>
-                                    <p className="favorites__card-subscr">Подписка</p>
-                                </div>
-                            </div>
-                        ))
+                        favoritesData.length ? favoritesData.map((item) => (
+                           <FavoriteCard item={item}/> )): <h2>Здесь будут фильмы, которые ты решишь посмотреть позже</h2>
                     }
                 </div>
             </div>

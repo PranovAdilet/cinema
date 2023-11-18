@@ -35,6 +35,7 @@ export interface IShippingFields{
     password: string
     login: string
     phone: string
+    avatar: string
 }
 
 export interface IUser extends IShippingFields{

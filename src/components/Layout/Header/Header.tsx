@@ -10,6 +10,7 @@ import {changeCartoonsSearch} from "../../../redux/store/reducers/cartoons";
 import { DebouncedFunc } from 'lodash';
 import _ from 'lodash';
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks";
+import {BsBookmark} from "react-icons/bs";
 
 const Header = () => {
 
@@ -22,7 +23,7 @@ const Header = () => {
     useEffect(() => {
        dispatch(getAllUsers())
     }, [])
-
+    console.log(user)
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (location.pathname === "/films"){
             dispatch(changeSearch(e.target.value))
@@ -70,15 +71,59 @@ const Header = () => {
 
                     <div className="header__right">
                         <input className="header__search" type="search" placeholder='Поиск' onChange={debounceSearch}/>
+                        <Link to={'/admin-panel'}>
+                            Админ панель
+                        </Link>
 
                         {
                             user.email ?
                                 <div className="header__auth">
-                                    <p onClick={() => {
-                                        dispatch(logOutAccount())
-                                        localStorage.removeItem('user')
-                                        navigate('/')
-                                    }}>Выйти</p>
+                                    <img className="header__avatar" src={user.avatar} alt=""/>
+                                    <div className="header__profile">
+                                        <div className="header__profile-right">
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+
+
+                                        </div>
+                                        <div className="header__profile-left">
+                                            <p onClick={() => {
+                                                dispatch(logOutAccount())
+                                                localStorage.removeItem('user')
+                                                navigate('/')
+                                            }}>Выйти</p>
+
+                                            <p>LOGGGG</p>
+                                            <p>LOGGGG</p>
+                                        </div>
+
+                                    </div>
                                 </div>:
                                 <div className="header__auth">
                                     <Link to={'/login'}>Логин</Link>
@@ -86,12 +131,11 @@ const Header = () => {
                                     <Link to={'/registration'}>Регистрация</Link>
                                 </div>
                         }
-                        <Link to={'/admin-panel'}>
-                            Админ панель
-                        </Link>
+
                     </div>
                 </nav>
             </div>
+            <div className="header__line"/>
         </header>
     );
 };

@@ -4,45 +4,42 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
-import { sortRating} from "../../../redux/store/reducers/cinema";
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
-import {IFilterState} from "../../../interface/app.interface";
+import {sortFilms} from "../../redux/store/reducers/cinema";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks"
+import {IFilterState} from "../../interface/app.interface";
+
 
 interface props{
     setFilter: (obj: IFilterState) => void
     filter: IFilterState
 }
 
-
-const FilmsSort = ({filter, setFilter} : props) => {
+const FilmsSort = ({filter, setFilter}: props) => {
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(sortRating(filter.rating))
-    }, [filter.rating])
+        dispatch(sortFilms(filter.state))
+    }, [filter.state])
 
 
     return (
         <Box className="films__filter-box" sx={{minWidth: 200}}>
             <FormControl fullWidth>
-                <InputLabel style={{color: 'white'}} id="demo-simple-select-label">Рейтинг I-R</InputLabel>
+                <InputLabel style={{color: 'white'}} id="demo-simple-select-label">Сортировать по</InputLabel>
                 <Select style={{color: 'white'}}
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={filter.rating}
+                        value={filter.state}
                         label="fasf"
                         onChange={(e:SelectChangeEvent<string> ) => setFilter({
                             ...filter,
-                            rating: e.target.value
-
+                            state: e.target.value
                         })}
                 >
-                    <MenuItem className="films__filter-item" value="">Любой рейтинг</MenuItem>
-                    <MenuItem className="films__filter-item" value="9">Больше 9</MenuItem>
-                    <MenuItem className="films__filter-item" value="8">Больше 8</MenuItem>
-                    <MenuItem className="films__filter-item" value="7">Больше 7</MenuItem>
-                    <MenuItem className="films__filter-item" value="6">Больше 6</MenuItem>
+                    <MenuItem className="films__filter-item" value="viewCount">По популярности</MenuItem>
+                    <MenuItem className="films__filter-item" value="year">Дате</MenuItem>
+                    <MenuItem className="films__filter-item" value="rating">Рейтингу</MenuItem>
                 </Select>
             </FormControl>
         </Box>

@@ -8,6 +8,7 @@ interface IUser{
     email: string
     login: string
     phone: string
+    avatar: string
 }
 
 interface UserSlice {
@@ -21,7 +22,8 @@ const initialState: UserSlice = {
     user: {
         phone: "",
         email: '',
-        login: ''
+        login: '',
+        avatar: ""
     },
     status: "empty",
     error:"",
@@ -105,7 +107,8 @@ const userSlice = createSlice({
             state.user = {
                 email: '',
                 login: '',
-                phone: ""
+                phone: "",
+                avatar: ""
             }
         }
     },

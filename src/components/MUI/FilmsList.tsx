@@ -1,21 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation} from "swiper"
 import {AiOutlineStar,AiOutlineDisconnect} from 'react-icons/ai'
-import {BsBookmark} from 'react-icons/bs'
+import {BsBookmark, BsBookmarkFill} from 'react-icons/bs'
 import {ImMagicWand} from 'react-icons/im'
 import "swiper/css";
 import {Link} from "react-router-dom"
 import {useEffect} from "react";
 import {useAppDispatch} from "../../redux/hooks/reduxHooks";
 import {useSelector} from "react-redux";
-import {selectCartoons, selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
+import {selectCartoons, selectFavorites, selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
 import {getCartoons} from "../../redux/store/reducers/cartoons";
 import {IFilm} from "../../interface/app.interface";
 import {getCinema, sortFilms} from "../../redux/store/reducers/cinema";
+import {addFavorite, removeFavorite} from "../../redux/store/reducers/favorites";
+import AddFavorite from "../AddFavorite";
 
 const FilmList = () => {
     const dispatch = useAppDispatch()
     const {filter, data} = useSelector(selectFilms)
+    const {favoritesData} = useSelector(selectFavorites)
 
 
     const userValue = localStorage.getItem('user');
@@ -27,6 +30,14 @@ const FilmList = () => {
             status:newStatus
         }))
     }, [filter])
+
+    const addFavoriteHandler = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, item: IFilm) => {
+        e.preventDefault()
+        favoritesData.findIndex((el) => el.id === item.id) > -1 ?
+            dispatch(removeFavorite(item.id)) : dispatch(addFavorite(item))
+
+    }
+
 
 
 
@@ -75,12 +86,7 @@ const FilmList = () => {
                                                 </p>
                                                 {time(item)}
                                                 <div className="film-list__card-icons">
-                                        <span className="film-list__card-icon">
-                                            <BsBookmark/>
-                                            <span className="film-list__card-move">
-                                                Смотреть позже
-                                            </span>
-                                        </span>
+                                        <AddFavorite item={item}/>
                                                     <span className="film-list__card-icon">
                                             <ImMagicWand/>
                                                <span className="film-list__card-move">

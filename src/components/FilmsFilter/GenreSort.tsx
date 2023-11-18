@@ -4,9 +4,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
-import {changeGenre} from "../../../redux/store/reducers/cinema";
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
-import {IFilterState} from "../../../interface/app.interface";
+import {changeGenre} from "../../redux/store/reducers/cinema";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks"
+import {IFilterState} from "../../interface/app.interface";
 
 interface props{
     setFilter: (obj: IFilterState) => void

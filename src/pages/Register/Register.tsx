@@ -21,11 +21,11 @@ const Register = () => {
     } = useForm<IShippingFields>({mode: "onChange"});
 
     const onSubmit: SubmitHandler<IShippingFields> = (data) => {
-
-        axios.post('/register', data)
+        const newData = {...data, avatar:"https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg" }
+        axios.post('/register', newData)
             .then((response) => {
                 localStorage.setItem('user', JSON.stringify(response.data));
-                dispatch(loginAccount({...data}))
+                dispatch(loginAccount({...newData}))
                 navigate('/');
             })
             .catch((error) => alert(error));

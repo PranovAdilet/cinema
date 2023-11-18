@@ -24,13 +24,19 @@ body {
 
 .header {
   padding: 15px 0;
-  border-bottom: 1px solid #36353e;
   position: relative;
+  z-index: 10;
+}
+.header__line {
+  width: 100%;
+  margin-top: 25px;
+  border-bottom: 1px solid #36353e;
 }
 .header__nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .header__logo {
   font-size: 30px;
@@ -47,11 +53,11 @@ body {
   color: #a5a1b2;
   font-size: 22px;
 }
-.header__link.active {
-  color: #ffffff;
-}
 .header__link:hover {
   color: #fff;
+}
+.header__link.active {
+  color: #ffffff;
 }
 .header__item-down {
   transition: 0.5s;
@@ -67,6 +73,7 @@ body {
 .header__right {
   display: flex;
   column-gap: 20px;
+  align-items: center;
 }
 .header__search {
   border: none;
@@ -82,7 +89,64 @@ body {
   display: flex;
   align-items: center;
   column-gap: 5px;
+}
+.header__auth:hover .header__profile {
+  transition: 0.2s;
+  transition-delay: 0.3s;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.header__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
   cursor: pointer;
+}
+.header__profile {
+  display: flex;
+  position: absolute;
+  top: -10px;
+  right: -1.5%;
+  width: 103%;
+  height: 450px;
+  background: #1f1b2e;
+  border-radius: 10px;
+  z-index: -1;
+  padding: 30px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.header__profile > div {
+  margin-top: 100px;
+}
+.header__profile-right {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  border-right: 1px solid #36353e;
+}
+.header__profile-left {
+  width: 30%;
+  padding: 20px;
+}
+.header__profile-link {
+  font-weight: 700;
+}
+.header__profile-icon {
+  font-size: 23px;
+}
+.header__profile-block {
+  min-height: 100px;
+  cursor: pointer;
+  padding: 20px;
+  background: #312b45;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
 }
 
 .slider {
@@ -258,7 +322,7 @@ body {
 .film-list .swiper-button-prev:after {
   position: absolute;
   left: 100%;
-  top: -53%;
+  top: -110%;
   padding: 27px 22px;
   font-size: 20px;
   color: #ffffff;
@@ -279,7 +343,7 @@ body {
 .film-list .swiper-button-next:after {
   position: absolute;
   right: 250%;
-  top: -53%;
+  top: -110%;
   color: #ffffff;
   padding: 27px 22px;
   font-size: 20px;
@@ -642,14 +706,31 @@ body {
   flex-wrap: wrap;
   gap: 40px;
 }
+.favorites__trash {
+  position: absolute;
+  top: 40%;
+  right: -45px;
+  font-size: 22px;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: 0.3s;
+}
+.favorites__trash:hover {
+  fill: #ea003d;
+}
 .favorites__card {
   display: flex;
   column-gap: 15px;
-  width: 260px;
+  width: 285px;
   cursor: pointer;
 }
-.favorites__card:hover > img {
+.favorites__card:hover > .favorites__card-info > .favorites__trash {
+  opacity: 1;
   transition: 0.3s;
+  transform: translateX(0);
+}
+.favorites__card:hover > img {
+  transition: 0.2s;
   transform: scale(1.04);
   cursor: pointer;
 }
@@ -661,6 +742,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 .favorites__card-img {
   width: 70px;
@@ -678,7 +760,6 @@ body {
 }
 .favorites__card-subscr {
   font-size: 14px;
-  color: red;
 }
 
 /*# sourceMappingURL=App.css.map */

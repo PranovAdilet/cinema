@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation} from "swiper"
 import {AiOutlineStar,AiOutlineDisconnect} from 'react-icons/ai'
-import {BsBookmark} from 'react-icons/bs'
+import {BsBookmark, BsBookmarkFill} from 'react-icons/bs'
 import {ImMagicWand} from 'react-icons/im'
 import "swiper/css";
 import {Link} from "react-router-dom"
@@ -11,10 +11,12 @@ import {useSelector} from "react-redux";
 import {selectCartoons} from "../../redux/reduxSelectors/reduxSelectors";
 import {getCartoons} from "../../redux/store/reducers/cartoons";
 import {IFilm} from "../../interface/app.interface";
+import AddFavorite from "../AddFavorite";
 
 const CartoonsList = () => {
     const dispatch = useAppDispatch()
     const {filter, data} = useSelector(selectCartoons)
+
 
 
     const userValue = localStorage.getItem('user');
@@ -36,6 +38,7 @@ const CartoonsList = () => {
             )}
         </>
     }
+
 
     return (
         <section className="film-list">
@@ -69,12 +72,9 @@ const CartoonsList = () => {
                                                 </p>
                                                 {time(item)}
                                                 <div className="film-list__card-icons">
-                                        <span className="film-list__card-icon">
-                                            <BsBookmark/>
-                                            <span className="film-list__card-move">
-                                                Смотреть позже
-                                            </span>
-                                        </span>
+                                                    {
+                                                        <AddFavorite item={item}/>
+                                                    }
                                                     <span className="film-list__card-icon">
                                             <ImMagicWand/>
                                                <span className="film-list__card-move">

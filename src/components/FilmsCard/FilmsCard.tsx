@@ -1,19 +1,16 @@
 import {Link} from 'react-router-dom'
-import {BsBookmark} from "react-icons/bs";
+import {BsBookmark,  BsBookmarkFill} from "react-icons/bs";
 import {ImMagicWand} from "react-icons/im";
 import {AiOutlineDisconnect, AiOutlineStar} from "react-icons/ai";
-import {IFilm} from "../../../interface/app.interface"
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks";
-import {addFavorite} from "../../../redux/store/reducers/favorites";
+import {IFilm} from "../../interface/app.interface"
+import {useAppDispatch} from "../../redux/hooks/reduxHooks";
+import {addFavorite, removeFavorite} from "../../redux/store/reducers/favorites";
+import {useSelector} from "react-redux";
+import {selectFavorites} from "../../redux/reduxSelectors/reduxSelectors";
+import AddFavorite from "../AddFavorite";
 
 
 const FilmsCard = ({item}: {item: IFilm}) => {
-    const dispatch = useAppDispatch()
-
-    const addFavoriteHandler = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-        e.preventDefault()
-        dispatch(addFavorite(item));
-    };
     
     return (
         <div key={item.id} className="film-list__card films__card">
@@ -31,12 +28,7 @@ const FilmsCard = ({item}: {item: IFilm}) => {
                             {Math.floor(item.time / 60)} ч {item.time % 60} мин
                         </p>
                         <div className="film-list__card-icons">
-                                        <span onClick={(e) => addFavoriteHandler(e)} className="film-list__card-icon">
-                                            <BsBookmark/>
-                                            <span  className="film-list__card-move">
-                                                Смотреть позже
-                                            </span>
-                                        </span>
+                                       <AddFavorite item={item}/>
                             <span className="film-list__card-icon">
                                             <ImMagicWand/>
                                                <span className="film-list__card-move">

@@ -12,6 +12,7 @@ import {selectCartoons, selectSeries} from "../../redux/reduxSelectors/reduxSele
 import {getCartoons} from "../../redux/store/reducers/cartoons";
 import {IFilm} from "../../interface/app.interface";
 import {getSeries} from "../../redux/store/reducers/series";
+import AddFavorite from "../AddFavorite";
 
 const SeriesList = () => {
     const dispatch = useAppDispatch()
@@ -70,12 +71,7 @@ const SeriesList = () => {
                                                 </p>
                                                 {time(item)}
                                                 <div className="film-list__card-icons">
-                                        <span className="film-list__card-icon">
-                                            <BsBookmark/>
-                                            <span className="film-list__card-move">
-                                                Смотреть позже
-                                            </span>
-                                        </span>
+                                       <AddFavorite item={item}/>
                                                     <span className="film-list__card-icon">
                                             <ImMagicWand/>
                                                <span className="film-list__card-move">
