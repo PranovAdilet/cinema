@@ -11,7 +11,8 @@ export interface IFilm{
     "countRate": number,
     "status": string,
     "viewCount": number
-    country: string
+    country: string,
+    "type" : string
 }
 export interface IFilter{
     genre: string

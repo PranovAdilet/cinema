@@ -19,7 +19,7 @@ const FavoritesPage = () => {
                 <div className="favorites__cards">
                     {
                         favoritesData.length ? favoritesData.map((item) => (
-                           <FavoriteCard item={item}/> )): <h2>Здесь будут фильмы, которые ты решишь посмотреть позже</h2>
+                           <FavoriteCard key={item.id} item={item}/> )): <h2>Здесь будут фильмы, которые ты решишь посмотреть позже</h2>
                     }
                 </div>
             </div>

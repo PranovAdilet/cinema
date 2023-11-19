@@ -4,9 +4,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
-import {IFilterState} from "../../../interface/app.interface";
-import {changeSeriesGenre} from "../../../redux/store/reducers/series";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks"
+import {changeCartoonsGenre} from "../../redux/store/reducers/cartoons";
+import {IFilterState} from "../../interface/app.interface";
 
 interface props{
     setFilter: (obj: IFilterState) => void
@@ -14,13 +14,13 @@ interface props{
 }
 
 
-const SeriesGenreSort = ({filter, setFilter} : props) => {
+const CartoonsGenreSort = ({ setFilter, filter} : props) => {
 
     const dispatch = useAppDispatch();
 
 
     useEffect(() => {
-        dispatch(changeSeriesGenre(filter.genreState))
+        dispatch(changeCartoonsGenre(filter.genreState))
     }, [filter.genreState])
 
 
@@ -41,7 +41,7 @@ const SeriesGenreSort = ({filter, setFilter} : props) => {
                     <MenuItem className="films__filter-item" value="">По умолчанию</MenuItem>
                     <MenuItem className="films__filter-item" value="Приключения">Приключения</MenuItem>
                     <MenuItem className="films__filter-item" value="Комедия">Комедия</MenuItem>
-                    <MenuItem className="films__filter-item" value="Криминал">Криминал</MenuItem>
+                    <MenuItem className="films__filter-item" value="Триллер">Триллер</MenuItem>
                     <MenuItem className="films__filter-item" value="Фантастика">Фантастика</MenuItem>
                     <MenuItem className="films__filter-item" value="Боевик">Боевик</MenuItem>
                     <MenuItem className="films__filter-item" value="драма">Драма</MenuItem>
@@ -51,4 +51,4 @@ const SeriesGenreSort = ({filter, setFilter} : props) => {
     );
 };
 
-export default SeriesGenreSort;
+export default CartoonsGenreSort;

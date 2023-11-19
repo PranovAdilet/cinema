@@ -35,7 +35,7 @@ export const getSeries = createAsyncThunk(
     'series/getSeries',
     async (filter: IFilter) => {
         try {
-            const res = await axios(`/series?${filter.genre !== '' ? `genre=${filter.genre}&` : ''
+            const res = await axios(`/films?type=series&${filter.genre !== '' ? `genre=${filter.genre}&` : ''
             }${filter.year !== '' ? `year=${filter.year}&` : ''
             }${filter.search !== '' ? `title_like=${filter.search
             }&` : ''}${filter.sort !== "" ? `_sort=${filter.sort

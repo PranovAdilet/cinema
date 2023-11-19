@@ -12,6 +12,7 @@ import {selectCartoons} from "../../redux/reduxSelectors/reduxSelectors";
 import {getCartoons} from "../../redux/store/reducers/cartoons";
 import {IFilm} from "../../interface/app.interface";
 import AddFavorite from "../AddFavorite";
+import Similar from "../Similar";
 
 const CartoonsList = () => {
     const dispatch = useAppDispatch()
@@ -59,7 +60,7 @@ const CartoonsList = () => {
                     {
                         data.map(item => (
                             <SwiperSlide key={item.id}>
-                                <Link  to={`/cartoons/${item.id}`}>
+                                <Link to={`/cartoons/${item.id}`}>
                                     <div className="film-list__card">
                                         <div className="film-list__card-block">
                                             <img src={item.poster} alt=""/>
@@ -72,15 +73,8 @@ const CartoonsList = () => {
                                                 </p>
                                                 {time(item)}
                                                 <div className="film-list__card-icons">
-                                                    {
-                                                        <AddFavorite item={item}/>
-                                                    }
-                                                    <span className="film-list__card-icon">
-                                            <ImMagicWand/>
-                                               <span className="film-list__card-move">
-                                               Похожее
-                                            </span>
-                                        </span>
+                                                    <AddFavorite item={item}/>
+                                                    <Similar item={item}/>
                                                     <span className="film-list__card-icon">
                                             <AiOutlineStar/>
                                                <span className="film-list__card-move">

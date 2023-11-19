@@ -14,6 +14,7 @@ import {IFilm} from "../../interface/app.interface";
 import {getCinema, sortFilms} from "../../redux/store/reducers/cinema";
 import {addFavorite, removeFavorite} from "../../redux/store/reducers/favorites";
 import AddFavorite from "../AddFavorite";
+import Similar from "../Similar";
 
 const FilmList = () => {
     const dispatch = useAppDispatch()
@@ -86,13 +87,8 @@ const FilmList = () => {
                                                 </p>
                                                 {time(item)}
                                                 <div className="film-list__card-icons">
-                                        <AddFavorite item={item}/>
-                                                    <span className="film-list__card-icon">
-                                            <ImMagicWand/>
-                                               <span className="film-list__card-move">
-                                               Похожее
-                                            </span>
-                                        </span>
+                                                    <AddFavorite item={item}/>
+                                                    <Similar item={item}/>
                                                     <span className="film-list__card-icon">
                                             <AiOutlineStar/>
                                                <span className="film-list__card-move">

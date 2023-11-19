@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {getCinema, clearFilters, changeYear, sortRating, sortFilms} from "../../redux/store/reducers/cinema";
 import {useSelector} from "react-redux";
-import FilmsCard from "../../components/FilmsCard/FilmsCard";
+import Card from "../../components/Card";
 import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
 import GenreSort from "../../components/FilmsFilter/GenreSort";
 import FilmsYear from "../../components/FilmsFilter/FilmsYear";
@@ -11,7 +11,7 @@ import RatingSort from "../../components/FilmsFilter/RatingSort";
 import FilmsSort from "../../components/FilmsFilter/FilmsSort";
 import {TfiClose} from "react-icons/tfi"
 import FilmsActiveItem from "../../components/FilmsActiveItem";
-import SortCartoons from "../../components/Cartoons/SortCartoons";
+import SortCartoons from "../../components/CartoonsFilter/SortCartoons";
 import {newStatus} from "../../App";
 import filmsCountrySort from "../../components/FilmsFilter/FilmsCountrySort";
 import {IFilterState} from "../../interface/app.interface";
@@ -94,7 +94,7 @@ const Films = () => {
                             : status === 'done' ?
                                 <>
                                     {data.map((item) => (
-                                            <FilmsCard key={item.id} item={item}/>
+                                            <Card key={item.id} item={item}/>
                                     ))
                                     }
                                 </> : <h2>{error}</h2>

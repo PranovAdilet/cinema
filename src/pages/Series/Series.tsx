@@ -4,16 +4,16 @@ import {useSelector} from "react-redux";
 import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
 import { selectSeries} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
-import OneSeriesCard from "../../components/Series/OneSeriesCard/OneSeriesCard";
 import {IFilterState} from "../../interface/app.interface";
 import {clearFilters} from "../../redux/store/reducers/cinema";
 import FilmsActiveItem from "../../components/FilmsActiveItem";
 import {TfiClose} from "react-icons/tfi";
-import SeriesGenreSort from "../../components/Series/SeriesFilter/SeriesGenreSort";
-import SeriesYearSort from "../../components/Series/SeriesFilter/SeriesYearSort";
-import SeriesCountrySort from "../../components/Series/SeriesFilter/SeriesCountrySort";
-import SeriesSort from "../../components/Series/SeriesFilter/SeriesSort";
-import SeriesRatingSort from "../../components/Series/SeriesFilter/SeriesRatingSort";
+import SeriesGenreSort from "../../components/SeriesFilter/SeriesGenreSort";
+import SeriesYearSort from "../../components/SeriesFilter/SeriesYearSort";
+import SeriesCountrySort from "../../components/SeriesFilter/SeriesCountrySort";
+import SeriesSort from "../../components/SeriesFilter/SeriesSort";
+import SeriesRatingSort from "../../components/SeriesFilter/SeriesRatingSort";
+import Card from "../../components/Card";
 
 
 
@@ -92,7 +92,7 @@ const Series = () => {
                             : status === 'done' ?
                                 <>
                                     {data.map((item) => (
-                                        <OneSeriesCard key={item.id} item={item}/>
+                                        <Card key={item.id} item={item}/>
                                     ))
                                     }
                                 </> : <h2>{error}</h2>

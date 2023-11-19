@@ -4,9 +4,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
-import {IFilterState} from "../../../interface/app.interface";
-import {changeSeriesYear} from "../../../redux/store/reducers/series";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks"
+import {IFilterState} from "../../interface/app.interface";
+import {changeSeriesYear} from "../../redux/store/reducers/series";
 
 interface props{
     setFilter: (obj: IFilterState) => void

@@ -2,7 +2,7 @@ import React from 'react';
 import {BiSolidTrashAlt} from "react-icons/bi";
 import {removeFavorite} from "../redux/store/reducers/favorites";
 import {useSelector} from "react-redux";
-import {selectCartoons, selectFavorites, selectFilms, selectSeries} from "../redux/reduxSelectors/reduxSelectors";
+import {selectCartoons, selectFilms, selectSeries} from "../redux/reduxSelectors/reduxSelectors";
 import {useAppDispatch} from "../redux/hooks/reduxHooks";
 import {IFilm} from "../interface/app.interface";
 import {useNavigate} from "react-router-dom";
@@ -24,7 +24,7 @@ const FavoriteCard = ({item} : {item : IFilm}) => {
             } else if (cartoons.find((el) => el.title === item.title)){
                 return `/cartoons/${item.id}`
             }else {
-                alert("Ошибка в пути!")
+                console.error("Error navigation!")
                 return "/"
             }
     }

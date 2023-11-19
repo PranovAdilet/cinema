@@ -14,7 +14,11 @@ const FilmsInfo = ({ product }: {product: IFilm}) => {
                     {product.year}
                 </p>
                 <p>
-                    {Math.floor(product.time / 60)} ч {product.time % 60} мин
+                    {!isNaN(product.time) ? (
+                        <p className="film-list__card-time">{Math.floor(product.time / 60)} ч {product.time % 60} мин</p>
+                    ) : (
+                        <p className="film-list__card-time">{product.time}</p>
+                    )}
                 </p>
             </div>
             <p className="film__info-genre">

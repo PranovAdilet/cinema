@@ -1,22 +1,19 @@
-import {Link} from 'react-router-dom'
-import {BsBookmark,  BsBookmarkFill} from "react-icons/bs";
-import {ImMagicWand} from "react-icons/im";
+import {Link, useNavigate} from 'react-router-dom'
 import {AiOutlineDisconnect, AiOutlineStar} from "react-icons/ai";
-import {IFilm} from "../../interface/app.interface"
-import {useAppDispatch} from "../../redux/hooks/reduxHooks";
-import {addFavorite, removeFavorite} from "../../redux/store/reducers/favorites";
-import {useSelector} from "react-redux";
-import {selectFavorites} from "../../redux/reduxSelectors/reduxSelectors";
-import AddFavorite from "../AddFavorite";
+import {IFilm} from "../interface/app.interface"
+import AddFavorite from "./AddFavorite";
+import Similar from "./Similar";
 
 
-const FilmsCard = ({item}: {item: IFilm}) => {
+const Card = ({item}: {item: IFilm}) => {
+
+    const posterType = item.poster.startsWith("./") ? `/${item.poster}` : item.poster
     
     return (
         <div key={item.id} className="film-list__card films__card">
             <Link to={`/film/${item.id}`}>
                 <div className="film-list__card-block">
-                    <img src={item.poster} alt=""/>
+                    <img src={posterType} alt=""/>
                     <div className="film-list__card-info">
                         <h3 className="film-list__card-rate">
                             {item.rating}
@@ -24,17 +21,14 @@ const FilmsCard = ({item}: {item: IFilm}) => {
                         <p className="film-list__card-desc">
                             {item.year} {item.country} {item.genre}
                         </p>
-                        <p className="film-list__card-time">
-                            {Math.floor(item.time / 60)} ч {item.time % 60} мин
-                        </p>
+                        {!isNaN(item.time) ? (
+                            <p className="film-list__card-time">{Math.floor(item.time / 60)} ч {item.time % 60} мин</p>
+                        ) : (
+                            <p className="film-list__card-time">{item.time}</p>
+                        )}
                         <div className="film-list__card-icons">
-                                       <AddFavorite item={item}/>
-                            <span className="film-list__card-icon">
-                                            <ImMagicWand/>
-                                               <span className="film-list__card-move">
-                                               Похожее
-                                            </span>
-                                        </span>
+                            <AddFavorite item={item}/>
+                            <Similar item={item}/>
                             <span className="film-list__card-icon">
                                             <AiOutlineStar/>
                                                <span className="film-list__card-move">
@@ -63,4 +57,4 @@ const FilmsCard = ({item}: {item: IFilm}) => {
     );
 };
 
-export default FilmsCard;
+export default Card;

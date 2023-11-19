@@ -1,305 +1,15 @@
 {
   "users": [
     {
-      "email": "Nurs22@mail.ru",
-      "password": "$2a$10$CwYcJR99oWTSXgm5byraZOE.Q3XWqbv8T40yvDJ9P8NA6DbKaVvXG",
-      "login": "NURs",
-      "phone": "+996(666)66-66-66",
-      "id": 1,
-      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
-    },
-    {
-      "email": "Nurs@mail.ru",
-      "password": "$2a$10$CwYcJR99oWTSXgm5byraZOE.Q3XWqbv8T40yvDJ9P8NA6DbKaVvXG",
-      "login": "NURs",
-      "phone": "+996(666)66-66-66",
-      "id": 2,
-      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
-    },
-    {
-      "email": "Pranov@mail.ru",
-      "password": "$2a$10$/0kmPJESot.onqkgOxmRTuqan1aCKm9Vh9wiv1qJcIC3g8nrKDG5G",
-      "login": "PranovAdilet",
+      "email": "Adilet@mail.ru",
+      "password": "$2a$10$8VhsQDHb0zCvEA1qkGFGdOdtbpQVJ60reE1HP4uhbapbMHJPOrPWi",
+      "login": "Adilet",
       "phone": "+996(333)33-33-33",
-      "id": 3,
-      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg"
+      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg",
+      "id": 1
     }
   ],
   "films": [
-    {
-      "id": 1,
-      "title": "Человек-паук: Нет пути домой",
-      "description": "Жизнь и репутация Питера Паркера оказываются под угрозой, поскольку Мистерио раскрыл всему миру тайну личности Человека-паука. Пытаясь исправить ситуацию, Питер обращается за помощью к Стивену Стрэнджу, но вскоре всё становится намного опаснее.",
-      "year": 2021,
-      "time": 148,
-      "genre": "Приключения",
-      "trailer": "https://www.youtube.com/watch?v=hlANal2_tsc",
-      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/731c4031-7389-44f4-8c15-f9f4e3b0ed90/300x450",
-      "rating": 9,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 2000,
-      "country": "США"
-    },
-    {
-      "id": 2,
-      "title": "Чёрный Адам",
-      "description": "5000 лет назад Чёрный Адам был наделен силами египетских богов и заключён в тюрьму. Теперь он освобождается из своей усыпальницы и готовится явить миру уникальный подход к борьбе за справедливость.",
-      "year": 2022,
-      "time": 125,
-      "genre": "Приключения",
-      "trailer": "https://www.youtube.com/watch?v=qTLqSkKd5Wg",
-      "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/3d/%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%90%D0%B4%D0%B0%D0%BC.jpg/240px-%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%90%D0%B4%D0%B0%D0%BC.jpg",
-      "rating": 5,
-      "countRate": 0,
-      "status": "gold",
-      "viewCount": 970,
-      "country": "США"
-    },
-    {
-      "id": 3,
-      "title": "Чёрная пантера: Ваканда навсегда",
-      "description": "После смерти короля Т`Чаллы королева Рамонда, Шури, М`Баку, Окойе и Дора Милаж сражаются, чтобы защитить Ваканду от мировых держав.",
-      "year": 2022,
-      "time": 125,
-      "genre": "Приключения",
-      "trailer": "https://www.youtube.com/watch?v=2Tp8kAlkMVE",
-      "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/3b/Black_Panther_Wakanda_Forever_poster.jpg/240px-Black_Panther_Wakanda_Forever_poster.jpg",
-      "rating": 9,
-      "countRate": 0,
-      "status": "gold",
-      "viewCount": 800,
-      "country": "Россия"
-    },
-    {
-      "id": 4,
-      "title": "Анчартед: На картах не значится",
-      "description": "Нейтан Дрейк и Виктор «Салли» Салливан, два искателя приключений, отправляются на поиски величайшего сокровища мира. Кроме того, они надеются найти улики, которые приведут их к давно потерянному брату Нейтана.",
-      "year": 2022,
-      "time": 114,
-      "genre": "Приключения",
-      "trailer": "https://www.youtube.com/watch?v=i0XvzdqAb9k",
-      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/3ddc0946-5e53-4f7a-b355-cd42c2280f9e/600x900",
-      "rating": 10,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 800,
-      "country": "Германия"
-    },
-    {
-      "id": 5,
-      "title": "Начало",
-      "description": "Кобб – талантливый вор, лучший из лучших в опасном искусстве извлечения: он крадет ценные секреты из глубин подсознания во время сна, когда человеческий разум наиболее уязвим. Редкие способности Кобба сделали его ценным игроком в привычном к предательству мире промышленного шпионажа, но они же превратили его в извечного беглеца и лишили всего, что он когда-либо любил.",
-      "year": 2010,
-      "time": 148,
-      "genre": "Фантастика",
-      "trailer": "https://www.youtube.com/watch?v=85Zz1CCXyDI",
-      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8ab9a119-dd74-44f0-baec-0629797483d7/300x450",
-      "rating": 8,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 730,
-      "country": "Польша"
-    },
-    {
-      "id": 6,
-      "title": "Почему он?",
-      "description": "Отец невесты воюет с безумным женихом-миллионером. Скабрезная комедия сценариста «Знакомства с родителями»",
-      "year": 2016,
-      "time": 106,
-      "genre": "Комедия",
-      "trailer": "https://www.youtube.com/watch?v=19v1MnY3Uf0",
-      "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/a/a6/Why_Him_%28film%29.jpg/640px-Why_Him_%28film%29.jpg",
-      "rating": 5,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 730,
-      "country": "Китай"
-    },
-    {
-      "id": 7,
-      "title": "Джентльмены",
-      "description": "Талантливый выпускник Оксфорда, применив свой уникальный ум и невиданную дерзость, придумал нелегальную схему обогащения с использованием поместья обедневшей английской аристократии. Однако когда он решает продать свой бизнес влиятельному клану миллиардеров из США, на его пути встают не менее обаятельные, но жесткие джентльмены. Намечается обмен любезностями, который точно не обойдется",
-      "year": 2019,
-      "time": 113,
-      "genre": "Криминал",
-      "trailer": "https://www.youtube.com/embed/RDMlUyJsR_o?si=hYcoQvfuJurzU6zC",
-      "poster": "https://upload.wikimedia.org/wikipedia/ru/c/c1/%D0%94%D0%B6%D0%B5%D0%BD%D1%82%D0%BB%D1%8C%D0%BC%D0%B5%D0%BD%D1%8B.jpg",
-      "rating": 5,
-      "countRate": 0,
-      "status": "gold",
-      "viewCount": 58730,
-      "country": "Корея"
-    },
-    {
-      "id": 8,
-      "title": "Джон Уик 2",
-      "description": "Когда бывший коллега Джона решает взять под свой контроль таинственную гильдию убийц, Уик вынужден выйти из отставки. Ведомый кровавой клятвой Джон отправляется в Рим, где ему придется сразиться с одними из самых опасных киллеров в мире.",
-      "year": 2017,
-      "time": 122,
-      "genre": "Боевик",
-      "trailer": "https://www.youtube.com/watch?v=0DkJa_aGTP8&t=3s",
-      "poster": "https://upload.wikimedia.org/wikipedia/ru/f/f1/John_Wick_2.jpg",
-      "rating": 2,
-      "countRate": 0,
-      "status": "gold",
-      "viewCount": 58730,
-      "country": "Япония"
-    },
-    {
-      "id": 9,
-      "title": "Зеленая книга",
-      "description": "Бывший вышибала Тони нанимается водителем к темнокожему музыканту с аристократическими манерами Дону Ширли. Они отправляются в тур по южным штатам, где в 1960-х еще царили расовые предрассудки.",
-      "year": 2018,
-      "time": 129,
-      "genre": "драма",
-      "trailer": "https://www.youtube.com/watch?v=e6b9urtUJt0",
-      "poster": "https://upload.wikimedia.org/wikipedia/ru/f/f0/Green_Book.jpg",
-      "rating": 7,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 1000,
-      "country": "Австралия"
-    },
-    {
-      "id": 10,
-      "title": "По соображениям совести",
-      "description": "Сознательный уклонист проходит через все тяготы фронта. Драма Мэла Гибсона о военном медике Десмонде Доссе",
-      "year": 2016,
-      "time": 133,
-      "genre": "драма",
-      "trailer": "https://www.youtube.com/watch?v=VxaGyCaCouY",
-      "poster": "https://upload.wikimedia.org/wikipedia/ru/2/2c/Hacksaw_Ridge.jpg",
-      "rating": 7,
-      "countRate": 0,
-      "status": "gold",
-      "viewCount": 400,
-      "country": "Франция"
-    },
-    {
-      "id": 11,
-      "title": "Пушки Акимбо",
-      "description": "Интернет-тролля заставляют участвовать в кровавой бойне. Отпетый комедийный боевик с Дэниэлом Рэдклиффом",
-      "year": 2019,
-      "time": 97,
-      "genre": "Боевик",
-      "trailer": "https://www.youtube.com/watch?v=cMo3-FJBPLw",
-      "poster": "https://upload.wikimedia.org/wikipedia/ru/e/ea/Guns_Akimbo_%28film%29.jpg",
-      "rating": 8,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 400,
-      "country": "США"
-    },
-    {
-      "id": 12,
-      "title": "Живая Сталь",
-      "description": "Отец с сыном тренируют робота-боксера и строят отношения с нуля. Хью Джекман в зрелищном семейном экшене",
-      "year": 2011,
-      "time": 121,
-      "genre": "Фантастика",
-      "trailer": "https://www.youtube.com/watch?v=VQfjnd3xCqo",
-      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/a2da53fd-24c9-4715-8f98-5382b387fd4d/300x450",
-      "rating": 8,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 400,
-      "country": "Россия"
-    }
-  ],
-  "series": [
-    {
-      "id": 1,
-      "title": "Гримм",
-      "description": "«Гримм» — американский фэнтези-телесериал, частично основанный на сказках братьев Гримм. Премьера сериала состоялась 28 октября 2011 года на телеканале NBC.",
-      "year": 2011,
-      "time": 60,
-      "genre": "Ужасы",
-      "trailer": "https://www.youtube.com/watch?v=DTkkYFKqV6o",
-      "poster": "./assets/grimm.webp",
-      "rating": 8,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 0,
-      "country": "Россия"
-    },
-    {
-      "id": 2,
-      "title": "Властелин колец: Кольца власти",
-      "description": "«Властели́н коле́ц: Ко́льца вла́сти» — американский фэнтезийный телесериал, основанный на романе-эпопее Дж. Р. Р. Толкина «Властелин колец» и приложениях к нему",
-      "year": 2022,
-      "time": 62,
-      "genre": "Фантастика",
-      "trailer": "кольцо власти трейлер",
-      "poster": "./assets/lordOfRings.webp",
-      "rating": 8,
-      "countRate": 0,
-      "status": "gold",
-      "viewCount": 0,
-      "country": "США"
-    },
-    {
-      "id": 3,
-      "title": "Клан сапрано",
-      "description": "«Клан Сопра́но» — американский криминально-драматический телесериал, созданный Дэвидом Чейзом и транслировавшийся на канале HBO.",
-      "year": 1999,
-      "time": 60,
-      "genre": "Драма",
-      "trailer": "https://www.youtube.com/watch?v=AaIrw54oonU",
-      "poster": "./assets/soprano.jpg",
-      "rating": 9,
-      "countRate": 0,
-      "status": "gold",
-      "viewCount": 0,
-      "country": "Франция"
-    },
-    {
-      "id": 4,
-      "title": "Во все тяжкие",
-      "description": "«Во все тяжкие» — американская телевизионная криминальная драма, премьерные серии которой транслировались с 20 января 2008 года по 29 сентября 2013 года по кабельному каналу AMC.",
-      "year": 2008,
-      "time": 61,
-      "genre": "Боевик",
-      "trailer": "https://www.youtube.com/watch?v=L5l3vv9n7EU",
-      "poster": "./assets/voVseTyajkie.jpg",
-      "rating": 9,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 0,
-      "country": "Германия"
-    },
-    {
-      "id": 5,
-      "title": "Миллиа́рды",
-      "description": "«Миллиа́рды» — американский драматический телесериал с Дэмиэном Льюисом и Полом Джаматти в главных ролях. Двенадцать эпизодов шоу были заказаны телеканалом Showtime в марте 2015 года. Премьера состоялась 17 января 2016 года, однако первый эпизод стал доступен 1 января 2016 года онлайн.",
-      "year": 2016,
-      "time": 62,
-      "genre": "Комедия",
-      "trailer": "https://www.youtube.com/watch?v=NPFilbpd_Qs",
-      "poster": "./assets/billions.webp",
-      "rating": 5,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 0,
-      "country": "Китай"
-    },
-    {
-      "id": 6,
-      "title": "Го́тэм",
-      "description": "«Го́тэм» — американский криминальный телесериал, произведённый в сотрудничестве компаний Primrose Hill Productions, DC Entertainment и Warner Bros. Television",
-      "year": 2014,
-      "time": 63,
-      "genre": "Фантастика",
-      "trailer": "https://www.youtube.com/watch?v=esAsOLKlU-Q",
-      "poster": "./assets/gotem.jpg",
-      "rating": 5,
-      "countRate": 0,
-      "status": "free",
-      "viewCount": 0,
-      "country": "Япония"
-    }
-  ],
-  "cartoons": [
     {
       "id": 1,
       "title": "Hunter X Hunter",
@@ -313,7 +23,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Россия"
+      "country": "Россия",
+      "type": "cartoons"
     },
     {
       "id": 2,
@@ -328,7 +39,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 9000,
-      "country": "Россия"
+      "country": "Россия",
+      "type": "cartoons"
     },
     {
       "id": 3,
@@ -343,7 +55,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Россия"
+      "country": "Россия",
+      "type": "cartoons"
     },
     {
       "id": 4,
@@ -358,7 +71,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 7000,
-      "country": "Россия"
+      "country": "Россия",
+      "type": "cartoons"
     },
     {
       "id": 5,
@@ -373,7 +87,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Россия"
+      "country": "Россия",
+      "type": "cartoons"
     },
     {
       "id": 6,
@@ -388,7 +103,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 10000,
-      "country": "США"
+      "country": "США",
+      "type": "cartoons"
     },
     {
       "id": 7,
@@ -403,7 +119,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "США"
+      "country": "США",
+      "type": "cartoons"
     },
     {
       "id": 8,
@@ -418,7 +135,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "США"
+      "country": "США",
+      "type": "cartoons"
     },
     {
       "id": 9,
@@ -433,7 +151,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "США"
+      "country": "США",
+      "type": "cartoons"
     },
     {
       "id": 10,
@@ -448,7 +167,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Япония"
+      "country": "Япония",
+      "type": "cartoons"
     },
     {
       "id": 11,
@@ -463,7 +183,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "США"
+      "country": "США",
+      "type": "cartoons"
     },
     {
       "id": 12,
@@ -478,7 +199,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 9000,
-      "country": "США"
+      "country": "США",
+      "type": "cartoons"
     },
     {
       "id": 13,
@@ -493,7 +215,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Япония"
+      "country": "Япония",
+      "type": "cartoons"
     },
     {
       "id": 14,
@@ -508,7 +231,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 7000,
-      "country": "Япония"
+      "country": "Япония",
+      "type": "cartoons"
     },
     {
       "id": 15,
@@ -523,7 +247,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Япония"
+      "country": "Япония",
+      "type": "cartoons"
     },
     {
       "id": 16,
@@ -538,7 +263,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 10000,
-      "country": "Япония"
+      "country": "Япония",
+      "type": "cartoons"
     },
     {
       "id": 17,
@@ -553,7 +279,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Япония"
+      "country": "Япония",
+      "type": "cartoons"
     },
     {
       "id": 18,
@@ -568,7 +295,8 @@
       "countRate": 0,
       "status": "free",
       "country": "Япония",
-      "viewCount": 2000
+      "viewCount": 2000,
+      "type": "cartoons"
     },
     {
       "id": 19,
@@ -583,7 +311,8 @@
       "countRate": 0,
       "status": "free",
       "country": "Япония",
-      "viewCount": 2000
+      "viewCount": 2000,
+      "type": "cartoons"
     },
     {
       "id": 20,
@@ -598,7 +327,8 @@
       "countRate": 0,
       "status": "free",
       "country": "Италия",
-      "viewCount": 2000
+      "viewCount": 2000,
+      "type": "cartoons"
     },
     {
       "id": 21,
@@ -613,7 +343,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Италия"
+      "country": "Италия",
+      "type": "cartoons"
     },
     {
       "id": 22,
@@ -628,6 +359,7 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 9000,
+      "type": "cartoons",
       "country": "Италия"
     },
     {
@@ -643,7 +375,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Италия"
+      "country": "Италия",
+      "type": "cartoons"
     },
     {
       "id": 24,
@@ -658,7 +391,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 7000,
-      "country": "Италия"
+      "country": "Италия",
+      "type": "cartoons"
     },
     {
       "id": 25,
@@ -673,7 +407,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Италия"
+      "country": "Италия",
+      "type": "cartoons"
     },
     {
       "id": 26,
@@ -688,7 +423,8 @@
       "countRate": 0,
       "status": "free",
       "country": "Франция",
-      "viewCount": 10000
+      "viewCount": 10000,
+      "type": "cartoons"
     },
     {
       "id": 27,
@@ -703,7 +439,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 28,
@@ -718,7 +455,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 29,
@@ -733,7 +471,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 30,
@@ -748,7 +487,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 31,
@@ -763,7 +503,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 32,
@@ -778,7 +519,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 9000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 33,
@@ -793,7 +535,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 34,
@@ -808,7 +551,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 7000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 35,
@@ -823,7 +567,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Франция"
+      "country": "Франция",
+      "type": "cartoons"
     },
     {
       "id": 36,
@@ -838,7 +583,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 10000,
-      "country": "Австралия"
+      "country": "Австралия",
+      "type": "cartoons"
     },
     {
       "id": 37,
@@ -853,7 +599,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Австралия"
+      "country": "Австралия",
+      "type": "cartoons"
     },
     {
       "id": 38,
@@ -868,7 +615,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Австралия"
+      "country": "Австралия",
+      "type": "cartoons"
     },
     {
       "id": 39,
@@ -883,7 +631,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Австралия"
+      "country": "Австралия",
+      "type": "cartoons"
     },
     {
       "id": 40,
@@ -898,7 +647,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Австралия"
+      "country": "Австралия",
+      "type": "cartoons"
     },
     {
       "id": 41,
@@ -913,7 +663,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Австралия"
+      "country": "Австралия",
+      "type": "cartoons"
     },
     {
       "id": 42,
@@ -928,7 +679,8 @@
       "countRate": 0,
       "status": "free",
       "country": "Германия",
-      "viewCount": 9000
+      "viewCount": 9000,
+      "type": "cartoons"
     },
     {
       "id": 43,
@@ -943,7 +695,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Германия"
+      "country": "Германия",
+      "type": "cartoons"
     },
     {
       "id": 44,
@@ -958,7 +711,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 7000,
-      "country": "Германия"
+      "country": "Германия",
+      "type": "cartoons"
     },
     {
       "id": 45,
@@ -973,7 +727,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Германия"
+      "country": "Германия",
+      "type": "cartoons"
     },
     {
       "id": 46,
@@ -988,7 +743,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 10000,
-      "country": "Германия"
+      "country": "Германия",
+      "type": "cartoons"
     },
     {
       "id": 47,
@@ -1003,7 +759,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Германия"
+      "country": "Германия",
+      "type": "cartoons"
     },
     {
       "id": 48,
@@ -1018,7 +775,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Германия"
+      "country": "Германия",
+      "type": "cartoons"
     },
     {
       "id": 49,
@@ -1033,7 +791,8 @@
       "countRate": 0,
       "status": "free",
       "country": "Германия",
-      "viewCount": 2000
+      "viewCount": 2000,
+      "type": "cartoons"
     },
     {
       "id": 50,
@@ -1048,7 +807,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Польша"
+      "country": "Польша",
+      "type": "cartoons"
     },
     {
       "id": 51,
@@ -1063,7 +823,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Польша"
+      "country": "Польша",
+      "type": "cartoons"
     },
     {
       "id": 52,
@@ -1078,7 +839,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 9000,
-      "country": "Польша"
+      "country": "Польша",
+      "type": "cartoons"
     },
     {
       "id": 53,
@@ -1093,7 +855,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Польша"
+      "country": "Польша",
+      "type": "cartoons"
     },
     {
       "id": 54,
@@ -1108,7 +871,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 7000,
-      "country": "Польша"
+      "country": "Польша",
+      "type": "cartoons"
     },
     {
       "id": 55,
@@ -1123,7 +887,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Польша"
+      "country": "Польша",
+      "type": "cartoons"
     },
     {
       "id": 56,
@@ -1138,7 +903,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 10000,
-      "country": "Польша"
+      "country": "Польша",
+      "type": "cartoons"
     },
     {
       "id": 57,
@@ -1153,7 +919,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Польша"
+      "country": "Польша",
+      "type": "cartoons"
     },
     {
       "id": 58,
@@ -1168,7 +935,8 @@
       "countRate": 0,
       "status": "free",
       "country": "Польша",
-      "viewCount": 2000
+      "viewCount": 2000,
+      "type": "cartoons"
     },
     {
       "id": 59,
@@ -1183,7 +951,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Корея"
+      "country": "Корея",
+      "type": "cartoons"
     },
     {
       "id": 60,
@@ -1198,7 +967,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Корея"
+      "country": "Корея",
+      "type": "cartoons"
     },
     {
       "id": 61,
@@ -1213,7 +983,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Корея"
+      "country": "Корея",
+      "type": "cartoons"
     },
     {
       "id": 62,
@@ -1228,7 +999,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 9000,
-      "country": "Корея"
+      "country": "Корея",
+      "type": "cartoons"
     },
     {
       "id": 63,
@@ -1243,7 +1015,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Корея"
+      "country": "Корея",
+      "type": "cartoons"
     },
     {
       "id": 64,
@@ -1258,7 +1031,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 7000,
-      "country": "Корея"
+      "country": "Корея",
+      "type": "cartoons"
     },
     {
       "id": 65,
@@ -1273,7 +1047,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Корея"
+      "country": "Корея",
+      "type": "cartoons"
     },
     {
       "id": 66,
@@ -1288,7 +1063,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 10000,
-      "country": "Корея"
+      "country": "Корея",
+      "type": "cartoons"
     },
     {
       "id": 67,
@@ -1303,7 +1079,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Китай"
+      "country": "Китай",
+      "type": "cartoons"
     },
     {
       "id": 68,
@@ -1318,7 +1095,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Китай"
+      "country": "Китай",
+      "type": "cartoons"
     },
     {
       "id": 69,
@@ -1333,7 +1111,8 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Китай"
+      "country": "Китай",
+      "type": "cartoons"
     },
     {
       "id": 70,
@@ -1348,7 +1127,384 @@
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
-      "country": "Китай"
+      "country": "Китай",
+      "type": "cartoons"
+    },
+
+
+
+
+    {
+      "id": 71,
+      "title": "Гримм",
+      "description": "«Гримм» — американский фэнтези-телесериал, частично основанный на сказках братьев Гримм. Премьера сериала состоялась 28 октября 2011 года на телеканале NBC.",
+      "year": 2011,
+      "time": 60,
+      "genre": "Ужасы",
+      "trailer": "https://www.youtube.com/watch?v=DTkkYFKqV6o",
+      "poster": "./assets/grimm.webp",
+      "rating": 8,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 0,
+      "country": "Россия",
+      "type": "series"
+    },
+    {
+      "id": 72,
+      "title": "Властелин колец: Кольца власти",
+      "description": "«Властели́н коле́ц: Ко́льца вла́сти» — американский фэнтезийный телесериал, основанный на романе-эпопее Дж. Р. Р. Толкина «Властелин колец» и приложениях к нему",
+      "year": 2022,
+      "time": 62,
+      "genre": "Фантастика",
+      "trailer": "кольцо власти трейлер",
+      "poster": "./assets/lordOfRings.webp",
+      "rating": 8,
+      "countRate": 0,
+      "status": "gold",
+      "viewCount": 0,
+      "country": "США",
+      "type": "series"
+    },
+    {
+      "id": 73,
+      "title": "Клан сапрано",
+      "description": "«Клан Сопра́но» — американский криминально-драматический телесериал, созданный Дэвидом Чейзом и транслировавшийся на канале HBO.",
+      "year": 1999,
+      "time": 60,
+      "genre": "Драма",
+      "trailer": "https://www.youtube.com/watch?v=AaIrw54oonU",
+      "poster": "./assets/soprano.jpg",
+      "rating": 9,
+      "countRate": 0,
+      "status": "gold",
+      "viewCount": 0,
+      "country": "Франция",
+      "type": "series"
+    },
+    {
+      "id": 74,
+      "title": "Во все тяжкие",
+      "description": "«Во все тяжкие» — американская телевизионная криминальная драма, премьерные серии которой транслировались с 20 января 2008 года по 29 сентября 2013 года по кабельному каналу AMC.",
+      "year": 2008,
+      "time": 61,
+      "genre": "Боевик",
+      "trailer": "https://www.youtube.com/watch?v=L5l3vv9n7EU",
+      "poster": "./assets/voVseTyajkie.jpg",
+      "rating": 9,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 0,
+      "country": "Германия",
+      "type": "series"
+    },
+    {
+      "id": 75,
+      "title": "Миллиа́рды",
+      "description": "«Миллиа́рды» — американский драматический телесериал с Дэмиэном Льюисом и Полом Джаматти в главных ролях. Двенадцать эпизодов шоу были заказаны телеканалом Showtime в марте 2015 года. Премьера состоялась 17 января 2016 года, однако первый эпизод стал доступен 1 января 2016 года онлайн.",
+      "year": 2016,
+      "time": 62,
+      "genre": "Комедия",
+      "trailer": "https://www.youtube.com/watch?v=NPFilbpd_Qs",
+      "poster": "./assets/billions.webp",
+      "rating": 5,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 0,
+      "country": "Китай",
+      "type": "series"
+    },
+    {
+      "id": 76,
+      "title": "Го́тэм",
+      "description": "«Го́тэм» — американский криминальный телесериал, произведённый в сотрудничестве компаний Primrose Hill Productions, DC Entertainment и Warner Bros. Television",
+      "year": 2014,
+      "time": 63,
+      "genre": "Фантастика",
+      "trailer": "https://www.youtube.com/watch?v=esAsOLKlU-Q",
+      "poster": "./assets/gotem.jpg",
+      "rating": 5,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 0,
+      "country": "Япония",
+      "type": "series"
+    },
+
+
+
+
+    {
+      "id": 77,
+      "title": "Человек-паук: Нет пути домой",
+      "description": "Жизнь и репутация Питера Паркера оказываются под угрозой, поскольку Мистерио раскрыл всему миру тайну личности Человека-паука. Пытаясь исправить ситуацию, Питер обращается за помощью к Стивену Стрэнджу, но вскоре всё становится намного опаснее.",
+      "year": 2021,
+      "time": 148,
+      "genre": "Приключения",
+      "trailer": "https://www.youtube.com/watch?v=hlANal2_tsc",
+      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/731c4031-7389-44f4-8c15-f9f4e3b0ed90/300x450",
+      "rating": 9,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 2000,
+      "country": "США",
+      "type": "films"
+    },
+    {
+      "id": 78,
+      "title": "Чёрный Адам",
+      "description": "5000 лет назад Чёрный Адам был наделен силами египетских богов и заключён в тюрьму. Теперь он освобождается из своей усыпальницы и готовится явить миру уникальный подход к борьбе за справедливость.",
+      "year": 2022,
+      "time": 125,
+      "genre": "Приключения",
+      "trailer": "https://www.youtube.com/watch?v=qTLqSkKd5Wg",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/3d/%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%90%D0%B4%D0%B0%D0%BC.jpg/240px-%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%90%D0%B4%D0%B0%D0%BC.jpg",
+      "rating": 5,
+      "countRate": 0,
+      "status": "gold",
+      "viewCount": 970,
+      "country": "США",
+      "type": "films"
+    },
+    {
+      "id": 79,
+      "title": "Чёрная пантера: Ваканда навсегда",
+      "description": "После смерти короля Т`Чаллы королева Рамонда, Шури, М`Баку, Окойе и Дора Милаж сражаются, чтобы защитить Ваканду от мировых держав.",
+      "year": 2022,
+      "time": 125,
+      "genre": "Приключения",
+      "trailer": "https://www.youtube.com/watch?v=2Tp8kAlkMVE",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/3b/Black_Panther_Wakanda_Forever_poster.jpg/240px-Black_Panther_Wakanda_Forever_poster.jpg",
+      "rating": 9,
+      "countRate": 0,
+      "status": "gold",
+      "viewCount": 800,
+      "country": "Россия",
+      "type": "films"
+    },
+    {
+      "id": 80,
+      "title": "Анчартед: На картах не значится",
+      "description": "Нейтан Дрейк и Виктор «Салли» Салливан, два искателя приключений, отправляются на поиски величайшего сокровища мира. Кроме того, они надеются найти улики, которые приведут их к давно потерянному брату Нейтана.",
+      "year": 2022,
+      "time": 114,
+      "genre": "Приключения",
+      "trailer": "https://www.youtube.com/watch?v=i0XvzdqAb9k",
+      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/3ddc0946-5e53-4f7a-b355-cd42c2280f9e/600x900",
+      "rating": 10,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 800,
+      "country": "Германия",
+      "type": "films"
+    },
+    {
+      "id": 81,
+      "title": "Начало",
+      "description": "Кобб – талантливый вор, лучший из лучших в опасном искусстве извлечения: он крадет ценные секреты из глубин подсознания во время сна, когда человеческий разум наиболее уязвим. Редкие способности Кобба сделали его ценным игроком в привычном к предательству мире промышленного шпионажа, но они же превратили его в извечного беглеца и лишили всего, что он когда-либо любил.",
+      "year": 2010,
+      "time": 148,
+      "genre": "Фантастика",
+      "trailer": "https://www.youtube.com/watch?v=85Zz1CCXyDI",
+      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8ab9a119-dd74-44f0-baec-0629797483d7/300x450",
+      "rating": 8,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 730,
+      "country": "Польша",
+      "type": "films"
+    },
+    {
+      "id": 82,
+      "title": "Почему он?",
+      "description": "Отец невесты воюет с безумным женихом-миллионером. Скабрезная комедия сценариста «Знакомства с родителями»",
+      "year": 2016,
+      "time": 106,
+      "genre": "Комедия",
+      "trailer": "https://www.youtube.com/watch?v=19v1MnY3Uf0",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/a/a6/Why_Him_%28film%29.jpg/640px-Why_Him_%28film%29.jpg",
+      "rating": 5,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 730,
+      "country": "Китай",
+      "type": "films"
+    },
+    {
+      "id": 83,
+      "title": "Джентльмены",
+      "description": "Талантливый выпускник Оксфорда, применив свой уникальный ум и невиданную дерзость, придумал нелегальную схему обогащения с использованием поместья обедневшей английской аристократии. Однако когда он решает продать свой бизнес влиятельному клану миллиардеров из США, на его пути встают не менее обаятельные, но жесткие джентльмены. Намечается обмен любезностями, который точно не обойдется",
+      "year": 2019,
+      "time": 113,
+      "genre": "Криминал",
+      "trailer": "https://www.youtube.com/embed/RDMlUyJsR_o?si=hYcoQvfuJurzU6zC",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/c/c1/%D0%94%D0%B6%D0%B5%D0%BD%D1%82%D0%BB%D1%8C%D0%BC%D0%B5%D0%BD%D1%8B.jpg",
+      "rating": 5,
+      "countRate": 0,
+      "status": "gold",
+      "viewCount": 58730,
+      "country": "Корея",
+      "type": "films"
+    },
+    {
+      "id": 84,
+      "title": "Джон Уик 2",
+      "description": "Когда бывший коллега Джона решает взять под свой контроль таинственную гильдию убийц, Уик вынужден выйти из отставки. Ведомый кровавой клятвой Джон отправляется в Рим, где ему придется сразиться с одними из самых опасных киллеров в мире.",
+      "year": 2017,
+      "time": 122,
+      "genre": "Боевик",
+      "trailer": "https://www.youtube.com/watch?v=0DkJa_aGTP8&t=3s",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/f/f1/John_Wick_2.jpg",
+      "rating": 2,
+      "countRate": 0,
+      "status": "gold",
+      "viewCount": 58730,
+      "country": "Япония",
+      "type": "films"
+    },
+    {
+      "id": 85,
+      "title": "Зеленая книга",
+      "description": "Бывший вышибала Тони нанимается водителем к темнокожему музыканту с аристократическими манерами Дону Ширли. Они отправляются в тур по южным штатам, где в 1960-х еще царили расовые предрассудки.",
+      "year": 2018,
+      "time": 129,
+      "genre": "драма",
+      "trailer": "https://www.youtube.com/watch?v=e6b9urtUJt0",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/f/f0/Green_Book.jpg",
+      "rating": 7,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 1000,
+      "country": "Австралия",
+      "type": "films"
+    },
+    {
+      "id": 86,
+      "title": "По соображениям совести",
+      "description": "Сознательный уклонист проходит через все тяготы фронта. Драма Мэла Гибсона о военном медике Десмонде Доссе",
+      "year": 2016,
+      "time": 133,
+      "genre": "драма",
+      "trailer": "https://www.youtube.com/watch?v=VxaGyCaCouY",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/2/2c/Hacksaw_Ridge.jpg",
+      "rating": 7,
+      "countRate": 0,
+      "status": "gold",
+      "viewCount": 400,
+      "country": "Франция",
+      "type": "films"
+    },
+    {
+      "id": 87,
+      "title": "Пушки Акимбо",
+      "description": "Интернет-тролля заставляют участвовать в кровавой бойне. Отпетый комедийный боевик с Дэниэлом Рэдклиффом",
+      "year": 2019,
+      "time": 97,
+      "genre": "Боевик",
+      "trailer": "https://www.youtube.com/watch?v=cMo3-FJBPLw",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/e/ea/Guns_Akimbo_%28film%29.jpg",
+      "rating": 8,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 400,
+      "country": "США",
+      "type": "films"
+    },
+    {
+      "id": 88,
+      "title": "Живая Сталь",
+      "description": "Отец с сыном тренируют робота-боксера и строят отношения с нуля. Хью Джекман в зрелищном семейном экшене",
+      "year": 2011,
+      "time": 121,
+      "genre": "Фантастика",
+      "trailer": "https://www.youtube.com/watch?v=VQfjnd3xCqo",
+      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/a2da53fd-24c9-4715-8f98-5382b387fd4d/300x450",
+      "rating": 8,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 400,
+      "country": "Россия",
+      "type": "films"
+    },
+    {
+      "id": 89,
+      "title": "Во все тяжкие",
+      "description": "«Во все тяжкие» — американская телевизионная криминальная драма, премьерные серии которой транслировались с 20 января 2008 года по 29 сентября 2013 года по кабельному каналу AMC.",
+      "year": 2008,
+      "time": 61,
+      "genre": "Драма",
+      "trailer": "https://www.youtube.com/watch?v=L5l3vv9n7EU",
+      "poster": "./assets/voVseTyajkie.jpg",
+      "rating": 9,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 0,
+      "country": "Германия",
+      "type": "series"
+    },
+    {
+      "id": 90,
+      "title": "Миллиа́рды",
+      "description": "«Миллиа́рды» — американский драматический телесериал с Дэмиэном Льюисом и Полом Джаматти в главных ролях. Двенадцать эпизодов шоу были заказаны телеканалом Showtime в марте 2015 года. Премьера состоялась 17 января 2016 года, однако первый эпизод стал доступен 1 января 2016 года онлайн.",
+      "year": 2016,
+      "time": 62,
+      "genre": "Боевик",
+      "trailer": "https://www.youtube.com/watch?v=NPFilbpd_Qs",
+      "poster": "./assets/billions.webp",
+      "rating": 5,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 0,
+      "country": "Китай",
+      "type": "series"
+    },
+    {
+      "id": 91,
+      "title": "Го́тэм",
+      "description": "«Го́тэм» — американский криминальный телесериал, произведённый в сотрудничестве компаний Primrose Hill Productions, DC Entertainment и Warner Bros. Television",
+      "year": 2014,
+      "time": 63,
+      "genre": "Ужасы",
+      "trailer": "https://www.youtube.com/watch?v=esAsOLKlU-Q",
+      "poster": "./assets/gotem.jpg",
+      "rating": 5,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 0,
+      "country": "Япония",
+      "type": "series"
+    },
+    {
+      "id": 92,
+      "title": "Человек-паук: Нет пути домой",
+      "description": "Жизнь и репутация Питера Паркера оказываются под угрозой, поскольку Мистерио раскрыл всему миру тайну личности Человека-паука. Пытаясь исправить ситуацию, Питер обращается за помощью к Стивену Стрэнджу, но вскоре всё становится намного опаснее.",
+      "year": 2021,
+      "time": 148,
+      "genre": "Комедия",
+      "trailer": "https://www.youtube.com/watch?v=hlANal2_tsc",
+      "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/731c4031-7389-44f4-8c15-f9f4e3b0ed90/300x450",
+      "rating": 9,
+      "countRate": 0,
+      "status": "free",
+      "viewCount": 2000,
+      "country": "США",
+      "type": "films"
+    },
+    {
+      "id": 93,
+      "title": "Чёрный Адам",
+      "description": "5000 лет назад Чёрный Адам был наделен силами египетских богов и заключён в тюрьму. Теперь он освобождается из своей усыпальницы и готовится явить миру уникальный подход к борьбе за справедливость.",
+      "year": 2022,
+      "time": 125,
+      "genre": "Криминал",
+      "trailer": "https://www.youtube.com/watch?v=qTLqSkKd5Wg",
+      "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/3d/%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%90%D0%B4%D0%B0%D0%BC.jpg/240px-%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%90%D0%B4%D0%B0%D0%BC.jpg",
+      "rating": 5,
+      "countRate": 0,
+      "status": "gold",
+      "viewCount": 970,
+      "country": "США",
+      "type": "films"
     }
   ]
 }

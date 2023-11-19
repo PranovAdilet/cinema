@@ -23,7 +23,7 @@ const Header = () => {
     useEffect(() => {
        dispatch(getAllUsers())
     }, [])
-    console.log(user)
+
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (location.pathname === "/films"){
             dispatch(changeSearch(e.target.value))
@@ -80,48 +80,60 @@ const Header = () => {
                                 <div className="header__auth">
                                     <img className="header__avatar" src={user.avatar} alt=""/>
                                     <div className="header__profile">
-                                        <div className="header__profile-right">
-                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
-                                                <span className="header__profile-icon"><BsBookmark/></span>
-                                                <p className="header__profile-link">Смотреть позже</p>
-                                            </div>
-                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
-                                                <span className="header__profile-icon"><BsBookmark/></span>
-                                                <p className="header__profile-link">Смотреть позже</p>
-                                            </div>
-                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
-                                                <span className="header__profile-icon"><BsBookmark/></span>
-                                                <p className="header__profile-link">Смотреть позже</p>
-                                            </div>
-                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
-                                                <span className="header__profile-icon"><BsBookmark/></span>
-                                                <p className="header__profile-link">Смотреть позже</p>
-                                            </div>
-                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
-                                                <span className="header__profile-icon"><BsBookmark/></span>
-                                                <p className="header__profile-link">Смотреть позже</p>
-                                            </div>
-                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
-                                                <span className="header__profile-icon"><BsBookmark/></span>
-                                                <p className="header__profile-link">Смотреть позже</p>
-                                            </div>
-                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
-                                                <span className="header__profile-icon"><BsBookmark/></span>
-                                                <p className="header__profile-link">Смотреть позже</p>
-                                            </div>
-
-
-                                        </div>
                                         <div className="header__profile-left">
-                                            <p onClick={() => {
-                                                dispatch(logOutAccount())
-                                                localStorage.removeItem('user')
-                                                navigate('/')
-                                            }}>Выйти</p>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
+                                            <div onClick={() => navigate("/favorites")} className="header__profile-block">
+                                                <span className="header__profile-icon"><BsBookmark/></span>
+                                                <p className="header__profile-link">Смотреть позже</p>
+                                            </div>
 
-                                            <p>LOGGGG</p>
-                                            <p>LOGGGG</p>
+
                                         </div>
+                                        <div className="header__profile-right">
+                                                <h4 className="header__profile-right-title">Выбор профиля</h4>
+                                                <div className="header__profile-right-emails">
+                                                    <div className="header__profile-right-email">
+                                                        <img className="header__avatar" src={user.avatar} alt=""/>
+                                                        <p className="header__profile-login">{user.login.length > 4 ? user.login.slice(0,5) + "..." : user.login}</p>
+                                                    </div>
+                                                    <div className="header__profile-right-email">
+                                                        <img className="header__avatar" src={user.avatar} alt=""/>
+                                                        <p className="header__profile-login">{user.login.length > 4 ? user.login.slice(0,5) + "..." : user.login}</p>
+                                                    </div>
+                                                    <div className="header__profile-right-email">
+                                                        <p className="header__profile-new">+</p>
+                                                        <p className="header__profile-login">Новый</p>
+                                                    </div>
+                                                </div>
+                                            {
+                                                user.email ? <div className="header__profile-right-info">
+                                                    <p className="header__profile-right-text">Редактировать профиль</p>
+                                                    <p className="header__profile-right-text">Настройки</p>
+                                                    <p className="header__profile-right-text">Помощь</p>
+                                                    <p className="header__profile-right-text"
+                                                       onClick={() => {
+                                                           dispatch(logOutAccount())
+                                                           localStorage.removeItem('user')
+                                                           navigate('/')
+                                                       }}>Выйти</p>
+                                                </div> : <h3>Войдите или зарегистрируйтесь</h3>
+                                            }
+                                            </div>
 
                                     </div>
                                 </div>:

@@ -12,6 +12,7 @@ import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
 import AdminPanel from "./pages/AdminPanel/AdminPanel"
 import FavoritesPage from "./pages/Favorites/FavoritesPage";
+import SimilarPage from "./pages/Simular/SimilarPage";
 
 const userValue = localStorage.getItem('user');
 export const newStatus = userValue !== null ? 'gold' : 'free'
@@ -30,7 +31,9 @@ function App() {
             <Route path={'film/:id'} element={<Film/>}/>
             <Route path={'series/:id'} element={<OneSeries/>}/>
             <Route path={'cartoons/:id'} element={<Cartoon/>}/>
+            <Route path={'similar/:id'} element={<SimilarPage/>}/>
             <Route path={'favorites'} element={<FavoritesPage/>}/>
+            <Route path={'similar'} element={<SimilarPage/>}/>
           </Route>
           <Route path={'/login'} element={<Login/>}/>
           <Route path={'/registration'} element={<Register/>}/>

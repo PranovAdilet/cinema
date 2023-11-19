@@ -36,7 +36,7 @@ export const getCartoons = createAsyncThunk(
     'cartoons/getCartoons',
     async (filter: IFilter) => {
         try {
-            const res = await axios(`/cartoons?${filter.genre !== '' ? `genre=${filter.genre}&` : ''
+            const res = await axios(`/films?type=cartoons&${filter.genre !== '' ? `genre=${filter.genre}&` : ''
             }${filter.year !== '' ? `year=${filter.year}&` : ''
             }${filter.search !== '' ? `title_like=${filter.search
             }&` : ''}${filter.sort !== "" ? `_sort=${filter.sort

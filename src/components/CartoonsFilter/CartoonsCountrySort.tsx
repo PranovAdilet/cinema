@@ -4,22 +4,21 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
-import {useAppDispatch} from "../../../redux/hooks/reduxHooks"
-import {IFilterState} from "../../../interface/app.interface";
-import {sortCountries} from "../../../redux/store/reducers/cinema";
-import {sortSeriesCountries} from "../../../redux/store/reducers/series";
+import {useAppDispatch} from "../../redux/hooks/reduxHooks"
+import {sortCountriesCartoons} from "../../redux/store/reducers/cartoons";
+import {IFilterState} from "../../interface/app.interface";
 
 interface props{
     setFilter: (obj: IFilterState) => void
-    filter: IFilterState
-}
+    filter: IFilterState}
 
-const SeriesCountrySort = ({filter, setFilter} : props) => {
+
+const CartoonsRatingSort = ({setFilter, filter} : props) => {
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(sortSeriesCountries(filter.country))
+        dispatch(sortCountriesCartoons(filter.country))
     }, [filter.country])
 
 
@@ -52,4 +51,4 @@ const SeriesCountrySort = ({filter, setFilter} : props) => {
     );
 };
 
-export default SeriesCountrySort;
+export default CartoonsRatingSort;

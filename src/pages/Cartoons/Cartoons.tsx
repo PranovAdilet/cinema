@@ -5,14 +5,14 @@ import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
 import {selectCartoons} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 import {TfiClose} from "react-icons/tfi"
-import CartoonsCard from "../../components/Cartoons/CartoonsCard/CartoonsCard";
-import CartoonsGenreSort from "../../components/Cartoons/CartoonsFilter/CartoonsGenreSort";
-import CartoonsYearSort from "../../components/Cartoons/CartoonsFilter/CartoonsYearSort";
-import CartoonsRatingSort from "../../components/Cartoons/CartoonsFilter/CartoonsRatingSort";
-import CartoonsSort from "../../components/Cartoons/CartoonsFilter/CartoonsSort";
-import SortCartoons from "../../components/Cartoons/SortCartoons";
-import CartoonsCountrySort from "../../components/Cartoons/CartoonsFilter/CartoonsCountrySort";
+import CartoonsGenreSort from "../../components/CartoonsFilter/CartoonsGenreSort";
+import CartoonsYearSort from "../../components/CartoonsFilter/CartoonsYearSort";
+import CartoonsRatingSort from "../../components/CartoonsFilter/CartoonsRatingSort";
+import CartoonsSort from "../../components/CartoonsFilter/CartoonsSort";
+import SortCartoons from "../../components/CartoonsFilter/SortCartoons";
+import CartoonsCountrySort from "../../components/CartoonsFilter/CartoonsCountrySort";
 import {IFilterState} from "../../interface/app.interface";
+import Card from "../../components/Card";
 
 const Cartoons = () => {
     const [filterState, setFilterState] = useState<IFilterState>({
@@ -89,7 +89,7 @@ const Cartoons = () => {
                             : status === 'done' ?
                                 <>
                                     {data.map((item) => (
-                                        <CartoonsCard key={item.id} item={item}/>
+                                        <Card key={item.id} item={item}/>
                                     ))
                                     }
                                 </> : <h2>{error}</h2>

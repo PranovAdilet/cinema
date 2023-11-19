@@ -20,7 +20,7 @@ export const getOneSeries = createAsyncThunk(
     "oneSeries/getOneSeries",
     async (id: string | undefined) => {
         try {
-            const res = await axios(`/series/${id}`)
+            const res = await axios(`/films/${id}`)
             if (res.statusText !== 'OK') {
                 throw new Error('Server error !')
             }

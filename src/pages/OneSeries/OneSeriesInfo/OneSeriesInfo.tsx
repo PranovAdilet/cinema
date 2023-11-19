@@ -4,6 +4,7 @@ import {IFilm} from '../../../interface/app.interface'
 
 
 const FilmsInfo = ({ product }: {product: IFilm}) => {
+    console.log(product)
 
     return (
         <div className="film__info">
