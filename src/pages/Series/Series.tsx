@@ -31,16 +31,12 @@ const Series = () => {
     const {status, error, data, filter} = useSelector(selectSeries)
 
 
-    const userValue = localStorage.getItem('user');
-
     const values = ["2023", "2022", "2021", "Новые", "Япония", "Россия"]
 
-    const newStatus = userValue !== null ? 'gold' : 'free';
 
     useEffect(() => {
        dispatch( getSeries({
-           ...filter,
-           status:newStatus
+           ...filter
        }))
     },[filter])
 

@@ -35,8 +35,7 @@ const Cartoons = () => {
 
     useEffect(() => {
         dispatch(getCartoons({
-            ...filter,
-            status:newStatus
+            ...filter
         }))
     }, [filter])
 
@@ -70,7 +69,7 @@ const Cartoons = () => {
                     <div className="films__filter2">
                         {
                             values.map((item) => (
-                                <SortCartoons filter={{...filter, status: newStatus}} key={item} active={active} setActive={setActive} value={item}/>
+                                <SortCartoons filter={{...filter}} key={item} active={active} setActive={setActive} value={item}/>
                             ))
                         }
                     </div>

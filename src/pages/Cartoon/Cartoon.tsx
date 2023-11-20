@@ -3,9 +3,9 @@ import {useParams} from 'react-router-dom'
 import {useSelector} from "react-redux";
 import CartoonInfo from "./CartoonInfo/CartoonInfo";
 import CartoonVideo from "./CartoonVideo/CartoonVideo";
-import {selectOneCartoon} from "../../redux/reduxSelectors/reduxSelectors"
+import {selectFilm} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
-import {getOneCartoon} from "../../redux/store/reducers/oneCartoon";
+import {getOneFilm} from "../../redux/store/reducers/oneFilm";
 
 
 const Cartoon = () => {
@@ -13,10 +13,10 @@ const Cartoon = () => {
 
     const dispatch = useAppDispatch()
     const params = useParams();
-    const {product} = useSelector(selectOneCartoon);
+    const {product} = useSelector(selectFilm);
 
     useEffect(() => {
-        dispatch(getOneCartoon(params.id))
+        dispatch(getOneFilm(params.id))
     },[]);
 
 

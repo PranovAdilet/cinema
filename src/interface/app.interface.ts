@@ -18,10 +18,10 @@ export interface IFilter{
     genre: string
     year: string
     search:string
-    status:string | null,
     sort: string
     rating: string
     country: string
+    type: string
 }
 
 export interface ILoginField{

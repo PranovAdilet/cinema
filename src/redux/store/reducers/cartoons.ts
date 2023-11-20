@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "../../../utils/axios";
 import {IFilm, IFilter} from '../../../interface/app.interface'
+import queryString from "query-string";
 
 interface CartoonsAsync {
     data: IFilm[],
@@ -12,6 +13,7 @@ interface CartoonsAsync {
         sort: string
         rating: string
         country: string
+        type: string
     },
     status: "loading"| "error" | "done" | "empty" | null,
     error: null | string
@@ -24,9 +26,10 @@ const initialState: CartoonsAsync = {
         genre : '',
         year: '',
         search: '',
-        sort: '',
+        sort: 'viewCount',
         rating: "",
-        country: ""
+        country: "",
+        type: "cartoons"
     },
     status: 'empty',
     error: ''
@@ -36,21 +39,28 @@ export const getCartoons = createAsyncThunk(
     'cartoons/getCartoons',
     async (filter: IFilter) => {
         try {
-            const res = await axios(`/films?type=cartoons&${filter.genre !== '' ? `genre=${filter.genre}&` : ''
-            }${filter.year !== '' ? `year=${filter.year}&` : ''
-            }${filter.search !== '' ? `title_like=${filter.search
-            }&` : ''}${filter.sort !== "" ? `_sort=${filter.sort
-            }&_order=desc&` : ""}${filter.rating !== "" ? `rating_gte=${filter.rating}&` : ""
-            }${filter.country !== "" ? `country=${filter.country}` : "" } `)
-            if (res.statusText !== 'OK') {
-                throw new Error('Server error !')
+            const queryParams = queryString.stringify({
+                type: 'cartoons',
+                genre: filter.genre || undefined,
+                year: filter.year || undefined,
+                title_like: filter.search || undefined,
+                sort: filter.sort || undefined,
+                rating_gte: filter.rating || undefined,
+                country: filter.country || undefined,
+            });
+
+            const res = await axios(`/films?${queryParams}`);
+
+            if (res.status === 200) {
+                return res.data;
+            } else {
+                throw new Error('Server error!');
             }
-            return res.data
         } catch (err) {
-            if (err instanceof Error){
-                console.log(err.message)
-            }else {
-                console.log('Unexpected error', err)
+            if (err instanceof Error) {
+                throw new Error(err.message);
+            } else {
+                console.log('Unexpected error', err);
             }
         }
     }

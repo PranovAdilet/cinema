@@ -47,12 +47,14 @@ const EditUser = ({item, changeInput, setChangeInput }: IProps) => {
             <td className="admin__table-info">
                 <input
                     type="text"
-                    onChange={(e) => inputLoginHandler(e, item)} value={changeInput.login} className="admin__table-input"/>
+                    // onChange={(e) => inputLoginHandler(e, item)}
+                value={changeInput.login} className="admin__table-input"/>
             </td>
             <td className="admin__table-info">
                 <input
                     type="email"
-                   onChange={(e) => inputEmailHandler(e, item)} value={changeInput.email} className="admin__table-input"
+                   // onChange={(e) => inputEmailHandler(e, item)}
+                    value={changeInput.email} className="admin__table-input"
                 />
             </td>
             <td className="admin__table-info">
@@ -60,7 +62,8 @@ const EditUser = ({item, changeInput, setChangeInput }: IProps) => {
                     type="tel"
                     mask={`+\\9\\96(999)99-99-99`}
 
-                    onChange={(e) => inputPhoneHandler(e, item)} value={changeInput.phone} className="admin__table-input"/>
+                    // onChange={(e) => inputPhoneHandler(e, item)}
+                value={changeInput.phone} className="admin__table-input"/>
             </td>
 
             <td className="admin__table-info"

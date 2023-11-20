@@ -8,7 +8,6 @@ import { selectSeries} from "../../redux/reduxSelectors/reduxSelectors";
 import {useEffect} from "react";
 import {getSeries} from "../../redux/store/reducers/series";
 import {Link} from "react-router-dom";
-import grimm from "../../../public/assets/grimm.webp"
 
 
 
@@ -23,8 +22,7 @@ const Slider = () => {
 
     useEffect(() => {
         dispatch(getSeries({
-            ...filter,
-            status:newStatus
+            ...filter
         }))
     }, [filter])
 

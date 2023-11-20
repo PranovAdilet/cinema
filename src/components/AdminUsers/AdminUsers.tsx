@@ -67,9 +67,9 @@ const AdminUsers = () => {
                           </td>
 
                           <td className="admin__table-info"
-                              onClick={() => {
-                                  setChangeInput(item)
-                              }}
+                              // onClick={() => {
+                              //     setChangeInput(item)
+                              // }}
                           >
                               <button className="admin__table-btn">
                                   Изменить

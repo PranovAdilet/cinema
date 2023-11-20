@@ -6,6 +6,20 @@
     column-gap: 8px;
     margin-bottom: 17px;
   }
+  &__empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    margin: 20px 0 50px ;
+    &-icon{
+      font-size: 50px;
+      margin: 40px;
+      fill:#939297
+    }
+  }
   &__text{
     color:#939297;
   }

@@ -14,9 +14,6 @@ import AdminPanel from "./pages/AdminPanel/AdminPanel"
 import FavoritesPage from "./pages/Favorites/FavoritesPage";
 import SimilarPage from "./pages/Simular/SimilarPage";
 
-const userValue = localStorage.getItem('user');
-export const newStatus = userValue !== null ? 'gold' : 'free'
-
 
 function App() {
 

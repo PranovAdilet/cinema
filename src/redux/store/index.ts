@@ -5,10 +5,9 @@ import cinemaSlice from "../store/reducers/cinema"
 import oneFilm from "../store/reducers/oneFilm"
 import series from "../store/reducers/series"
 import users from "./reducers/users"
-import oneSeries from "../store/reducers/oneSeries"
 import cartoons from "./reducers/cartoons";
-import oneCartoon from "./reducers/oneCartoon";
 import favoritesSlice from "./reducers/favorites";
+import allData from "./reducers/allFilms";
 import {Persistor} from "redux-persist/es/types";
 
 
@@ -23,10 +22,9 @@ const rootReducer = combineReducers({
     oneFilm: oneFilm,
     series: series,
     users: users,
-    oneSeries: oneSeries,
     cartoons: cartoons,
-    oneCartoon: oneCartoon,
-    favorites: favoritesSlice
+    favorites: favoritesSlice,
+    allData: allData
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

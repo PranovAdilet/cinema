@@ -1,26 +1,21 @@
-import {createAsyncThunk,createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {IFilm, IFilter} from "../../../interface/app.interface";
 import axios from "../../../utils/axios";
-import {IFilm} from '../../../interface/app.interface'
+import {getCinema} from "./cinema";
 
-interface CartoonAsync {
-    product : IFilm | null,
+
+
+interface allDataAsync {
+    data: IFilm[],
     status: "loading"| "error" | "done" | "empty" | null,
     error: null | string
 }
 
-const initialState: CartoonAsync = {
-    product : null,
-    error : '',
-    status : 'empty'
-}
-
-
-
-export const getOneCartoon = createAsyncThunk(
-    "oneCartoon/getOneCartoon",
-    async (id: string | undefined) => {
+export const getAllData = createAsyncThunk(
+    'cinema/getAllData',
+    async () => {
         try {
-            const res = await axios(`/films/${id}`)
+            const res = await axios(`/films`)
             if (res.statusText !== 'OK') {
                 throw new Error('Server error !')
             }
@@ -34,30 +29,36 @@ export const getOneCartoon = createAsyncThunk(
         }
     }
 )
-const oneCartoon = createSlice({
-    name: "oneCartoon",
-    initialState,
-    reducers : {
 
-    },
+const initialState: allDataAsync = {
+    data: [],
+    status: 'empty',
+    error: ''
+}
+
+
+const allDataSlice = createSlice({
+    name: 'allData',
+    initialState,
+    reducers: {},
     extraReducers : (builder) => {
         builder
-            .addCase(getOneCartoon.pending, (state) => {
+            .addCase(getAllData.pending, (state) => {
                 state.status = 'loading'
                 state.error = ''
             })
         builder
-            .addCase(getOneCartoon.rejected, (state, action) => {
+            .addCase(getAllData.rejected, (state, action) => {
                 state.status = 'error'
                 state.error = action.payload as string
             })
         builder
-            .addCase(getOneCartoon.fulfilled, (state, action) => {
+            .addCase(getAllData.fulfilled, (state, action) => {
                 state.status = 'done'
                 state.error = ''
-                state.product = action.payload
+                state.data = action.payload
             })
     }
 })
 
-export default  oneCartoon.reducer
+export default allDataSlice.reducer

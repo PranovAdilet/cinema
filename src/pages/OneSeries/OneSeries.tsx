@@ -1,11 +1,11 @@
 import {useEffect} from 'react';
 import {useParams} from 'react-router-dom'
 import {useSelector} from "react-redux";
-import {getOneSeries} from "../../redux/store/reducers/oneSeries";
 import OneSeriesInfo from "./OneSeriesInfo/OneSeriesInfo";
 import OneSeriesVideo from "./OneSeriesVideo/OneSeriesVideo";
-import {selectOneSeries} from "../../redux/reduxSelectors/reduxSelectors"
+import {selectFilm} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
+import {getOneFilm} from "../../redux/store/reducers/oneFilm";
 
 
 const OneSeries = () => {
@@ -15,10 +15,10 @@ const OneSeries = () => {
     const dispatch = useAppDispatch()
     const params = useParams();
 
-    const {product} = useSelector(selectOneSeries);
+    const {product} = useSelector(selectFilm);
 
     useEffect(() => {
-        dispatch(getOneSeries(params.id))
+        dispatch(getOneFilm(params.id))
     },[]);
 
 

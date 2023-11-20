@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import {useSelector} from "react-redux";
-import {selectFilm, selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
+import {selectData, selectFilm} from "../../redux/reduxSelectors/reduxSelectors";
 import {Link, useParams} from "react-router-dom";
 import {useAppDispatch} from "../../redux/hooks/reduxHooks";
-import {getAllData} from "../../redux/store/reducers/cinema";
-import {newStatus} from "../../App";
+import {getAllData} from "../../redux/store/reducers/allFilms";
 import {getOneFilm} from "../../redux/store/reducers/oneFilm";
 import Card from "../../components/Card";
 import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
@@ -16,13 +15,10 @@ const SimilarPage = () => {
     const dispatch = useAppDispatch()
 
     const {product} = useSelector(selectFilm)
-    const {data, filter, status, error} = useSelector(selectFilms)
+    const {data, status, error} = useSelector(selectData)
 
     useEffect(() => {
-        dispatch(getAllData({
-            ...filter,
-            status: newStatus
-        }))
+        dispatch(getAllData())
         dispatch(getOneFilm(params))
     }, [params])
 
@@ -41,6 +37,7 @@ const SimilarPage = () => {
            }
        }
     }
+    console.log(data)
 
 
     return (

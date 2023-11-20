@@ -15,7 +15,6 @@ const initialState: CinemaAsync = {
 }
 
 
-
 export const getOneFilm = createAsyncThunk(
     "onefilm/getOneFilm",
     async (id: string | undefined) => {

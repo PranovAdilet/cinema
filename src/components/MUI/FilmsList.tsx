@@ -1,47 +1,23 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation} from "swiper"
-import {AiOutlineStar,AiOutlineDisconnect} from 'react-icons/ai'
-import {BsBookmark, BsBookmarkFill} from 'react-icons/bs'
-import {ImMagicWand} from 'react-icons/im'
+import {AiOutlineDisconnect} from 'react-icons/ai'
 import "swiper/css";
 import {Link} from "react-router-dom"
-import {useEffect} from "react";
-import {useAppDispatch} from "../../redux/hooks/reduxHooks";
-import {useSelector} from "react-redux";
-import {selectCartoons, selectFavorites, selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
-import {getCartoons} from "../../redux/store/reducers/cartoons";
 import {IFilm} from "../../interface/app.interface";
-import {getCinema, sortFilms} from "../../redux/store/reducers/cinema";
-import {addFavorite, removeFavorite} from "../../redux/store/reducers/favorites";
 import AddFavorite from "../AddFavorite";
 import Similar from "../Similar";
-
-const FilmList = () => {
-    const dispatch = useAppDispatch()
-    const {filter, data} = useSelector(selectFilms)
-    const {favoritesData} = useSelector(selectFavorites)
+import {useState} from "react";
+import RatingContent from "../RatingContent";
+import RatingFilm from "../RatingFilm";
 
 
-    const userValue = localStorage.getItem('user');
-    const newStatus = userValue !== null ? 'gold' : 'free';
+interface IProps{
+    data: IFilm[]
+}
 
-    useEffect(() => {
-        dispatch(getCinema({
-            ...filter,
-            status:newStatus
-        }))
-    }, [filter])
+const FilmList = ({data} : IProps) => {
 
-    const addFavoriteHandler = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, item: IFilm) => {
-        e.preventDefault()
-        favoritesData.findIndex((el) => el.id === item.id) > -1 ?
-            dispatch(removeFavorite(item.id)) : dispatch(addFavorite(item))
-
-    }
-
-
-
-
+    const [ratingState, setRatingState] = useState(false)
     const time = (item: IFilm) => {
         return <>
             {!isNaN(item.time) ? (
@@ -52,13 +28,24 @@ const FilmList = () => {
         </>
     }
 
+    const titleFunction = () => {
+        if (data[0] && data[0].type === "series"){
+            return "Лучшие сериалы"
+        }else if (data[0] && data[0].type === "films"){
+            return "Новые фильмы"
+        } else {
+            return "Лучшие мультфильмы"
+        }
+
+
+    }
+
     return (
         <section className="film-list">
-
             <div className="film-list__container">
-                <h2 className="film-list__title">
-                    Новые фильмы
-                </h2>
+                <h2 className="film-list__title">{
+                    titleFunction()
+                }</h2>
                 <Swiper
                     slidesOffsetBefore={1}
                     slidesOffsetAfter={-130}
@@ -89,12 +76,7 @@ const FilmList = () => {
                                                 <div className="film-list__card-icons">
                                                     <AddFavorite item={item}/>
                                                     <Similar item={item}/>
-                                                    <span className="film-list__card-icon">
-                                            <AiOutlineStar/>
-                                               <span className="film-list__card-move">
-                                                 Oценить
-                                            </span>
-                                        </span>
+                                                    <RatingFilm setRatingState={setRatingState}/>
                                                     <div className="film-list__card-icon">
                                                         <AiOutlineDisconnect/>
                                                         <p className="film-list__card-move">
@@ -118,6 +100,9 @@ const FilmList = () => {
 
                 </Swiper>
             </div>
+            {
+                ratingState && <RatingContent setRatingState={setRatingState}/>
+            }
         </section>
     );
 };

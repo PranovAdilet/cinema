@@ -1,11 +1,16 @@
-import {Link, useNavigate} from 'react-router-dom'
-import {AiOutlineDisconnect, AiOutlineStar} from "react-icons/ai";
+import {Link} from 'react-router-dom'
+import {AiOutlineDisconnect} from "react-icons/ai";
 import {IFilm} from "../interface/app.interface"
 import AddFavorite from "./AddFavorite";
 import Similar from "./Similar";
+import RatingContent from "./RatingContent";
+import RatingFilm from "./RatingFilm";
+import {useState} from "react";
 
 
 const Card = ({item}: {item: IFilm}) => {
+
+    const [ratingState, setRatingState] = useState(false)
 
     const posterType = item.poster.startsWith("./") ? `/${item.poster}` : item.poster
     
@@ -29,12 +34,7 @@ const Card = ({item}: {item: IFilm}) => {
                         <div className="film-list__card-icons">
                             <AddFavorite item={item}/>
                             <Similar item={item}/>
-                            <span className="film-list__card-icon">
-                                            <AiOutlineStar/>
-                                               <span className="film-list__card-move">
-                                                 Oценить
-                                            </span>
-                                        </span>
+                            <RatingFilm setRatingState={setRatingState}/>
                             <div className="film-list__card-icon">
                                 <AiOutlineDisconnect/>
                                 <p className="film-list__card-move">
@@ -53,6 +53,9 @@ const Card = ({item}: {item: IFilm}) => {
                 </Link>
 
             </h3>
+            {
+                ratingState && <RatingContent setRatingState={setRatingState}/>
+            }
         </div>
     );
 };

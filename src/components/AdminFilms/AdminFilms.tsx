@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 import {selectFilms} from "../../redux/reduxSelectors/reduxSelectors";
 import {getCinema} from "../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../redux/hooks/reduxHooks";
-import {newStatus} from "../../App";
 
 
 
@@ -14,7 +13,7 @@ const AdminFilms = () => {
     const {data, filter} = useSelector( selectFilms)
 
     useEffect(() => {
-        dispatch(getCinema({...filter, status: newStatus}))
+        dispatch(getCinema({...filter}))
     }, [])
 
     return (
