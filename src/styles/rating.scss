@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
 
-  background-color: rgba(8, 6, 15, 0.93);
+  background-color: rgba(8, 6, 15, 0.95);
   z-index: 1000;
 
   width: 100%;
@@ -13,9 +13,10 @@
   justify-content: center;
   align-items: center;
   &__content{
+
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
   }
   &__icon{
     position: absolute;
@@ -34,6 +35,7 @@
   &__text{
     color:#939297;
     margin: 15px 0 25px;
+    text-align: center;
   }
   &__btn{
     font-size: 17px;
@@ -44,5 +46,15 @@
     border: none;
     outline: none;
     cursor: pointer;
+    margin-top: 20px;
+    &:hover{
+      background: red;
+    }
+  }
+  &__state{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 33px !important;
   }
 }

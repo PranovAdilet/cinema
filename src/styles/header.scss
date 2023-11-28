@@ -68,12 +68,37 @@
     display: flex;
     column-gap: 20px;
     align-items: center;
+    &-search{
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      cursor: pointer;
+      &:hover{
+        & > .header__search{
+            &::placeholder {
+              color: white;
+          }
+
+        }
+        & > .header__right-search-icon {
+          fill: white;
+        };
+
+      }
+      &-icon{
+        font-size: 20px;
+        color: #a5a1b2;
+        fill: #a5a1b2;
+      }
+    }
   }
 
   &__search {
     border: none;
     outline: none;
     background: transparent;
+    cursor: pointer;
+    color: #a5a1b2;
 
     &::placeholder {
       color: #a5a1b2;

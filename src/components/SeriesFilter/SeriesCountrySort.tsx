@@ -6,7 +6,6 @@ import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 import {IFilterState} from "../../interface/app.interface";
-import {sortCountries} from "../../redux/store/reducers/cinema";
 import {sortSeriesCountries} from "../../redux/store/reducers/series";
 
 interface props{

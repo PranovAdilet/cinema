@@ -5,18 +5,19 @@ import Card from "../../components/Card";
 import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
 import GenreSort from "../../components/FilmsFilter/GenreSort";
 import FilmsYear from "../../components/FilmsFilter/FilmsYear";
-import { selectFilms} from "../../redux/reduxSelectors/reduxSelectors"
+import {selectData, selectFilms} from "../../redux/reduxSelectors/reduxSelectors"
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 import RatingSort from "../../components/FilmsFilter/RatingSort";
 import FilmsSort from "../../components/FilmsFilter/FilmsSort";
 import {TfiClose} from "react-icons/tfi"
 import FilmsActiveItem from "../../components/FilmsActiveItem";
-import {newStatus} from "../../utils/localStorageUtils";
 import {IFilterState} from "../../interface/app.interface";
 import FilmsCountrySort from "../../components/FilmsFilter/FilmsCountrySort";
 
 
 const Films = () => {
+    window.scroll(0, 0)
+
     const [filterState, setFilterState] = useState<IFilterState>({
         state: "",
         year: "",
@@ -31,8 +32,7 @@ const Films = () => {
     const {status, error, data, filter} = useSelector(selectFilms)
 
 
-
-    const values = ["2023", "2022", "2021", "Новые", "Япония", "Россия"]
+    const values = ["2023", "2022", "2021", "Новые", "Япония", "Россия", "Лучшие"]
 
 
     useEffect(() => {
@@ -53,7 +53,6 @@ const Films = () => {
         })
         setActive("")
     }
-    console.log(newStatus)
 
     return (
         <>

@@ -11,6 +11,7 @@ import {useState} from "react";
 const Card = ({item}: {item: IFilm}) => {
 
     const [ratingState, setRatingState] = useState(false)
+    const [stateRenderRating, setStateRenderRating] = useState<boolean>(false)
 
     const posterType = item.poster.startsWith("./") ? `/${item.poster}` : item.poster
     
@@ -51,10 +52,9 @@ const Card = ({item}: {item: IFilm}) => {
                 <Link to={`/film/${item.id}`}>
                     {item.title}
                 </Link>
-
             </h3>
             {
-                ratingState && <RatingContent setRatingState={setRatingState}/>
+                ratingState && <RatingContent setRenderRating={setStateRenderRating} item={item} setRatingState={setRatingState}/>
             }
         </div>
     );

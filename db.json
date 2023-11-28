@@ -6,7 +6,7 @@
       "login": "Kana",
       "phone": "+996(111)11-11-11",
       "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg",
-      "id": 3
+      "id": 7
     },
     {
       "email": "Pranov@mail.ru",
@@ -14,7 +14,39 @@
       "login": "Adilet",
       "phone": "+996(999)99-99-99",
       "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg",
-      "id": 4
+      "id": 8
+    },
+    {
+      "email": "Adilet@mail.ru",
+      "password": "$2a$10$Sx1bGMGfesa/0d9uLipKAeAMIQOSnEtWJTWqR49YhZ0MJiHc760F.",
+      "login": "Pranov",
+      "phone": "+996(333)33-33-33",
+      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg",
+      "id": 9
+    },
+    {
+      "email": "Nurs@mail.ru",
+      "password": "$2a$10$Tm6ydqinwypFGlXAx4DUhurekT1byJVW76AvnzmOq9yDO66gjL6X6",
+      "login": "Nurs",
+      "phone": "+996(666)66-66-66",
+      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg",
+      "id": 10
+    },
+    {
+      "email": "Max@mail.ru",
+      "password": "$2a$10$VS7Yyh7xFzYWH9Pxa6sIauHyTE4Z6OhOXdLPoNpPrVVCmG8C.l6mC",
+      "login": "Max",
+      "phone": "+996(455)55-55-55",
+      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg",
+      "id": 11
+    },
+    {
+      "email": "Nurs22@mail.ru",
+      "password": "$2a$10$6CyyPlHo44FRUvpE0azmz.mDPPxh4tCKDVAmadGCWWvfSHo/zW4JS",
+      "login": "Nurskik",
+      "phone": "+996(333)33-33-33",
+      "avatar": "https://i.pinimg.com/564x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg",
+      "id": 12
     }
   ],
   "films": [
@@ -59,7 +91,7 @@
       "genre": "Аниме",
       "trailer": "https://www.youtube.com/embed/vFnoS-55_88?si=rOcARLrbMsTDLq4u",
       "poster": "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
-      "rating": 10,
+      "rating": 7.5,
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
@@ -219,7 +251,7 @@
       "genre": "Аниме",
       "trailer": "https://www.youtube.com/embed/vFnoS-55_88?si=rOcARLrbMsTDLq4u",
       "poster": "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
-      "rating": 10,
+      "rating": 8,
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
@@ -1163,7 +1195,7 @@
       "genre": "Фантастика",
       "trailer": "кольцо власти трейлер",
       "poster": "./assets/lordOfRings.webp",
-      "rating": 8,
+      "rating": 6,
       "countRate": 0,
       "status": "gold",
       "viewCount": 0,
@@ -1243,7 +1275,7 @@
       "genre": "Приключения",
       "trailer": "https://www.youtube.com/watch?v=hlANal2_tsc",
       "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/731c4031-7389-44f4-8c15-f9f4e3b0ed90/300x450",
-      "rating": 9,
+      "rating": 6.5,
       "countRate": 0,
       "status": "free",
       "viewCount": 2000,
@@ -1259,7 +1291,7 @@
       "genre": "Приключения",
       "trailer": "https://www.youtube.com/watch?v=qTLqSkKd5Wg",
       "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/3d/%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%90%D0%B4%D0%B0%D0%BC.jpg/240px-%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D0%90%D0%B4%D0%B0%D0%BC.jpg",
-      "rating": 5,
+      "rating": 10,
       "countRate": 0,
       "status": "gold",
       "viewCount": 970,
@@ -1275,7 +1307,7 @@
       "genre": "Приключения",
       "trailer": "https://www.youtube.com/watch?v=2Tp8kAlkMVE",
       "poster": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/3b/Black_Panther_Wakanda_Forever_poster.jpg/240px-Black_Panther_Wakanda_Forever_poster.jpg",
-      "rating": 9,
+      "rating": 6.5,
       "countRate": 0,
       "status": "gold",
       "viewCount": 800,
@@ -1291,7 +1323,7 @@
       "genre": "Приключения",
       "trailer": "https://www.youtube.com/watch?v=i0XvzdqAb9k",
       "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/3ddc0946-5e53-4f7a-b355-cd42c2280f9e/600x900",
-      "rating": 10,
+      "rating": 7,
       "countRate": 0,
       "status": "free",
       "viewCount": 800,
@@ -1307,7 +1339,7 @@
       "genre": "Фантастика",
       "trailer": "https://www.youtube.com/watch?v=85Zz1CCXyDI",
       "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8ab9a119-dd74-44f0-baec-0629797483d7/300x450",
-      "rating": 8,
+      "rating": 5.5,
       "countRate": 0,
       "status": "free",
       "viewCount": 730,
@@ -1476,7 +1508,7 @@
     },
     {
       "id": 92,
-      "title": "Человек-паук: Нет пути домой",
+      "title": "Человек-паук: Нет пути домой ",
       "description": "Жизнь и репутация Питера Паркера оказываются под угрозой, поскольку Мистерио раскрыл всему миру тайну личности Человека-паука. Пытаясь исправить ситуацию, Питер обращается за помощью к Стивену Стрэнджу, но вскоре всё становится намного опаснее.",
       "year": 2021,
       "time": 148,
@@ -1492,7 +1524,7 @@
     },
     {
       "id": 93,
-      "title": "Чёрный Адам",
+      "title": "Чёрный Адам ",
       "description": "5000 лет назад Чёрный Адам был наделен силами египетских богов и заключён в тюрьму. Теперь он освобождается из своей усыпальницы и готовится явить миру уникальный подход к борьбе за справедливость.",
       "year": 2022,
       "time": 125,

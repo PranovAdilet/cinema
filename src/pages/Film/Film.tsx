@@ -17,7 +17,7 @@ const Film = () => {
 
     useEffect(() => {
         dispatch(getOneFilm(params.id))
-    },[]);
+    },[params.id]);
     
 
     return (

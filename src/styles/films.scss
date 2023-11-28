@@ -28,6 +28,16 @@
 
     }
   }
+  &__active{
+    &-block{
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+    }
+    &-icon{
+      font-size: 20px;
+    }
+  }
   &__filter2{
     display: flex;
     align-items: center;
@@ -44,18 +54,23 @@
     cursor: pointer;
 
     &_active{
-      border: none !important;
-      padding: 12px 25px;
-      min-width: 100px;
-      border-radius: 20px !important;
-      cursor: pointer;
-      background: #252035 !important;
-      color: #676471 !important;
+        border: none !important;
+        padding: 12px 25px;
+        min-width: 100px;
+        border-radius: 20px !important;
+        cursor: pointer;
+        background: #252035 !important;
+        color: #676471 !important;
 
     }
     &:hover{
+      & > p {
+        color: #312b45 !important;
+      }
+      & > svg{
+        fill: #312b45;
+      }
       transition: .3s;
-      color: #312b45 !important;
       background: white !important;
     }
   }

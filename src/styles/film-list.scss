@@ -1,9 +1,12 @@
 .film-list {
   padding-bottom: 40px;
+  position: relative;
+
   &__container{
     padding: 0 0 0 30px;
   }
   &__title{
+    font-weight: 700;
     margin-bottom: 30px;
   }
   &__card{

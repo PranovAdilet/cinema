@@ -17,10 +17,13 @@ const SimilarPage = () => {
     const {product} = useSelector(selectFilm)
     const {data, status, error} = useSelector(selectData)
 
+
     useEffect(() => {
         dispatch(getAllData())
         dispatch(getOneFilm(params))
     }, [params])
+
+
 
     const similarData = product && data.filter((item) =>  item.id !== product.id &&
         item.genre === product.genre &&
@@ -37,7 +40,6 @@ const SimilarPage = () => {
            }
        }
     }
-    console.log(data)
 
 
     return (

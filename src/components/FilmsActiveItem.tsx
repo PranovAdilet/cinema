@@ -1,6 +1,8 @@
 import React from 'react';
 import {changeYear, sortCountries} from "../redux/store/reducers/cinema";
 import {useAppDispatch} from "../redux/hooks/reduxHooks";
+import { IoMdClose } from "react-icons/io";
+import { GoPlus } from "react-icons/go";
 
 interface props {
     active: string
@@ -11,6 +13,8 @@ interface props {
 
 
 const FilmsActiveItem = ({setActive, active, value}: props) => {
+
+
 
     const handleClick = () => {
         if (!isNaN(+value)) {
@@ -25,9 +29,13 @@ const FilmsActiveItem = ({setActive, active, value}: props) => {
 
     const dispatch = useAppDispatch()
     return (
-        <p onClick={handleClick}
-           className={`${active === value ? "films__item_active" : ""} films__item`}>{value}
-        </p>
+        <div className={`  films__active-block`}>
+            <p className={`${active === value ? "films__item_active" : "films__item"}`} onClick={handleClick}>{value}</p>
+            {
+                active !== value ? <GoPlus className="films__active-icon"/> : <IoMdClose className="films__active-icon"/>
+            }
+
+        </div>
     );
 };
 

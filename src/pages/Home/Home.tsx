@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Slider from "../../components/MUI/Slider";
 import FilmList from "../../components/MUI/FilmsList";
 import {getCinema} from "../../redux/store/reducers/cinema";
@@ -6,32 +6,45 @@ import {useSelector} from "react-redux";
 import {selectCartoons, selectFilms, selectSeries} from "../../redux/reduxSelectors/reduxSelectors";
 import {getSeries} from "../../redux/store/reducers/series";
 import {getCartoons} from "../../redux/store/reducers/cartoons";
-import {IFilter} from "../../interface/app.interface";
 import {useAppDispatch} from "../../redux/hooks/reduxHooks";
+import Sorting from "../../components/Sorting";
 
 const Home = () => {
-    const {filter: filterSeries, data : dataSeries} = useSelector(selectSeries)
-    const {filter : filterCartoons, data : dataCartoons} = useSelector(selectCartoons)
-    const {filter : filterFilms, data : dataFilms} = useSelector(selectFilms)
+    const { data : dataSeries} = useSelector(selectSeries)
+    const { data : dataCartoons} = useSelector(selectCartoons)
+    const { data : dataFilms} = useSelector(selectFilms)
 
+    const [stateRenderRating, setStateRenderRating] = useState<boolean>(false)
+
+    const newFilter = {
+        genre : '',
+        year: '',
+        search: '',
+        sort: '',
+        rating: "",
+        country: "",
+        type: "films"
+    }
     const dispatch = useAppDispatch()
-    const fetchData = (filter : IFilter, dispatchFunction : Function) => {
-        dispatch(dispatchFunction(filter))
-    };
 
     useEffect(() => {
-        fetchData(filterFilms, getCinema);
-        fetchData(filterSeries, getSeries);
-        fetchData(filterCartoons, getCartoons);
-    }, []);
+        dispatch(getCinema(newFilter))
+        dispatch(getCartoons(newFilter))
+        dispatch(getSeries(newFilter))
+        setStateRenderRating(false)
+
+    }, [stateRenderRating]);
 
     return (
 
         <div>
             <Slider/>
-            <FilmList data={dataFilms}/>
-            <FilmList data={dataSeries}/>
-            <FilmList data={dataCartoons}/>
+            <Sorting/>
+            <FilmList setStateRenderRating={setStateRenderRating} stateRenderRating={stateRenderRating} data={dataFilms}/>
+            <FilmList  setStateRenderRating={setStateRenderRating} stateRenderRating={stateRenderRating} data={dataSeries}/>
+            <FilmList  setStateRenderRating={setStateRenderRating} stateRenderRating={stateRenderRating} data={dataCartoons}/>
+            <FilmList setStateRenderRating={setStateRenderRating} stateRenderRating={stateRenderRating} data={dataFilms}/>
+            <FilmList  setStateRenderRating={setStateRenderRating} stateRenderRating={stateRenderRating} data={dataSeries}/>
         </div>
     );
 };

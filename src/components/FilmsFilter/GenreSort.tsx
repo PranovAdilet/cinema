@@ -7,6 +7,9 @@ import Select, {SelectChangeEvent} from '@mui/material/Select';
 import {changeGenre} from "../../redux/store/reducers/cinema";
 import {useAppDispatch} from "../../redux/hooks/reduxHooks"
 import {IFilterState} from "../../interface/app.interface";
+import {useSelector} from "react-redux";
+import {selectData} from "../../redux/reduxSelectors/reduxSelectors";
+import {sortingFilms} from "../../redux/store/reducers/allFilms";
 
 interface props{
     setFilter: (obj: IFilterState) => void
@@ -15,14 +18,25 @@ interface props{
 
 
 const GenreSort = ({filter, setFilter} : props) => {
+    const {sorting} = useSelector(selectData)
+
 
     const dispatch = useAppDispatch();
 
 
     useEffect(() => {
         dispatch(changeGenre(filter.genreState))
+        if (sorting){
+            setFilter({
+                ...filter,
+                genreState: sorting
+            })
+        }
+        dispatch(sortingFilms(""))
     }, [filter.genreState])
 
+
+    console.log(sorting)
 
     return (
         <Box className="films__filter-box" sx={{minWidth: 200}}>

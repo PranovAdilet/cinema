@@ -10,6 +10,7 @@
   font-weight: 400;
   color: #ffffff;
   scroll-behavior: smooth;
+
 }
 body {
   background: #100e19;
@@ -38,3 +39,5 @@ body {
 @import "footer";
 @import "favorites";
 @import "rating";
+@import "search";
+@import "sorting";

@@ -1,0 +1,78 @@
+.sorting{
+  width: 100%;
+  padding: 20px 30px 50px;
+  position: relative;
+
+  display: flex;
+  column-gap: 12px !important;
+  &__item{
+
+    display: flex;
+    align-items: center;
+    column-gap: 15px !important;
+
+    background-color: rgba(34,34,37,.75);
+    padding: 20px 30px !important;
+
+    border-radius: 13px;
+    cursor: pointer;
+
+    &-title{
+      font-size: 17px !important;
+    }
+    &-icon{
+      font-size: 25px !important;
+    }
+  }
+}
+
+
+.sorting .swiper-button-next:after {
+  position: absolute;
+  right: 100%;
+  top: -50%;
+
+  color:#ffffff;
+  padding: 27px 22px;
+
+  font-size: 20px;
+
+  backdrop-filter: blur(13px);
+  transition: .2s;
+  background: hsla(258,4%,55%,.32);
+  border-radius: 10px
+}
+
+.sorting .swiper-button-next:hover::after {
+  backdrop-filter: blur(13px);
+  background: hsla(258,4%,55%,.32);
+  transform: scale(120%);
+  transition: .2s;
+  border-radius: 10px
+}
+.sorting .swiper-button-prev:after {
+  position: absolute;
+  left: 80%;
+  top: -50%;
+
+
+  padding: 27px 22px;
+  font-size: 20px;
+
+  color: #ffffff;
+  backdrop-filter: blur(13px);
+  transition: .2s;
+  background: hsla(258,4%,55%,.32);
+
+  border-radius: 10px
+}
+
+.sorting .swiper-button-prev:hover::after {
+  backdrop-filter: blur(13px);
+  background: hsla(258,4%,55%,.32);
+
+  transition: .2s;
+  border-radius: 10px;
+
+  transform: scale(120%)
+}

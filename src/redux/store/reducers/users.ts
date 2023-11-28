@@ -16,6 +16,7 @@ interface UserSlice {
     status: "loading" | "empty" | "done" | "error"
     error:string,
     users: IShippingFields[]
+    activeUsers: IShippingFields[]
 }
 
 const initialState: UserSlice = {
@@ -27,7 +28,8 @@ const initialState: UserSlice = {
     },
     status: "empty",
     error:"",
-    users: []
+    users: [],
+    activeUsers: []
 }
 export const getAllUsers = createAsyncThunk(
     "user/getAllUsers",
@@ -100,16 +102,35 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
+
         loginAccount : (state,action) => {
-             state.user = action.payload
+            const existingUserIndex = state.activeUsers.findIndex((item) => item.id === action.payload.id);
+
+            if (existingUserIndex !== -1) {
+                state.activeUsers[existingUserIndex] = { ...action.payload };
+
+            } else {
+                state.activeUsers = [...state.activeUsers, { ...action.payload }];
+            }
+
+            state.user = action.payload;
         },
-        logOutAccount : (state) => {
+        logOutAccount : (state, action) => {
+            if (state.activeUsers.length >= 1){
+                state.activeUsers = state.activeUsers.filter((item) => item.email !== action.payload.email)
+                console.log(state.activeUsers)
+            }else {
+                state.activeUsers = []
+                console.log(2)
+            }
+
             state.user = {
                 email: '',
                 login: '',
                 phone: "",
                 avatar: ""
             }
+
         }
     },
     extraReducers:(builder) => {

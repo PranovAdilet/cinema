@@ -1,45 +1,45 @@
-import {Link, NavLink, useNavigate, useLocation} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import {BsFillCameraReelsFill} from 'react-icons/bs'
 import { useSelector} from "react-redux";
-import {changeSearch} from '../../../redux/store/reducers/cinema'
-import {changeSeriesSearch} from '../../../redux/store/reducers/series'
 import {selectUser} from '../../../redux/reduxSelectors/reduxSelectors'
-import {ChangeEvent, useEffect} from "react";
+import { useEffect, useState} from "react";
 import {getAllUsers, logOutAccount} from "../../../redux/store/reducers/users";
-import {changeCartoonsSearch} from "../../../redux/store/reducers/cartoons";
-import { DebouncedFunc } from 'lodash';
-import _ from 'lodash';
 import {useAppDispatch} from "../../../redux/hooks/reduxHooks";
 import {BsBookmark} from "react-icons/bs";
+import SearchContent from "../../Search__content";
+import { IoIosSearch } from "react-icons/io";
+import {IShippingFields} from "../../../interface/app.interface";
 
 const Header = () => {
-
+    const [activeUser, setActiveUser] = useState<IShippingFields | null>()
+    const [searchState, setSearchState] = useState(false)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
-    const location = useLocation()
 
-    const {user, users} = useSelector(selectUser)
+    const {user, activeUsers} = useSelector(selectUser)
 
     useEffect(() => {
+        if (user.email){
+            setActiveUser({...user, password: "", id: Math.floor(Math.random())})
+        }else if (activeUsers.length) {
+            setActiveUser(activeUsers[activeUsers.length - 1])
+        }else {
+            setActiveUser(null)
+        }
+
        dispatch(getAllUsers())
     }, [])
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        if (location.pathname === "/films"){
-            dispatch(changeSearch(e.target.value))
-        }
-        if (location.pathname === "/series"){
-            dispatch(changeSeriesSearch(e.target.value))
-        }
-
-        if (location.pathname === "/cartoons"){
-            dispatch(changeCartoonsSearch(e.target.value))
-        }
+    const signOutHandler = () => {
+        dispatch(logOutAccount(user))
+        const updatedActiveUser =
+            activeUsers.length > 1 ? activeUsers[activeUsers.length - 1] : null;
+        console.log(updatedActiveUser)
+        setActiveUser(updatedActiveUser);
+        navigate('/');
     }
-    const debounceSearch: DebouncedFunc<typeof handleChange> = _.debounce(handleChange, 500)
 
-
-
+    console.log(activeUsers)
     return (
         <header className="header">
             <div className="container">
@@ -70,13 +70,19 @@ const Header = () => {
                     </ul>
 
                     <div className="header__right">
-                        <input className="header__search" type="search" placeholder='Поиск' onChange={debounceSearch}/>
+                        <div onClick={() => setSearchState(true)} className="header__right-search">
+                            <IoIosSearch className="header__right-search-icon"/>
+                            <input placeholder="Поиск" className="header__search" type="search"/>
+                        </div>
+                        {
+                            searchState && <SearchContent setSearchState={setSearchState}/>
+                        }
                         <Link to={'/admin-panel'}>
                             Админ панель
                         </Link>
                                 <div className="header__auth">
                                     {
-                                        user.email ? <img className="header__avatar" src={user.avatar} alt=""/> :
+                                        activeUser && activeUser.email ? <img className="header__avatar" src={activeUser.avatar} alt=""/> :
                                             <div onClick={() => navigate("/login")} className="header__noUser">
                                                 <img className="header__noUser-img" src="https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528700_45-abrakadabra-fun-p-serii-chelovek-na-avu-52.jpg" alt=""/>
                                                 <p className="header__noUser-text"> Войти</p>
@@ -109,34 +115,30 @@ const Header = () => {
                                         </div>
                                         <div className="header__profile-right">
                                         {
-                                            user.email ?
+                                            activeUser && activeUser.email ?
                                                 <>
                                                     <h4 className="header__profile-right-title">Выбор профиля</h4>
                                                     <div className="header__profile-right-emails">
-                                                        <div className="header__profile-right-email">
-                                                            <img className="header__avatar" src={user.avatar} alt=""/>
-                                                            <p className="header__profile-login">{user.login.length > 4 ? user.login.slice(0,5) + "..." : user.login}</p>
-                                                        </div>
-                                                        <div className="header__profile-right-email">
-                                                            <img className="header__avatar" src={user.avatar} alt=""/>
-                                                            <p className="header__profile-login">{user.login.length > 4 ? user.login.slice(0,5) + "..." : user.login}</p>
-                                                        </div>
-                                                        <div className="header__profile-right-email">
+                                                        {
+                                                            activeUsers.map((item) => (
+                                                                <div key={item.id} onClick={() => setActiveUser(item)} className="header__profile-right-email">
+                                                                    <img className="header__avatar" src={item.avatar} alt=""/>
+                                                                    <p className="header__profile-login">{item.login.length > 4 ? item.login.slice(0,5) + "..." : item.login}</p>
+                                                                </div>
+                                                            ))
+                                                        }
+                                                        <div onClick={() => navigate('/login')} className="header__profile-right-email">
                                                             <p className="header__profile-new">+</p>
                                                             <p className="header__profile-login">Новый</p>
                                                         </div>
                                                     </div>
                                                     {
-                                                        user.email ? <div className="header__profile-right-info">
+                                                        activeUser ? <div className="header__profile-right-info">
                                                             <p className="header__profile-right-text">Редактировать профиль</p>
                                                             <p className="header__profile-right-text">Настройки</p>
                                                             <p className="header__profile-right-text">Помощь</p>
                                                             <p className="header__profile-right-text"
-                                                               onClick={() => {
-                                                                   dispatch(logOutAccount())
-                                                                   localStorage.removeItem('user')
-                                                                   navigate('/')
-                                                               }}>Выйти</p>
+                                                               onClick={() => signOutHandler()}>Выйти</p>
                                                         </div> : <h3>Войдите или зарегистрируйтесь</h3>
                                                     }
                                                 </>

@@ -13,6 +13,7 @@ import Register from "./pages/Register/Register"
 import AdminPanel from "./pages/AdminPanel/AdminPanel"
 import FavoritesPage from "./pages/Favorites/FavoritesPage";
 import SimilarPage from "./pages/Simular/SimilarPage";
+import SortingPage from "./pages/Sorting/SortingPage";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path={'similar/:id'} element={<SimilarPage/>}/>
             <Route path={'favorites'} element={<FavoritesPage/>}/>
             <Route path={'similar'} element={<SimilarPage/>}/>
+            <Route path={'sorting'} element={<SortingPage/>}/>
           </Route>
           <Route path={'/login'} element={<Login/>}/>
           <Route path={'/registration'} element={<Register/>}/>
